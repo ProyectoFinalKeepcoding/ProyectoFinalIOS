@@ -12,7 +12,7 @@ struct WelcomeView: View {
         NavigationStack {
             VStack {
                 Spacer()
-                DogAnimation(lottieFile: "DogAnimation")
+                LottieView(lottieFile: "DogAnimation")
                     .frame(width: 300, height: 200)
                 Button {
                     //
