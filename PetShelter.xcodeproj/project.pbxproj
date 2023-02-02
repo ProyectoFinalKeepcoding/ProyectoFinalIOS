@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		9D5F0DC7298C503000453576 /* PetShelterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5F0DC6298C503000453576 /* PetShelterApp.swift */; };
-		9D5F0DC9298C503000453576 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5F0DC8298C503000453576 /* ContentView.swift */; };
+		9D5F0DC9298C503000453576 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5F0DC8298C503000453576 /* WelcomeView.swift */; };
 		9D5F0DCB298C503200453576 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D5F0DCA298C503200453576 /* Assets.xcassets */; };
 		9D5F0DCE298C503200453576 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D5F0DCD298C503200453576 /* Preview Assets.xcassets */; };
 		9D5F0DD8298C503200453576 /* PetShelterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5F0DD7298C503200453576 /* PetShelterTests.swift */; };
 		9D5F0DE2298C503200453576 /* PetShelterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5F0DE1298C503200453576 /* PetShelterUITests.swift */; };
 		9D5F0DE4298C503200453576 /* PetShelterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5F0DE3298C503200453576 /* PetShelterUITestsLaunchTests.swift */; };
+		9D5F0DF8298C527C00453576 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5F0DF7298C527C00453576 /* MapView.swift */; };
+		9D5F0DFB298C52BE00453576 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5F0DFA298C52BE00453576 /* Map.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +38,7 @@
 /* Begin PBXFileReference section */
 		9D5F0DC3298C503000453576 /* PetShelter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetShelter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D5F0DC6298C503000453576 /* PetShelterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetShelterApp.swift; sourceTree = "<group>"; };
-		9D5F0DC8298C503000453576 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9D5F0DC8298C503000453576 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		9D5F0DCA298C503200453576 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D5F0DCD298C503200453576 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9D5F0DD3298C503200453576 /* PetShelterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PetShelterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +46,8 @@
 		9D5F0DDD298C503200453576 /* PetShelterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PetShelterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D5F0DE1298C503200453576 /* PetShelterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetShelterUITests.swift; sourceTree = "<group>"; };
 		9D5F0DE3298C503200453576 /* PetShelterUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetShelterUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9D5F0DF7298C527C00453576 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		9D5F0DFA298C52BE00453576 /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +98,9 @@
 		9D5F0DC5298C503000453576 /* PetShelter */ = {
 			isa = PBXGroup;
 			children = (
-				9D5F0DC6298C503000453576 /* PetShelterApp.swift */,
-				9D5F0DC8298C503000453576 /* ContentView.swift */,
+				9D5F0DF2298C51A600453576 /* Domain */,
+				9D5F0DF1298C519A00453576 /* Data */,
+				9D5F0DF0298C519300453576 /* UI */,
 				9D5F0DCA298C503200453576 /* Assets.xcassets */,
 				9D5F0DCC298C503200453576 /* Preview Content */,
 			);
@@ -125,6 +130,71 @@
 				9D5F0DE3298C503200453576 /* PetShelterUITestsLaunchTests.swift */,
 			);
 			path = PetShelterUITests;
+			sourceTree = "<group>";
+		};
+		9D5F0DF0298C519300453576 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				9D5F0DC6298C503000453576 /* PetShelterApp.swift */,
+				9D5F0DF5298C51E300453576 /* Register */,
+				9D5F0DF4298C51DB00453576 /* Login */,
+				9D5F0DF3298C51B800453576 /* Welcome */,
+				9D5F0DF6298C51ED00453576 /* Map */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		9D5F0DF1298C519A00453576 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		9D5F0DF2298C51A600453576 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		9D5F0DF3298C51B800453576 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				9D5F0DC8298C503000453576 /* WelcomeView.swift */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
+		9D5F0DF4298C51DB00453576 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		9D5F0DF5298C51E300453576 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		9D5F0DF6298C51ED00453576 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				9D5F0DF9298C52A000453576 /* Components */,
+				9D5F0DF7298C527C00453576 /* MapView.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		9D5F0DF9298C52A000453576 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				9D5F0DFA298C52BE00453576 /* Map.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +327,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D5F0DC9298C503000453576 /* ContentView.swift in Sources */,
+				9D5F0DC9298C503000453576 /* WelcomeView.swift in Sources */,
+				9D5F0DF8298C527C00453576 /* MapView.swift in Sources */,
+				9D5F0DFB298C52BE00453576 /* Map.swift in Sources */,
 				9D5F0DC7298C503000453576 /* PetShelterApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
