@@ -6,11 +6,23 @@
 //
 
 import SwiftUI
+import GoogleMaps
 
-struct Map: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+struct Map: UIViewRepresentable {
+    
+    typealias UIViewType = GMSMapView
+    
+    
+    func makeUIView(context: Context) -> GMSMapView {
+        let camera = GMSCameraPosition(latitude: 45, longitude: 45, zoom: 8)
+        let mapView = GMSMapView.map(withFrame: .zero, camera: camera)
+        return mapView
     }
+    
+    func updateUIView(_ uiView: GMSMapView, context: Context) {
+        //
+    }
+    
 }
 
 struct Map_Previews: PreviewProvider {

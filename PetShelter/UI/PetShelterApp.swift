@@ -6,9 +6,13 @@
 //
 
 import SwiftUI
+import GoogleMaps
 
 @main
 struct PetShelterApp: App {
+    init()  {
+        GMSServices.provideAPIKey("AIzaSyBzYlfOZo0Z7oyMWbrajwSXVuNU_ePDwkk")
+    }
     var body: some Scene {
         WindowGroup {
             WelcomeView()
