@@ -10,11 +10,13 @@ import SwiftUI
 struct MapView: View {
     var body: some View {
         VStack {
-            Text("Header")
-                .font(.title)
-            Map()
+            Header()
+            ZStack {
+                Map()
+                    .ignoresSafeArea()
+                AidButton()
+            }
         }
-        
     }
 }
 
