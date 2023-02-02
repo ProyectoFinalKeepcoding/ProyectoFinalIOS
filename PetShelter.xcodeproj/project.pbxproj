@@ -20,6 +20,9 @@
 		9D5F0DFB298C52BE00453576 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5F0DFA298C52BE00453576 /* Map.swift */; };
 		9D5F0DFD298C5C8700453576 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5F0DFC298C5C8700453576 /* Header.swift */; };
 		9D5F0DFF298C5CEA00453576 /* AidButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5F0DFE298C5CEA00453576 /* AidButton.swift */; };
+		9D5F0E0F298C7A1900453576 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 9D5F0E0E298C7A1900453576 /* Lottie */; };
+		9D5F0E12298C7B7800453576 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5F0E11298C7B7800453576 /* LottieView.swift */; };
+		9D5F0E14298C7C4400453576 /* DogAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 9D5F0E13298C7C4400453576 /* DogAnimation.json */; };
 		BE7157DA1E3658BDDD766EC4 /* Pods_PetShelterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812CA2925F0CE2122970AC02 /* Pods_PetShelterTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +62,8 @@
 		9D5F0DFA298C52BE00453576 /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		9D5F0DFC298C5C8700453576 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		9D5F0DFE298C5CEA00453576 /* AidButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AidButton.swift; sourceTree = "<group>"; };
+		9D5F0E11298C7B7800453576 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		9D5F0E13298C7C4400453576 /* DogAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DogAnimation.json; sourceTree = "<group>"; };
 		AC15991C6AB3AD7BEC7D9CC7 /* Pods-PetShelterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetShelterTests.release.xcconfig"; path = "Target Support Files/Pods-PetShelterTests/Pods-PetShelterTests.release.xcconfig"; sourceTree = "<group>"; };
 		B975DCA9E7535542CBCB0B0B /* Pods_PetShelter_PetShelterUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetShelter_PetShelterUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6082ED6772146F7B121A2DD /* Pods-PetShelter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetShelter.debug.xcconfig"; path = "Target Support Files/Pods-PetShelter/Pods-PetShelter.debug.xcconfig"; sourceTree = "<group>"; };
@@ -72,6 +77,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7EA5F1D799C11AEC6B6C4B4B /* Pods_PetShelter.framework in Frameworks */,
+				9D5F0E0F298C7A1900453576 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,6 +199,8 @@
 			isa = PBXGroup;
 			children = (
 				9D5F0DC8298C503000453576 /* WelcomeView.swift */,
+				9D5F0E11298C7B7800453576 /* LottieView.swift */,
+				9D5F0E13298C7C4400453576 /* DogAnimation.json */,
 			);
 			path = Welcome;
 			sourceTree = "<group>";
@@ -261,6 +269,9 @@
 			dependencies = (
 			);
 			name = PetShelter;
+			packageProductDependencies = (
+				9D5F0E0E298C7A1900453576 /* Lottie */,
+			);
 			productName = PetShelter;
 			productReference = 9D5F0DC3298C503000453576 /* PetShelter.app */;
 			productType = "com.apple.product-type.application";
@@ -336,6 +347,9 @@
 				Base,
 			);
 			mainGroup = 9D5F0DBA298C503000453576;
+			packageReferences = (
+				9D5F0E0D298C7A1900453576 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = 9D5F0DC4298C503000453576 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -353,6 +367,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D5F0DCE298C503200453576 /* Preview Assets.xcassets in Resources */,
+				9D5F0E14298C7C4400453576 /* DogAnimation.json in Resources */,
 				9D5F0DCB298C503200453576 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -487,6 +502,7 @@
 				9D5F0DF8298C527C00453576 /* MapView.swift in Sources */,
 				9D5F0DFB298C52BE00453576 /* Map.swift in Sources */,
 				9D5F0DC7298C503000453576 /* PetShelterApp.swift in Sources */,
+				9D5F0E12298C7B7800453576 /* LottieView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -811,6 +827,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9D5F0E0D298C7A1900453576 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9D5F0E0E298C7A1900453576 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9D5F0E0D298C7A1900453576 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9D5F0DBB298C503000453576 /* Project object */;
 }
