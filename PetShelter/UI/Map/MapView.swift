@@ -15,16 +15,30 @@ struct MapView: View {
         marker.title = $0.name
         return marker
     }
+    @State var selectedMarker: GMSMarker?
+    
     var body: some View {
         VStack {
             Header()
             ZStack {
-                Map(markers: $markers)
-                    .ignoresSafeArea()
+                Map(markers: $markers, selectedMarker: $selectedMarker){ selectedMarker in
+                    
+                    self.selectedMarker = selectedMarker
+                    print("Select \(selectedMarker.title)")
+                    
+                }
+                .ignoresSafeArea()
                 AidButton()
             }
+        }.sheet(item: $selectedMarker) { option in
+            Text(option.title ?? "No value")
+                .presentationDetents([.fraction(0.25),.medium])
         }
     }
+}
+
+extension GMSMarker: Identifiable {
+
 }
 
 struct MapView_Previews: PreviewProvider {
