@@ -24,6 +24,7 @@
 		9D5F0E12298C7B7800453576 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5F0E11298C7B7800453576 /* LottieView.swift */; };
 		9D5F0E14298C7C4400453576 /* DogAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 9D5F0E13298C7C4400453576 /* DogAnimation.json */; };
 		BE7157DA1E3658BDDD766EC4 /* Pods_PetShelterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812CA2925F0CE2122970AC02 /* Pods_PetShelterTests.framework */; };
+		D25870742991309D000FBF80 /* Shelter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25870732991309D000FBF80 /* Shelter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		9D5F0E13298C7C4400453576 /* DogAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DogAnimation.json; sourceTree = "<group>"; };
 		AC15991C6AB3AD7BEC7D9CC7 /* Pods-PetShelterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetShelterTests.release.xcconfig"; path = "Target Support Files/Pods-PetShelterTests/Pods-PetShelterTests.release.xcconfig"; sourceTree = "<group>"; };
 		B975DCA9E7535542CBCB0B0B /* Pods_PetShelter_PetShelterUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetShelter_PetShelterUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D25870732991309D000FBF80 /* Shelter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shelter.swift; sourceTree = "<group>"; };
 		E6082ED6772146F7B121A2DD /* Pods-PetShelter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetShelter.debug.xcconfig"; path = "Target Support Files/Pods-PetShelter/Pods-PetShelter.debug.xcconfig"; sourceTree = "<group>"; };
 		E99CEB1CE344709175E3888D /* Pods_PetShelter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetShelter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB6D51982ED40A172652196B /* Pods-PetShelter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetShelter.release.xcconfig"; path = "Target Support Files/Pods-PetShelter/Pods-PetShelter.release.xcconfig"; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 		9D5F0DF2298C51A600453576 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				D25870732991309D000FBF80 /* Shelter.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -503,6 +506,7 @@
 				9D5F0DFB298C52BE00453576 /* Map.swift in Sources */,
 				9D5F0DC7298C503000453576 /* PetShelterApp.swift in Sources */,
 				9D5F0E12298C7B7800453576 /* LottieView.swift in Sources */,
+				D25870742991309D000FBF80 /* Shelter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

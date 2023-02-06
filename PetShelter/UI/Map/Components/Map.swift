@@ -10,23 +10,32 @@ import GoogleMaps
 
 struct Map: UIViewRepresentable {
     
+    @Binding var markers: [GMSMarker]
+//    @Binding var selectedMarker: GMSMarker?
+    
     typealias UIViewType = GMSMapView
+    
+    private let gmsMapView = GMSMapView(frame: .zero)
+    private let defaultZoomLevel: Float = 10
     
     
     func makeUIView(context: Context) -> GMSMapView {
-        let camera = GMSCameraPosition(latitude: 45, longitude: 45, zoom: 8)
-        let mapView = GMSMapView.map(withFrame: .zero, camera: camera)
-        return mapView
+        let sanFrancisco = CLLocationCoordinate2D(latitude: 37.7576, longitude: -122.4194)
+        gmsMapView.camera = GMSCameraPosition.camera(withTarget: sanFrancisco, zoom: defaultZoomLevel)
+        gmsMapView.isUserInteractionEnabled = true
+        return gmsMapView
     }
     
     func updateUIView(_ uiView: GMSMapView, context: Context) {
-        //
+        markers.forEach { marker in
+            marker.map = uiView
+        }
     }
     
 }
 
-struct Map_Previews: PreviewProvider {
-    static var previews: some View {
-        Map()
-    }
-}
+//struct Map_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Map()
+//    }
+//}
