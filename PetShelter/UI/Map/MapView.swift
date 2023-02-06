@@ -32,7 +32,7 @@ struct MapView: View {
             }
         }.sheet(item: $selectedMarker) { option in
             Text(option.title ?? "No value")
-                .presentationDetents([.fraction(0.25),.medium])
+                .presentationDetents([.fraction(0.25),.medium, .large])
         }
     }
 }

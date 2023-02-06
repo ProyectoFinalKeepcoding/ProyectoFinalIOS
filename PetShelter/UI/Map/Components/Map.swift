@@ -54,7 +54,7 @@ final class MapViewCoordinator: NSObject, GMSMapViewDelegate {
     
 
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
-//        mapView.selectedMarker = marker
+        mapView.selectedMarker = marker
         onMarkerClick(marker)
         return true
     }
