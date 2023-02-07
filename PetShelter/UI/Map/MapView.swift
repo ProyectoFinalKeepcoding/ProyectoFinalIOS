@@ -24,15 +24,16 @@ struct MapView: View {
                 Map(markers: $markers, selectedMarker: $selectedMarker){ selectedMarker in
                     
                     self.selectedMarker = selectedMarker
-                    print("Select \(selectedMarker.title)")
-                    
                 }
                 .ignoresSafeArea()
                 AidButton()
             }
         }.sheet(item: $selectedMarker) { option in
-            Text(option.title ?? "No value")
-                .presentationDetents([.fraction(0.25),.medium, .large])
+            
+            LocationDetailView(name: option.title ?? "No value")
+                .presentationDetents([.medium, .large])
+                .padding(.top, 20)
+
         }
     }
 }
