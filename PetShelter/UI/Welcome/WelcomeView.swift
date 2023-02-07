@@ -12,35 +12,13 @@ struct WelcomeView: View {
         NavigationStack {
             VStack {
                 Spacer()
-                LottieView(lottieFile: "DogAnimation")
+               LottieView(lottieFile: "DogAnimation")
                     .frame(width: 300, height: 200)
-                Button {
-                    //
-                } label: {
-                    Text("Soy un centro de acogida")
-                        .font(.title3)
-                        .bold()
-                        .foregroundColor(.white)
-                }
-                .frame(width: 300)
-                .padding()
-                .background(Color.gray)
-                .cornerRadius(16)
+                ShelterButton()
                 Spacer()
                     .frame(height: 32)
-                NavigationLink(destination: {
-                    MapView()
-                }, label: {
-                    Text("Soy un rescatador")
-                        .font(.title3)
-                        .bold()
-                        .foregroundColor(.white)
-                })
-                .frame(width: 300)
-                .padding()
-                .background(Color.gray)
-                .cornerRadius(16)
                 
+                PhysicPersonButton()
                 Spacer()
             }
             .padding()

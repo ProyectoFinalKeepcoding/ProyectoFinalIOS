@@ -9,24 +9,33 @@ import SwiftUI
 import GoogleMaps
 
 struct Map: UIViewRepresentable {
+    @Binding var coordinates: [ShelterPointModel]
     
     typealias UIViewType = GMSMapView
     
     
     func makeUIView(context: Context) -> GMSMapView {
-        let camera = GMSCameraPosition(latitude: 45, longitude: 45, zoom: 8)
+        let camera = GMSCameraPosition(latitude: 38.3875, longitude: -0.5246, zoom: 5)
         let mapView = GMSMapView.map(withFrame: .zero, camera: camera)
+        mapView.delegate = context.coordinator
         return mapView
     }
     
     func updateUIView(_ uiView: GMSMapView, context: Context) {
-        //
+        context.coordinator.places = coordinates
+        context.coordinator.addMarkers(mapView: uiView)
+    }
+    
+    func makeCoordinator() -> Coordinator {
+        return Coordinator()
     }
     
 }
 
-struct Map_Previews: PreviewProvider {
-    static var previews: some View {
-        Map()
-    }
-}
+//struct Map_Previews: PreviewProvider {
+//
+//    static var previews: some View {
+//        Map()
+//            .coordinates
+//    }
+//}

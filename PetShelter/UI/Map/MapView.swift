@@ -8,15 +8,25 @@
 import SwiftUI
 
 struct MapView: View {
+    @ObservedObject var viewModel = MapViewModel()
+    
     var body: some View {
         VStack {
             Header()
+                .frame(height: 36)
+                .padding()
             ZStack {
-                Map()
+                Map(coordinates: $viewModel.locations)
                     .ignoresSafeArea()
                 AidButton()
             }
         }
+        .onAppear {
+            Task {
+               await viewModel.getShelterPoints()
+            }
+        }
+        .navigationBarBackButtonHidden(true)
     }
 }
 

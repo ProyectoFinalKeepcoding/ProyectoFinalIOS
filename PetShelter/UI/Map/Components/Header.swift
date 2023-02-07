@@ -9,17 +9,20 @@ import SwiftUI
 
 struct Header: View {
     var body: some View {
-        HStack {
+        HStack(alignment: .center, spacing: 12) {
             Button {
                 //
             } label: {
                 Image(systemName: "line.3.horizontal")
+                    .resizable()
+                    .frame(width: 48, height: 30)
                     .font(.system(size: 40))
                     .foregroundColor(.black)
             }
             Spacer()
-            Text("Logo")
-                .font(.title)
+            Image("Title login")
+                .resizable()
+                .frame(width: 250, height: 48)
             Spacer()
         }
         .padding()
