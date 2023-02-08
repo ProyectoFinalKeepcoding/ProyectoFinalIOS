@@ -10,6 +10,7 @@ import GoogleMaps
 
 struct Map: UIViewRepresentable {
     @Binding var coordinates: [ShelterPointModel]
+    var onMarkerClick: (ShelterPointModel) -> ()
     
     typealias UIViewType = GMSMapView
     
@@ -27,7 +28,7 @@ struct Map: UIViewRepresentable {
     }
     
     func makeCoordinator() -> Coordinator {
-        return Coordinator()
+        return Coordinator(onMarkerClick)
     }
     
 }

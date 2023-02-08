@@ -10,20 +10,28 @@ import SwiftUI
 struct MapView: View {
     @ObservedObject var viewModel = MapViewModel()
     
+    @State var selectedShelter: ShelterPointModel?
+    
     var body: some View {
         VStack {
             Header()
                 .frame(height: 36)
                 .padding()
             ZStack {
-                Map(coordinates: $viewModel.locations)
-                    .ignoresSafeArea()
+                Map(coordinates: $viewModel.locations){ selectedShelter in
+                    self.selectedShelter = selectedShelter
+                }
+                .ignoresSafeArea()
                 AidButton()
             }
-        }
+        }.sheet(item: $selectedShelter, content: { option in
+            Text(option.name)
+                .presentationDetents([.medium, .large])
+                .padding(.top, 20)
+        })
         .onAppear {
             Task {
-               await viewModel.getShelterPoints()
+                await viewModel.getShelterPoints()
             }
         }
         .navigationBarBackButtonHidden(true)
