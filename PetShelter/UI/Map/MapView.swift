@@ -25,7 +25,7 @@ struct MapView: View {
                 AidButton()
             }
         }.sheet(item: $selectedShelter, content: { option in
-            Text(option.name)
+            ShelterDetailModal(shelter: option)
                 .presentationDetents([.medium, .large])
                 .padding(.top, 20)
         })
