@@ -12,19 +12,27 @@ struct Map: UIViewRepresentable {
     @Binding var coordinates: [ShelterPointModel]
     var onMarkerClick: (ShelterPointModel) -> ()
     
+    @StateObject var locationManager = LocationManager()
+    private let zoom: Float = 5.0
+    
     typealias UIViewType = GMSMapView
     
     
     func makeUIView(context: Context) -> GMSMapView {
-        let camera = GMSCameraPosition(latitude: 38.3875, longitude: -0.5246, zoom: 5)
+        let camera = GMSCameraPosition.camera(withLatitude: locationManager.latitude, longitude: locationManager.longitude, zoom: zoom)
         let mapView = GMSMapView.map(withFrame: .zero, camera: camera)
+        mapView.settings.myLocationButton = true
+        mapView.isMyLocationEnabled = true
         mapView.delegate = context.coordinator
         return mapView
     }
     
-    func updateUIView(_ uiView: GMSMapView, context: Context) {
+    func updateUIView(_ mapView: GMSMapView, context: Context) {
+        let camera = GMSCameraPosition.camera(withLatitude: locationManager.latitude, longitude: locationManager.longitude, zoom: zoom)
+        mapView.camera = camera
+        mapView.animate(toLocation: CLLocationCoordinate2D(latitude: locationManager.latitude, longitude: locationManager.longitude))
         context.coordinator.places = coordinates
-        context.coordinator.addMarkers(mapView: uiView)
+        context.coordinator.addMarkers(mapView: mapView)
     }
     
     func makeCoordinator() -> Coordinator {

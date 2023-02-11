@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import CoreLocation
+import MapKit
 
 struct ShelterDetailModal: View {
     
@@ -55,6 +57,7 @@ struct ShelterDetailModal: View {
                     
                     Button {
                         //TODO: - Llamar
+                        callNumber(phoneNumber: shelter.phoneNumber)
                     } label: {
                         HStack{
                             Spacer()
@@ -75,6 +78,8 @@ struct ShelterDetailModal: View {
                     
                     Button {
                         //TODO: - Ir al sitio
+                        showRoute(address: shelter.address)
+
                     } label: {
                         
                         HStack{
@@ -101,6 +106,22 @@ struct ShelterDetailModal: View {
         
         .padding()
     }
+}
+
+private func callNumber(phoneNumber: String) {
+    if let phoneCallURL = URL(string: "tel://\(phoneNumber)") {
+        let application: UIApplication = UIApplication.shared
+        if (application.canOpenURL(phoneCallURL)) {
+            application.open(phoneCallURL, options: [:], completionHandler: nil)
+        }
+    }
+}
+
+private func showRoute(address: Address) {
+    let coordinate = CLLocationCoordinate2DMake(address.latitude,address.longitude)
+    let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary: nil))
+    mapItem.name = "Destination"
+    mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving])
 }
 
 struct ShelterDetailModal_Previews: PreviewProvider {

@@ -26,15 +26,25 @@ struct MapView: View {
             }
         }.sheet(item: $selectedShelter, content: { option in
             ShelterDetailModal(shelter: option)
-                .presentationDetents([.medium, .large])
+                .presentationDetents([.fraction(0.40), .large])
                 .padding(.top, 20)
         })
         .onAppear {
             Task {
                 await viewModel.getShelterPoints()
             }
+            
         }
         .navigationBarBackButtonHidden(true)
+    }
+}
+
+private func callNumber(phoneNumber: String) {
+    if let phoneCallURL = URL(string: "tel://\(phoneNumber)") {
+        let application: UIApplication = UIApplication.shared
+        if (application.canOpenURL(phoneCallURL)) {
+            application.open(phoneCallURL, options: [:], completionHandler: nil)
+        }
     }
 }
 
