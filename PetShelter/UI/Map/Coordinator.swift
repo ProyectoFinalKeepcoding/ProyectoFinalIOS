@@ -12,6 +12,12 @@ import SwiftUI
 class Coordinator: NSObject, GMSMapViewDelegate {
     var places: [ShelterPointModel] = []
     
+    var onMarkerClick: (ShelterPointModel) -> ()
+    
+    init(_ onMarkerClick: @escaping (ShelterPointModel) -> Void) {
+        self.onMarkerClick = onMarkerClick
+    }
+    
     func addMarkers(mapView: GMSMapView) {
         places.forEach { place in
             let marker = GMSMarker(position: CLLocationCoordinate2D(latitude: place.address.latitude, longitude: place.address.longitude))
@@ -39,6 +45,14 @@ class Coordinator: NSObject, GMSMapViewDelegate {
         let tintedImage = image.withTintColor(color, renderingMode: .alwaysOriginal)
         let scaledImage = tintedImage.resizeImageTo(size: CGSize(width: size, height: size))
         return UIImageView(image: scaledImage)
+    }
+    
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        let place = places.filter {
+            $0.name == marker.title
+        }.first!
+        onMarkerClick(place)
+        return true
     }
     
 }

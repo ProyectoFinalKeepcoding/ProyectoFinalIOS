@@ -13,4 +13,5 @@ struct ShelterPointModel: Decodable, Identifiable {
     let phoneNumber: String
     let address: Address
     let shelterType: ShelterType
+    var photoURL: String?
 }

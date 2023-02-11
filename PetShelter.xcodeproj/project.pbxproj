@@ -40,6 +40,8 @@
 		9DC7B452298D8B4D00AFC9D2 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC7B451298D8B4D00AFC9D2 /* MapViewModel.swift */; };
 		9DE8E39A2992E60A00FD2DCB /* Image+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE8E3992992E60A00FD2DCB /* Image+Extensions.swift */; };
 		BE7157DA1E3658BDDD766EC4 /* Pods_PetShelterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812CA2925F0CE2122970AC02 /* Pods_PetShelterTests.framework */; };
+		D263969E29946736009DCB53 /* ShelterDetailModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D263969D29946736009DCB53 /* ShelterDetailModal.swift */; };
+		D2D549CB2997106300FE39B2 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D549CA2997106300FE39B2 /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +101,8 @@
 		9DE8E3992992E60A00FD2DCB /* Image+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Extensions.swift"; sourceTree = "<group>"; };
 		AC15991C6AB3AD7BEC7D9CC7 /* Pods-PetShelterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetShelterTests.release.xcconfig"; path = "Target Support Files/Pods-PetShelterTests/Pods-PetShelterTests.release.xcconfig"; sourceTree = "<group>"; };
 		B975DCA9E7535542CBCB0B0B /* Pods_PetShelter_PetShelterUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetShelter_PetShelterUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D263969D29946736009DCB53 /* ShelterDetailModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelterDetailModal.swift; sourceTree = "<group>"; };
+		D2D549CA2997106300FE39B2 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		E6082ED6772146F7B121A2DD /* Pods-PetShelter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetShelter.debug.xcconfig"; path = "Target Support Files/Pods-PetShelter/Pods-PetShelter.debug.xcconfig"; sourceTree = "<group>"; };
 		E99CEB1CE344709175E3888D /* Pods_PetShelter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetShelter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB6D51982ED40A172652196B /* Pods-PetShelter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetShelter.release.xcconfig"; path = "Target Support Files/Pods-PetShelter/Pods-PetShelter.release.xcconfig"; sourceTree = "<group>"; };
@@ -269,6 +273,7 @@
 				9D5F0DF7298C527C00453576 /* MapView.swift */,
 				9DC7B451298D8B4D00AFC9D2 /* MapViewModel.swift */,
 				9D65301F2991BBB8004CF39D /* Coordinator.swift */,
+				D2D549CA2997106300FE39B2 /* LocationManager.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -279,6 +284,7 @@
 				9D5F0DFA298C52BE00453576 /* Map.swift */,
 				9D5F0DFC298C5C8700453576 /* Header.swift */,
 				9D5F0DFE298C5CEA00453576 /* AidButton.swift */,
+				D263969D29946736009DCB53 /* ShelterDetailModal.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -577,6 +583,7 @@
 				9DC7B44D298D84A600AFC9D2 /* RemoteDataSource.swift in Sources */,
 				9D9E536D29904859000E3D3F /* Repository.swift in Sources */,
 				9DC7B44A298D842600AFC9D2 /* ShelterPointModel.swift in Sources */,
+				D263969E29946736009DCB53 /* ShelterDetailModal.swift in Sources */,
 				9D5F0DFD298C5C8700453576 /* Header.swift in Sources */,
 				9D65301C29919863004CF39D /* ShelterButton.swift in Sources */,
 				9DC7B446298D802600AFC9D2 /* ShelterRegisterModel.swift in Sources */,
@@ -590,6 +597,7 @@
 				9D5F0DFB298C52BE00453576 /* Map.swift in Sources */,
 				9D5F0DC7298C503000453576 /* PetShelterApp.swift in Sources */,
 				9D65301829916BC0004CF39D /* NetworkError.swift in Sources */,
+				D2D549CB2997106300FE39B2 /* LocationManager.swift in Sources */,
 				9D5F0E12298C7B7800453576 /* LottieView.swift in Sources */,
 				9DC7B452298D8B4D00AFC9D2 /* MapViewModel.swift in Sources */,
 				9D6530202991BBB8004CF39D /* Coordinator.swift in Sources */,
@@ -752,6 +760,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PetShelter/Preview Content\"";
+				DEVELOPMENT_TEAM = 8DA4M3747L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PetShelter/Info.plist;
@@ -760,6 +769,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -782,6 +792,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PetShelter/Preview Content\"";
+				DEVELOPMENT_TEAM = 8DA4M3747L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PetShelter/Info.plist;
@@ -790,6 +801,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
