@@ -12,16 +12,27 @@ struct WelcomeView: View {
         NavigationStack {
             VStack {
                 Spacer()
-               LottieView(lottieFile: "DogAnimation")
-                    .frame(width: 300, height: 200)
+                    .frame(height: 100)
                 ShelterButton()
                 Spacer()
-                    .frame(height: 32)
+                    .frame(height: 180)
+                
+                HStack{
+                    LottieView(lottieFile: "DogAnimation")
+                         .frame(width: 160, height: 200)
+                    Spacer()
+                }
                 
                 PhysicPersonButton()
                 Spacer()
             }
+            
             .padding()
+            .background(
+                Image(decorative: "Welcome")
+                    .resizable()
+            ).ignoresSafeArea()
+
         }
     }
     
