@@ -8,7 +8,7 @@
 		<string>Moderat-Bold.ttf</string>
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Permitir acceso a localización ?</string>
+	<string>Necesitamos saber dónde estás para ayudarte a salvar la mascota que has encontrado</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict/>

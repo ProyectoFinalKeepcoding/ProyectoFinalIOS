@@ -12,7 +12,7 @@ struct WelcomeView: View {
         NavigationStack {
             VStack {
                 Spacer()
-                    .frame(height: 100)
+
                 ShelterButton()
                 Spacer()
                     .frame(height: 180)
