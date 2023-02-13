@@ -42,6 +42,8 @@
 		BE7157DA1E3658BDDD766EC4 /* Pods_PetShelterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812CA2925F0CE2122970AC02 /* Pods_PetShelterTests.framework */; };
 		D225FCA72999A06100728AAC /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D225FCA62999A06100728AAC /* LoginView.swift */; };
 		D263969E29946736009DCB53 /* ShelterDetailModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D263969D29946736009DCB53 /* ShelterDetailModal.swift */; };
+		D2B74898299925BD00D4F07E /* Moderat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D2B74896299925BD00D4F07E /* Moderat-Medium.ttf */; };
+		D2B74899299925BD00D4F07E /* Moderat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D2B74897299925BD00D4F07E /* Moderat-Bold.ttf */; };
 		D2D549CB2997106300FE39B2 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D549CA2997106300FE39B2 /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -104,6 +106,8 @@
 		B975DCA9E7535542CBCB0B0B /* Pods_PetShelter_PetShelterUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetShelter_PetShelterUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D225FCA62999A06100728AAC /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginView.swift; path = PetShelter/UI/Map/LoginView.swift; sourceTree = SOURCE_ROOT; };
 		D263969D29946736009DCB53 /* ShelterDetailModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelterDetailModal.swift; sourceTree = "<group>"; };
+		D2B74896299925BD00D4F07E /* Moderat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Moderat-Medium.ttf"; sourceTree = "<group>"; };
+		D2B74897299925BD00D4F07E /* Moderat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Moderat-Bold.ttf"; sourceTree = "<group>"; };
 		D2D549CA2997106300FE39B2 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		E6082ED6772146F7B121A2DD /* Pods-PetShelter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetShelter.debug.xcconfig"; path = "Target Support Files/Pods-PetShelter/Pods-PetShelter.debug.xcconfig"; sourceTree = "<group>"; };
 		E99CEB1CE344709175E3888D /* Pods_PetShelter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetShelter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -174,6 +178,7 @@
 		9D5F0DC5298C503000453576 /* PetShelter */ = {
 			isa = PBXGroup;
 			children = (
+				D2B74895299924C500D4F07E /* Fonts */,
 				9DE8E3982992E5F300FD2DCB /* Utils */,
 				9D9E53702990589F000E3D3F /* Info.plist */,
 				9DC7B44E298D880700AFC9D2 /* locations.json */,
@@ -334,6 +339,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		D2B74895299924C500D4F07E /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				D2B74897299925BD00D4F07E /* Moderat-Bold.ttf */,
+				D2B74896299925BD00D4F07E /* Moderat-Medium.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -449,10 +463,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2B74899299925BD00D4F07E /* Moderat-Bold.ttf in Resources */,
 				9D5F0DCE298C503200453576 /* Preview Assets.xcassets in Resources */,
 				9D5F0E14298C7C4400453576 /* DogAnimation.json in Resources */,
 				9DC7B44F298D880700AFC9D2 /* locations.json in Resources */,
 				9D5F0DCB298C503200453576 /* Assets.xcassets in Resources */,
+				D2B74898299925BD00D4F07E /* Moderat-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
