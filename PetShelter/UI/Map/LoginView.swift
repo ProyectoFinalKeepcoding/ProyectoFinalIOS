@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
+    @StateObject var viewModel = LoginViewModel()
     
     @State private var user = ""
     @State private var password = ""
@@ -30,7 +31,7 @@ struct LoginView: View {
                 })
                 .padding(.top,20)
             
-            TextField("Contraseña", text: $password)
+            SecureField("Contraseña", text: $password)
                 .padding()
                 .overlay(content: {
                     RoundedRectangle(cornerRadius: 5)
@@ -40,6 +41,9 @@ struct LoginView: View {
             
             Button {
                 //TODO: - Función login
+                Task{
+                   await viewModel.login(user: user, password: password)
+                }
             } label: {
                 Text("Entrar")
                     .padding()
