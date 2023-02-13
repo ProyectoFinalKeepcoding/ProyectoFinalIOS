@@ -12,14 +12,14 @@ struct ShelterButton: View {
         NavigationLink(destination: {
             RegisterView()
         }, label: {
-            Text("Soy un centro de acogida")
-                .font(.title3)
+            Text("Puedo acoger a una mascota")
+                .font(Font.custom("Moderat-Medium", size: 25))
                 .bold()
-                .foregroundColor(.white)
+                .foregroundColor(Color("Red Kiwoko"))
         })
         .frame(width: 300)
         .padding()
-        .background(Color.gray)
+        .background(Color.white)
         .cornerRadius(16)
     }
 }

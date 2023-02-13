@@ -12,14 +12,14 @@ struct PhysicPersonButton: View {
         NavigationLink(destination: {
             MapView()
         }, label: {
-            Text("Soy un rescatador")
-                .font(.title3)
+            Text("He encontrado una mascota")
+                .font(Font.custom("Moderat-Medium", size: 25))
                 .bold()
                 .foregroundColor(.white)
         })
         .frame(width: 300)
         .padding()
-        .background(Color.gray)
+        .background(Color("Red Kiwoko"))
         .cornerRadius(16)
     }
 }
