@@ -19,7 +19,7 @@ struct LoginView: View {
                 .padding(.top,100)
             
             Text("Ya tengo cuenta")
-                .font(.system(size: 20, weight: .bold))
+                .font(Font.custom("Moderat-Bold",size: 20))
                 .padding(.top,60)
             
             TextField("Usuario", text: $user)
@@ -44,18 +44,19 @@ struct LoginView: View {
                 Text("Entrar")
                     .padding()
                     .foregroundColor(Color.white)
+                    .font(Font.custom("Moderat-Medium", size: 16))
                     .frame(width: 200, height: 50)
                     .background(Color("Red Kiwoko"))
                     .cornerRadius(5)
             }.padding(.top, 20)
             
             Text("¿Has olvidado tu contraseña?")
-                .font(.system(size: 15, weight: .medium))
+                .font(Font.custom("Moderat-Medium",size: 18))
                 .foregroundColor(Color("Red Kiwoko"))
                 .padding(.top,10)
             
             Text("No tengo cuenta")
-                .font(.system(size: 20, weight: .bold))
+                .font(Font.custom("Moderat-Bold",size: 20))
                 .padding(.top,60)
             
             NavigationLink {
@@ -63,7 +64,7 @@ struct LoginView: View {
                 RegisterView()
             } label: {
                 Text("Registrarme")
-                    .font(.system(size: 20, weight: .bold))
+                    .font(Font.custom("Moderat-Bold",size: 20))
                     .foregroundColor(Color("Red Kiwoko"))
             }.padding(.top,5)
             
