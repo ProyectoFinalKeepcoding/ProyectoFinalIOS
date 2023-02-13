@@ -10,7 +10,7 @@ import SwiftUI
 struct ShelterButton: View {
     var body: some View {
         NavigationLink(destination: {
-            RegisterView()
+            LoginView()
         }, label: {
             Text("Soy un centro de acogida")
                 .font(.title3)
