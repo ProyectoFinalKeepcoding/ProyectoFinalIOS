@@ -13,6 +13,8 @@ struct LoginView: View {
     @State private var user = ""
     @State private var password = ""
     
+    
+    
     var body: some View {
         
         VStack{
@@ -42,7 +44,7 @@ struct LoginView: View {
             Button {
                 //TODO: - Función login
                 Task{
-                   await viewModel.login(user: user, password: password)
+                    await viewModel.login(user: user, password: password)
                 }
             } label: {
                 Text("Entrar")
@@ -61,7 +63,7 @@ struct LoginView: View {
             
             Text("No tengo cuenta")
                 .font(Font.custom("Moderat-Bold",size: 20))
-                .padding(.top,60)
+                .padding(.top,50)
             
             NavigationLink {
                 //MARK: - Ir al registro
@@ -72,10 +74,32 @@ struct LoginView: View {
                     .foregroundColor(Color("Red Kiwoko"))
             }.padding(.top,5)
             
+            switch viewModel.status {
+                
+            case .loading:
+                ProgressView()
+                    .scaleEffect(2)
+                    .padding(.top,10)
+                
+            default:
+                Spacer()
+                
+            }
+            
             Spacer()
             
         }
         .padding([.leading, .trailing], 20)
+        .alert(isPresented: $viewModel.hasError) {
+            
+            if case let .error(message) = viewModel.status {
+               return Alert(title: Text("Error"),
+                             message: Text(message))
+            }
+            
+            return Alert(title: Text(""))
+        }
+        
     }
     
 }
@@ -86,3 +110,4 @@ struct LoginView_Previews: PreviewProvider {
         LoginView()
     }
 }
+
