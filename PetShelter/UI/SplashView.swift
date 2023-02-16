@@ -14,12 +14,17 @@ struct SplashView: View {
     
     var body: some View {
         ZStack {
+            
+            Color.red
+                .opacity(0.9)
+            .ignoresSafeArea()
+            
             if self.isActive {
                 WelcomeView()
             } else {
 //                Rectangle()
 //                    .background(Color.red)
-                
+//
                 Image("ShelterSplashViewLogo")
                     .resizable()
                     .scaledToFit()
@@ -34,7 +39,10 @@ struct SplashView: View {
                 }
             }
         }
+//        Color.red
+//            .opacity(0.3)
 //        .background(Color.red)
+//        .opacity(0.3)
     }
        
         
