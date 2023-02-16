@@ -10,11 +10,12 @@ import SwiftUI
 
 struct SplashView: View {
     
+    @State private var animate = false
     @State var isActive: Bool = false
     
     var body: some View {
         ZStack {
-            
+            //Mandatory to fill the entire view
             Color.red
                 .opacity(0.9)
             .ignoresSafeArea()
@@ -22,27 +23,35 @@ struct SplashView: View {
             if self.isActive {
                 WelcomeView()
             } else {
-//                Rectangle()
-//                    .background(Color.red)
-//
+
+//                Circle()
+//                    .fill(.red)
+//                    .frame(width: 650, height: 650, alignment: .center)
+//                    .scaleEffect(animate ? 1.0 : 0.5)
+//                    .animation(.easeInOut(duration: 0.5).repeatForever(), value: animate)
+
                 Image("ShelterSplashViewLogo")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 300, height: 300)
+                    .scaleEffect(animate ? 1.0 : 0.75)
+                    .animation(.easeInOut(duration: 0.5).repeatForever(), value: animate)
             }
         }
 
         .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            DispatchQueue.main.async {
+                self.animate = true
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 withAnimation {
                     self.isActive = true
                 }
             }
         }
-//        Color.red
-//            .opacity(0.3)
-//        .background(Color.red)
-//        .opacity(0.3)
+        .onDisappear{
+            self.animate = false
+        }
     }
        
         
