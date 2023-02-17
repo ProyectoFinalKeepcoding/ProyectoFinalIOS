@@ -15,20 +15,21 @@ struct SplashView: View {
     
     var body: some View {
         ZStack {
-//            //Mandatory to fill the entire view
-//            CustomColor.redKiwoko
-//                .opacity(0.8)
-//                .ignoresSafeArea()
+            //Mandatory to fill the entire view
+            Color.black
+                .opacity(0.8)
+                .ignoresSafeArea()
             
             if self.isActive {
                 WelcomeView()
             } else {
 
-//                Circle()
-//                    .fill(.red)
-//                    .frame(width: 650, height: 650, alignment: .center)
-//                    .scaleEffect(animate ? 1.0 : 0.5)
-//                    .animation(.easeInOut(duration: 0.5).repeatForever(), value: animate)
+                Circle()
+                    .fill(CustomColor.redKiwoko)
+                    .opacity(0.7)
+                    .frame(width: 425, height: 425, alignment: .center)
+                    .scaleEffect(animate ? 1.0 : 0.6)
+                    .animation(.easeInOut(duration: 0.5).repeatForever(), value: animate)
 
                 Image("ShelterSplashViewLogo")
                     .resizable()
@@ -43,11 +44,11 @@ struct SplashView: View {
             DispatchQueue.main.async {
                 self.animate = true
             }
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-//                withAnimation {
-//                    self.isActive = true
-//                }
-//            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                withAnimation {
+                    self.isActive = true
+                }
+            }
         }
         .onDisappear{
             self.animate = false
