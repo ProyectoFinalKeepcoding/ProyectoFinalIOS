@@ -15,10 +15,10 @@ struct SplashView: View {
     
     var body: some View {
         ZStack {
-            //Mandatory to fill the entire view
-            Color.red
-                .opacity(0.9)
-            .ignoresSafeArea()
+//            //Mandatory to fill the entire view
+//            CustomColor.redKiwoko
+//                .opacity(0.8)
+//                .ignoresSafeArea()
             
             if self.isActive {
                 WelcomeView()
@@ -43,18 +43,16 @@ struct SplashView: View {
             DispatchQueue.main.async {
                 self.animate = true
             }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                withAnimation {
-                    self.isActive = true
-                }
-            }
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+//                withAnimation {
+//                    self.isActive = true
+//                }
+//            }
         }
         .onDisappear{
             self.animate = false
         }
-    }
-       
-        
+    }    
 }
 
 struct SplashView_Previews: PreviewProvider {
