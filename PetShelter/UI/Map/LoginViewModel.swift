@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import KeychainSwift
 
 enum Status: Equatable {
     case none, loading, loaded, error(error: String)
@@ -19,12 +20,21 @@ final class LoginViewModel: ObservableObject {
     @Published var navigateToDetail = false
     
     private var repository: Repository
+    private var keychain: KeychainSwift
     
-    init(repository: Repository = RepositoryImpl()) {
+    init(repository: Repository = RepositoryImpl(),
+         keychain: KeychainSwift = KeychainSwift()) {
         self.repository = repository
+        self.keychain = keychain
     }    
     
     func login(user: String, password: String) async {
+        
+        guard !user.isEmpty, !password.isEmpty else {
+            self.status = .error(error: "Debe completar todos los campos")
+            hasError = true
+            return
+        }
         self.status = .loading
         
         let result = await repository.login(user: user, password: password)
@@ -33,7 +43,7 @@ final class LoginViewModel: ObservableObject {
         case .success(let token):
             self.status = .loaded
             navigateToDetail = true
-            print(token)
+            self.keychain.set(token, forKey: "AccessToken")
         case .failure(let error):
             self.status = Status.error(error: "Usuario y/o Clave incorrectos")
             hasError = true
