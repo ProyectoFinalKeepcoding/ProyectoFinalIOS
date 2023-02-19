@@ -9,8 +9,12 @@ import Foundation
 import GoogleMaps
 
 final class MapViewModel: ObservableObject {
-    let repository = RepositoryImpl()
+    private var repository: Repository
     @Published var locations = [ShelterPointModel]()
+    
+    init(repository: Repository = RepositoryImpl()) {
+        self.repository = repository
+    }
     
     func getShelterPoints() async {
         let result = await repository.fetchShelterPoints()

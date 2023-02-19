@@ -11,4 +11,6 @@ enum NetworkError: Error {
     case responseError
     case invalidCode
     case invalidURL
+    case dataFormatting
+    case tokenFormatError
 }
