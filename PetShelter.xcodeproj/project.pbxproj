@@ -13,7 +13,6 @@
 		9D5F0DC9298C503000453576 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5F0DC8298C503000453576 /* WelcomeView.swift */; };
 		9D5F0DCB298C503200453576 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D5F0DCA298C503200453576 /* Assets.xcassets */; };
 		9D5F0DCE298C503200453576 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D5F0DCD298C503200453576 /* Preview Assets.xcassets */; };
-		9D5F0DD8298C503200453576 /* PetShelterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5F0DD7298C503200453576 /* PetShelterTests.swift */; };
 		9D5F0DE2298C503200453576 /* PetShelterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5F0DE1298C503200453576 /* PetShelterUITests.swift */; };
 		9D5F0DE4298C503200453576 /* PetShelterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5F0DE3298C503200453576 /* PetShelterUITestsLaunchTests.swift */; };
 		9D5F0DF8298C527C00453576 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5F0DF7298C527C00453576 /* MapView.swift */; };
@@ -81,7 +80,6 @@
 		9D5F0DCA298C503200453576 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D5F0DCD298C503200453576 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9D5F0DD3298C503200453576 /* PetShelterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PetShelterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9D5F0DD7298C503200453576 /* PetShelterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetShelterTests.swift; sourceTree = "<group>"; };
 		9D5F0DDD298C503200453576 /* PetShelterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PetShelterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D5F0DE1298C503200453576 /* PetShelterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetShelterUITests.swift; sourceTree = "<group>"; };
 		9D5F0DE3298C503200453576 /* PetShelterUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetShelterUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -214,7 +212,6 @@
 		9D5F0DD6298C503200453576 /* PetShelterTests */ = {
 			isa = PBXGroup;
 			children = (
-				9D5F0DD7298C503200453576 /* PetShelterTests.swift */,
 				D2F6FCA229A18C7200675257 /* MockRepository.swift */,
 				D2F6FCA429A18DA000675257 /* LoginViewModelTests.swift */,
 				D2F6FCA629A190A200675257 /* MockKeychain.swift */,
@@ -658,7 +655,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2F6FCA529A18DA000675257 /* LoginViewModelTests.swift in Sources */,
-				9D5F0DD8298C503200453576 /* PetShelterTests.swift in Sources */,
 				D2F6FCA329A18C7200675257 /* MockRepository.swift in Sources */,
 				D2F6FCA729A190A200675257 /* MockKeychain.swift in Sources */,
 			);
