@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		238180DB299EB356004446F3 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238180DA299EB356004446F3 /* SplashView.swift */; };
+		238180DE299EBDCF004446F3 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238180DD299EBDCF004446F3 /* CustomColor.swift */; };
 		6C0CB3120A6A66C8DE605820 /* Pods_PetShelter_PetShelterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B975DCA9E7535542CBCB0B0B /* Pods_PetShelter_PetShelterUITests.framework */; };
 		7EA5F1D799C11AEC6B6C4B4B /* Pods_PetShelter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E99CEB1CE344709175E3888D /* Pods_PetShelter.framework */; };
 		9D5F0DC7298C503000453576 /* PetShelterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5F0DC6298C503000453576 /* PetShelterApp.swift */; };
@@ -71,6 +73,8 @@
 
 /* Begin PBXFileReference section */
 		061601341A03BB051BF1EE3B /* Pods-PetShelter-PetShelterUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetShelter-PetShelterUITests.debug.xcconfig"; path = "Target Support Files/Pods-PetShelter-PetShelterUITests/Pods-PetShelter-PetShelterUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		238180DA299EB356004446F3 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		238180DD299EBDCF004446F3 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 		3A3A95B8FAFBF58848646572 /* Pods-PetShelter-PetShelterUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetShelter-PetShelterUITests.release.xcconfig"; path = "Target Support Files/Pods-PetShelter-PetShelterUITests/Pods-PetShelter-PetShelterUITests.release.xcconfig"; sourceTree = "<group>"; };
 		68ACFA3C2AFE9BC4D6AB13B3 /* Pods-PetShelterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetShelterTests.debug.xcconfig"; path = "Target Support Files/Pods-PetShelterTests/Pods-PetShelterTests.debug.xcconfig"; sourceTree = "<group>"; };
 		812CA2925F0CE2122970AC02 /* Pods_PetShelterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetShelterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,6 +157,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		238180DC299EBDBA004446F3 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				238180DD299EBDCF004446F3 /* CustomColor.swift */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
 		28046F3931BB7346B319318E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +200,7 @@
 		9D5F0DC5298C503000453576 /* PetShelter */ = {
 			isa = PBXGroup;
 			children = (
+				238180DC299EBDBA004446F3 /* Colors */,
 				D2B74895299924C500D4F07E /* Fonts */,
 				9DE8E3982992E5F300FD2DCB /* Utils */,
 				9D9E53702990589F000E3D3F /* Info.plist */,
@@ -233,6 +246,7 @@
 			children = (
 				D230E82E299E971600A4E089 /* Detail */,
 				9D5F0DC6298C503000453576 /* PetShelterApp.swift */,
+				238180DA299EB356004446F3 /* SplashView.swift */,
 				9D5F0DF5298C51E300453576 /* Register */,
 				9D5F0DF4298C51DB00453576 /* Login */,
 				9D5F0DF3298C51B800453576 /* Welcome */,
@@ -622,6 +636,7 @@
 			files = (
 				9D65301629916871004CF39D /* Mappers.swift in Sources */,
 				9D9E536B29904785000E3D3F /* RemoteDataSourceImpl.swift in Sources */,
+				238180DB299EB356004446F3 /* SplashView.swift in Sources */,
 				9D9E536F29904891000E3D3F /* RepositoryImpl.swift in Sources */,
 				9DC7B44D298D84A600AFC9D2 /* RemoteDataSource.swift in Sources */,
 				9D9E536D29904859000E3D3F /* Repository.swift in Sources */,
@@ -637,6 +652,7 @@
 				D225FCA72999A06100728AAC /* LoginView.swift in Sources */,
 				9D5F0DFF298C5CEA00453576 /* AidButton.swift in Sources */,
 				9D5F0DF8298C527C00453576 /* MapView.swift in Sources */,
+				238180DE299EBDCF004446F3 /* CustomColor.swift in Sources */,
 				9DC7B448298D816900AFC9D2 /* SignInModel.swift in Sources */,
 				9D65301E299198BC004CF39D /* PhysicPersonButton.swift in Sources */,
 				D230E830299E974900A4E089 /* DetailView.swift in Sources */,
