@@ -19,7 +19,7 @@ struct PhysicPersonButton: View {
         })
         .frame(width: 300)
         .padding()
-        .background(Color("Red Kiwoko"))
+        .background(Color("RedKiwoko"))
         .cornerRadius(16)
     }
 }

@@ -15,7 +15,7 @@ struct ShelterButton: View {
             Text("Puedo acoger a una mascota")
                 .font(Font.custom("Moderat-Medium", size: 25))
                 .bold()
-                .foregroundColor(Color("Red Kiwoko"))
+                .foregroundColor(Color("RedKiwoko"))
         })
         .frame(width: 300)
         .padding()

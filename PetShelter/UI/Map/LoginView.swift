@@ -57,13 +57,13 @@ struct LoginView: View {
                         .foregroundColor(Color.white)
                         .font(Font.custom("Moderat-Medium", size: 16))
                         .frame(width: 200, height: 50)
-                        .background(Color("Red Kiwoko"))
+                        .background(Color("RedKiwoko"))
                         .cornerRadius(5)
                 }.padding(.top, 20)
                 
                 Text("¿Has olvidado tu contraseña?")
                     .font(Font.custom("Moderat-Medium",size: 18))
-                    .foregroundColor(Color("Red Kiwoko"))
+                    .foregroundColor(Color("RedKiwoko"))
                     .padding(.top,10)
                 
                 Text("No tengo cuenta")
@@ -76,7 +76,7 @@ struct LoginView: View {
                 } label: {
                     Text("Registrarme")
                         .font(Font.custom("Moderat-Bold",size: 20))
-                        .foregroundColor(Color("Red Kiwoko"))
+                        .foregroundColor(Color("RedKiwoko"))
                 }.padding(.top,5)
                 
                 switch viewModel.status {
