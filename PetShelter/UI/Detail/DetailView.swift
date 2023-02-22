@@ -10,7 +10,6 @@ import KeychainSwift
 
 struct DetailView: View {
 
-    
     var body: some View {
         Text("Hello, Detail View")
     }

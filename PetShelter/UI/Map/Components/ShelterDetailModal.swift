@@ -73,7 +73,7 @@ struct ShelterDetailModal: View {
                         }
                     }.tint(Color.white)
                         .padding(15)
-                        .background(Color("Red Kiwoko"))
+                        .background(Color("RedKiwoko"))
                         .cornerRadius(10)
                     
                     Button {
@@ -95,7 +95,7 @@ struct ShelterDetailModal: View {
                         }
                     }.tint(Color.white)
                         .padding(15)
-                        .background(Color("Red Kiwoko"))
+                        .background(Color("RedKiwoko"))
                         .cornerRadius(10)
                 }
                 

@@ -45,10 +45,10 @@
 		D225FCA72999A06100728AAC /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D225FCA62999A06100728AAC /* LoginView.swift */; };
 		D230E830299E974900A4E089 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230E82F299E974900A4E089 /* DetailView.swift */; };
 		D263969E29946736009DCB53 /* ShelterDetailModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D263969D29946736009DCB53 /* ShelterDetailModal.swift */; };
-		D29E6671299FB3B2006DE0DF /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D29E6670299FB3B2006DE0DF /* KeychainSwift */; };
 		D2B74898299925BD00D4F07E /* Moderat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D2B74896299925BD00D4F07E /* Moderat-Medium.ttf */; };
 		D2B74899299925BD00D4F07E /* Moderat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D2B74897299925BD00D4F07E /* Moderat-Bold.ttf */; };
 		D2D549CB2997106300FE39B2 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D549CA2997106300FE39B2 /* LocationManager.swift */; };
+		D2ED0A7F29A55FEF00AF4FB1 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D2ED0A7E29A55FEF00AF4FB1 /* KeychainSwift */; };
 		D2F6FCA329A18C7200675257 /* MockRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F6FCA229A18C7200675257 /* MockRepository.swift */; };
 		D2F6FCA529A18DA000675257 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F6FCA429A18DA000675257 /* LoginViewModelTests.swift */; };
 		D2F6FCA729A190A200675257 /* MockKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F6FCA629A190A200675257 /* MockKeychain.swift */; };
@@ -132,7 +132,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D29E6671299FB3B2006DE0DF /* KeychainSwift in Frameworks */,
+				D2ED0A7F29A55FEF00AF4FB1 /* KeychainSwift in Frameworks */,
 				7EA5F1D799C11AEC6B6C4B4B /* Pods_PetShelter.framework in Frameworks */,
 				9D5F0E0F298C7A1900453576 /* Lottie in Frameworks */,
 			);
@@ -404,7 +404,7 @@
 			name = PetShelter;
 			packageProductDependencies = (
 				9D5F0E0E298C7A1900453576 /* Lottie */,
-				D29E6670299FB3B2006DE0DF /* KeychainSwift */,
+				D2ED0A7E29A55FEF00AF4FB1 /* KeychainSwift */,
 			);
 			productName = PetShelter;
 			productReference = 9D5F0DC3298C503000453576 /* PetShelter.app */;
@@ -483,7 +483,7 @@
 			mainGroup = 9D5F0DBA298C503000453576;
 			packageReferences = (
 				9D5F0E0D298C7A1900453576 /* XCRemoteSwiftPackageReference "lottie-ios" */,
-				D29E666F299FB3B2006DE0DF /* XCRemoteSwiftPackageReference "keychain-swift" */,
+				D2ED0A7D29A55FEF00AF4FB1 /* XCRemoteSwiftPackageReference "keychain-swift" */,
 			);
 			productRefGroup = 9D5F0DC4298C503000453576 /* Products */;
 			projectDirPath = "";
@@ -1005,7 +1005,7 @@
 				minimumVersion = 4.0.0;
 			};
 		};
-		D29E666F299FB3B2006DE0DF /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+		D2ED0A7D29A55FEF00AF4FB1 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
 			requirement = {
@@ -1021,9 +1021,9 @@
 			package = 9D5F0E0D298C7A1900453576 /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
 		};
-		D29E6670299FB3B2006DE0DF /* KeychainSwift */ = {
+		D2ED0A7E29A55FEF00AF4FB1 /* KeychainSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D29E666F299FB3B2006DE0DF /* XCRemoteSwiftPackageReference "keychain-swift" */;
+			package = D2ED0A7D29A55FEF00AF4FB1 /* XCRemoteSwiftPackageReference "keychain-swift" */;
 			productName = KeychainSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
