@@ -40,7 +40,7 @@ class RepositoryImpl: Repository {
     }
     
     
-    func login(user: String, password: String) async -> Result<String, NetworkError> {
+    func login(user: String, password: String) async -> Result<[String], NetworkError> {
         
         guard let url = URL(string: "http://127.0.0.1:8080/api/auth/signin") else {
             return .failure(.invalidURL)
@@ -66,17 +66,19 @@ class RepositoryImpl: Repository {
                 return .failure(.invalidCode)
             }
             
-            guard let token = String(data: data, encoding: .utf8) else {
-                return .failure(.tokenFormatError)
-            }
+//            guard let response = String(data: data, encoding: .utf8) else {
+//                return .failure(.tokenFormatError)
+//            }
             
-            return .success(token)
+            let loginResponse = try JSONDecoder().decode([String].self, from: data)
+            
+            return .success(loginResponse)
             
         } catch {
             return .failure(.responseError)
         }
         
     }
-    
+//    let shelterPointModel = try JSONDecoder().decode([ShelterPointModel].self, from: data)
     
 }

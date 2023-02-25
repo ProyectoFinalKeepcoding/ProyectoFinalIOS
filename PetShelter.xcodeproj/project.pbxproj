@@ -44,6 +44,7 @@
 		D210F440299A9019007D8ED1 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D210F43F299A9019007D8ED1 /* LoginViewModel.swift */; };
 		D225FCA72999A06100728AAC /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D225FCA62999A06100728AAC /* LoginView.swift */; };
 		D230E830299E974900A4E089 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230E82F299E974900A4E089 /* DetailView.swift */; };
+		D252778329AA93D80028893A /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D252778229AA93D80028893A /* DetailViewModel.swift */; };
 		D263969E29946736009DCB53 /* ShelterDetailModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D263969D29946736009DCB53 /* ShelterDetailModal.swift */; };
 		D2B74898299925BD00D4F07E /* Moderat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D2B74896299925BD00D4F07E /* Moderat-Medium.ttf */; };
 		D2B74899299925BD00D4F07E /* Moderat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D2B74897299925BD00D4F07E /* Moderat-Bold.ttf */; };
@@ -115,6 +116,7 @@
 		D210F43F299A9019007D8ED1 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewModel.swift; path = PetShelter/UI/Map/LoginViewModel.swift; sourceTree = SOURCE_ROOT; };
 		D225FCA62999A06100728AAC /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginView.swift; path = PetShelter/UI/Map/LoginView.swift; sourceTree = SOURCE_ROOT; };
 		D230E82F299E974900A4E089 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		D252778229AA93D80028893A /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		D263969D29946736009DCB53 /* ShelterDetailModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelterDetailModal.swift; sourceTree = "<group>"; };
 		D2B74896299925BD00D4F07E /* Moderat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Moderat-Medium.ttf"; sourceTree = "<group>"; };
 		D2B74897299925BD00D4F07E /* Moderat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Moderat-Bold.ttf"; sourceTree = "<group>"; };
@@ -371,6 +373,7 @@
 			isa = PBXGroup;
 			children = (
 				D230E82F299E974900A4E089 /* DetailView.swift */,
+				D252778229AA93D80028893A /* DetailViewModel.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -647,6 +650,7 @@
 				9D65301C29919863004CF39D /* ShelterButton.swift in Sources */,
 				9DC7B446298D802600AFC9D2 /* ShelterRegisterModel.swift in Sources */,
 				9DE8E39A2992E60A00FD2DCB /* Image+Extensions.swift in Sources */,
+				D252778329AA93D80028893A /* DetailViewModel.swift in Sources */,
 				9D5F0DC9298C503000453576 /* WelcomeView.swift in Sources */,
 				9D65301A2991972D004CF39D /* RegisterView.swift in Sources */,
 				D225FCA72999A06100728AAC /* LoginView.swift in Sources */,

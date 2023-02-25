@@ -9,5 +9,5 @@ import Foundation
 
 protocol Repository {
     func fetchShelterPoints() async -> Result<[ShelterPointModel], NetworkError>
-    func login(user: String, password: String) async -> Result<String, NetworkError>
+    func login(user: String, password: String) async -> Result<[String], NetworkError>
 }

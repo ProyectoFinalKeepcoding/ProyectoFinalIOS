@@ -22,10 +22,10 @@ class MockRepository: Repository {
             shelterType: .shelterPoint)])
     }
     
-    func login(user: String, password: String) async -> Result<String, PetShelter.NetworkError> {
+    func login(user: String, password: String) async -> Result<[String], PetShelter.NetworkError> {
         
         if (user == "user" && password == "password") {
-            return .success("Token")
+            return .success(["Token","id"])
         }
         
         return .failure(.responseError)

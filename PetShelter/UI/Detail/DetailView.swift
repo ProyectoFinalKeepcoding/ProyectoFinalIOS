@@ -12,6 +12,8 @@ import RadioGroup
 
 struct DetailView: View {
     
+    var userId: String
+    
     @State var name = "Ayuntamiento Pozuelo"
     
     @State var address = ""
@@ -127,6 +129,6 @@ struct DetailView: View {
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView()
+        DetailView(userId: "A70C6E16-7B01-4D99-821C-E43E522FFABC")
     }
 }

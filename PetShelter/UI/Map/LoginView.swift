@@ -111,7 +111,7 @@ struct LoginView: View {
             
         }.navigationDestination(
             isPresented: $viewModel.navigateToDetail) {
-                DetailView()
+                DetailView(userId: viewModel.userId)
             }
     }
     
