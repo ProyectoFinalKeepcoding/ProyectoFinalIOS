@@ -43,6 +43,7 @@ final class LoginViewModel: ObservableObject {
         case .success(let token):
             self.status = .loaded
             navigateToDetail = true
+            print("Login Result \(token)")
             self.keychain.set(token, forKey: "AccessToken")
         case .failure(let error):
             self.status = Status.error(error: "Usuario y/o Clave incorrectos")

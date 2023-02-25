@@ -9,21 +9,43 @@ import SwiftUI
 import KeychainSwift
 import RadioGroup
 
-//            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrBCP-OgVDqreIVehp9Fvw7guCg9LgPEX3mQ&usqp=CAU
 
 struct DetailView: View {
+    
+    @State var name = "Ayuntamiento Pozuelo"
     
     @State var address = ""
     
     @State var phone = ""
     
-    @State var selectedType = 1
+    @State var selectedType = 2
+    
+    @FocusState var isFocusOn: Bool
     
     var body: some View {
-        VStack {
-            Text("Ayuntamiento Pozuelo")
+        VStack(alignment: .center) {
+            
+            HStack(alignment: .center, spacing: 5){
+                
+                Spacer()
+
+                TextField(text: $name) {
+                    
+                }.multilineTextAlignment(.center)
                 .font(Font.custom("Moderat-Bold",size: 22))
-                .padding(.top, 50)
+                .focused($isFocusOn)
+               
+                Button {
+                    isFocusOn.toggle()
+                } label: {
+                    Image("pencil")
+                        .resizable()
+                        .frame(width: 40, height: 40)
+                }
+                    
+                Spacer()
+            }
+            .padding(.top, 20)
             
             AsyncImage(url: URL(string: "")) { photoDownload in
                 photoDownload
@@ -78,11 +100,10 @@ struct DetailView: View {
                     Text("Centro de acogida").tag(4)
                     Text("Tienda kiwoko").tag(5)
                 }
-                .pickerStyle(.segmented)
-                .colorMultiply(.blue)
-                
+                .frame(height: 90)
+                .pickerStyle(.inline)
+                .padding(0)
             }
-            .padding(.top, 5)
             
             Button {
                 //TODO: - Guardar cambios
@@ -90,13 +111,13 @@ struct DetailView: View {
                 Text("Guardar cambios")
                     .padding()
                     .foregroundColor(Color.white)
-                    .font(Font.custom("Moderat-Medium", size: 18))
+                    .font(Font.custom("Moderat-Bold", size: 18))
                     .frame(width: 200, height: 50)
                     .background(Color("RedKiwoko"))
                     .cornerRadius(5)
             }
             .padding(.top, 15)
-
+            .shadow(radius: 10.0, x:20, y:10)
             
             Spacer()
             
