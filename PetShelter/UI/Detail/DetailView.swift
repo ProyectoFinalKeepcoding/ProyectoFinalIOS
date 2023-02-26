@@ -7,22 +7,18 @@
 
 import SwiftUI
 import KeychainSwift
-import RadioGroup
-
 
 struct DetailView: View {
     
-    var userId: String
+    @StateObject var viewModel = DetailViewModel()
     
-    @State var name = "Ayuntamiento Pozuelo"
+    var userId: String
     
     @State var address = ""
     
-    @State var phone = ""
-    
-    @State var selectedType = 2
-    
     @FocusState var isFocusOn: Bool
+    
+    var shelterTypes = ShelterType.allCases
     
     var body: some View {
         VStack(alignment: .center) {
@@ -30,13 +26,13 @@ struct DetailView: View {
             HStack(alignment: .center, spacing: 5){
                 
                 Spacer()
-
-                TextField(text: $name) {
+                
+                TextField("Nombre",text: $viewModel.shelterDetail.name) {
                     
                 }.multilineTextAlignment(.center)
-                .font(Font.custom("Moderat-Bold",size: 22))
-                .focused($isFocusOn)
-               
+                    .font(Font.custom("Moderat-Bold",size: 22))
+                    .focused($isFocusOn)
+                
                 Button {
                     isFocusOn.toggle()
                 } label: {
@@ -44,12 +40,12 @@ struct DetailView: View {
                         .resizable()
                         .frame(width: 40, height: 40)
                 }
-                    
+                
                 Spacer()
             }
             .padding(.top, 20)
             
-            AsyncImage(url: URL(string: "")) { photoDownload in
+            AsyncImage(url: URL(string: "http://127.0.0.1:8080/\( viewModel.shelterDetail.photoURL ?? "")" )) { photoDownload in
                 photoDownload
                     .resizable()
                     .frame(width: 250, height: 250)
@@ -81,7 +77,7 @@ struct DetailView: View {
             VStack (alignment: .leading){
                 Text("Teléfono")
                 
-                TextField(text: $phone) {
+                TextField(text: $viewModel.shelterDetail.phoneNumber) {
                     
                 }
                 .padding(8)
@@ -95,12 +91,13 @@ struct DetailView: View {
             VStack(alignment: .leading) {
                 Text("¿Qué soy?")
                 
-                Picker(selection: $selectedType, label: Text("Favorite Color")) {
-                    Text("Particular").tag(1)
-                    Text("Ayuntamiento").tag(2)
-                    Text("Veterinario").tag(3)
-                    Text("Centro de acogida").tag(4)
-                    Text("Tienda kiwoko").tag(5)
+                Picker(selection: $viewModel.shelterDetail.shelterType, label: Text("Shelter Type")) {
+                    
+                    ForEach(shelterTypes, id: \.self) {
+                        Text($0.description)
+                    
+                    }
+            
                 }
                 .frame(height: 90)
                 .pickerStyle(.inline)
@@ -124,6 +121,11 @@ struct DetailView: View {
             Spacer()
             
         }.padding([.leading, .trailing], 20)
+            .onAppear{
+                Task{
+                    await viewModel.getShelterDetail(userId:userId)
+                }
+            }
     }
 }
 

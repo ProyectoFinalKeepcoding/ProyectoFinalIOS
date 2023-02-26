@@ -6,11 +6,25 @@
 //
 
 import Foundation
+import KeychainSwift
 
-let server = "http://127.0.0.1:8080"
+let server = "http://127.0.0.1:8080/api"
+
+let ApiKey = "mWIwALVZo3a0evMfbUgkl/gLvRis1/w99To0AamBN+0="
+
+struct HTTPMethods{
+    static let post = "POST"
+    static let get = "GET"
+    static let content = "application/json"
+}
+
+enum endpoints: String {
+    case shelters = "/shelters"
+    case login = "/auth/signin"
+}
 
 class RepositoryImpl: Repository {
-    
+
     private var urlSession = URLSession.shared
     
     init(urlSession: URLSession = URLSession.shared) {
@@ -18,11 +32,11 @@ class RepositoryImpl: Repository {
     }
     
     func fetchShelterPoints() async -> Result<[ShelterPointModel], NetworkError> {
-        guard let url = URL(string: "http://127.0.0.1:8080/api/shelters") else { return .failure(.invalidURL) }
+        guard let url = URL(string: "\(server)\(endpoints.shelters.rawValue)") else { return .failure(.invalidURL) }
         
         var request = URLRequest(url: url)
-        request.httpMethod = "GET"
-        request.setValue("mWIwALVZo3a0evMfbUgkl/gLvRis1/w99To0AamBN+0=", forHTTPHeaderField: "ApiKey")
+        request.httpMethod = HTTPMethods.get
+        request.setValue(ApiKey, forHTTPHeaderField: "ApiKey")
         
         do {
             let (data, response) = try await urlSession.data(for: request)
@@ -31,7 +45,6 @@ class RepositoryImpl: Repository {
             }
             
             let shelterPointModel = try JSONDecoder().decode([ShelterPointModel].self, from: data)
-            print(shelterPointModel)
             return .success(shelterPointModel)
             
         } catch {
@@ -42,7 +55,7 @@ class RepositoryImpl: Repository {
     
     func login(user: String, password: String) async -> Result<[String], NetworkError> {
         
-        guard let url = URL(string: "http://127.0.0.1:8080/api/auth/signin") else {
+        guard let url = URL(string: "\(server)\(endpoints.login.rawValue)") else {
             return .failure(.invalidURL)
         }
         
@@ -56,8 +69,8 @@ class RepositoryImpl: Repository {
         print("Base64 \(base64LoginString)")
         
         var urlRequest = URLRequest(url: url)
-        urlRequest.httpMethod = "GET"
-        urlRequest.setValue("mWIwALVZo3a0evMfbUgkl/gLvRis1/w99To0AamBN+0=", forHTTPHeaderField: "ApiKey")
+        urlRequest.httpMethod = HTTPMethods.get
+        urlRequest.setValue(ApiKey, forHTTPHeaderField: "ApiKey")
         urlRequest.setValue("Basic \(base64LoginString)", forHTTPHeaderField: "Authorization")
         
         do {
@@ -65,10 +78,6 @@ class RepositoryImpl: Repository {
             guard (response as? HTTPURLResponse)?.statusCode == 200 else {
                 return .failure(.invalidCode)
             }
-            
-//            guard let response = String(data: data, encoding: .utf8) else {
-//                return .failure(.tokenFormatError)
-//            }
             
             let loginResponse = try JSONDecoder().decode([String].self, from: data)
             
@@ -79,6 +88,35 @@ class RepositoryImpl: Repository {
         }
         
     }
-//    let shelterPointModel = try JSONDecoder().decode([ShelterPointModel].self, from: data)
+
+    func getShelterDetail(userId: String) async -> Result<ShelterPointModel, NetworkError> {
+        
+        print("User Id: \(userId)")
+        guard let url = URL(string: "\(server)\(endpoints.shelters.rawValue)/\(userId)") else {
+            return .failure(.invalidURL)
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = HTTPMethods.get
+        request.setValue(ApiKey, forHTTPHeaderField: "ApiKey")
+        
+        do {
+            let (data, response) = try await urlSession.data(for: request)
+            guard (response as? HTTPURLResponse)?.statusCode == 200 else {
+                
+                print(response.description)
+                return .failure(.invalidCode)
+            }
+            
+            let shelterPointModel = try JSONDecoder().decode(ShelterPointModel.self, from: data)
+            return .success(shelterPointModel)
+            
+        } catch {
+            print(error.localizedDescription)
+            return .failure(.responseError)
+        }
+    }
+    
+    
     
 }
