@@ -14,7 +14,8 @@ struct DetailView: View {
     
     var userId: String
     
-    @State var address = ""
+    @State var addressSelected = true
+    @State var addressContent = ""
     
     @FocusState var isFocusOn: Bool
     
@@ -63,7 +64,7 @@ struct DetailView: View {
             VStack (alignment: .leading){
                 Text("Dirección")
                 
-                TextField(text: $address) {
+                TextField(text: $viewModel.searchableAddress) {
                     
                 }
                 .padding(8)
@@ -71,52 +72,84 @@ struct DetailView: View {
                     RoundedRectangle(cornerRadius: 5)
                         .strokeBorder(Color.gray)
                 })
+                .onReceive(viewModel.$searchableAddress.debounce(
+                    for: .seconds(1), scheduler: DispatchQueue.main)) { viewModel.searchAddress($0)
+
+                    }
+                    .onChange(of: viewModel.searchableAddress) { newValue in
+                        if (!newValue.isEmpty && newValue != addressContent) {
+                            addressSelected = false
+                        }
+                        
+                    }
                 
             }.padding(.top,15)
             
-            VStack (alignment: .leading){
-                Text("Teléfono")
-                
-                TextField(text: $viewModel.shelterDetail.phoneNumber) {
-                    
-                }
-                .padding(8)
-                .overlay(content: {
-                    RoundedRectangle(cornerRadius: 5)
-                        .strokeBorder(Color.gray)
-                })
-                
-            }.padding(.top,5)
             
-            VStack(alignment: .leading) {
-                Text("¿Qué soy?")
-                
-                Picker(selection: $viewModel.shelterDetail.shelterType, label: Text("Shelter Type")) {
+            ZStack{
+                VStack{
+                    VStack (alignment: .leading){
+                        Text("Teléfono")
+                        
+                        TextField(text: $viewModel.shelterDetail.phoneNumber) {
+                            
+                        }
+                        .padding(8)
+                        .overlay(content: {
+                            RoundedRectangle(cornerRadius: 5)
+                                .strokeBorder(Color.gray)
+                        })
+                        
+                    }.padding(.top,5)
                     
-                    ForEach(shelterTypes, id: \.self) {
-                        Text($0.description)
-                    
+                    VStack(alignment: .leading) {
+                        Text("¿Qué soy?")
+                        
+                        Picker(selection: $viewModel.shelterDetail.shelterType, label: Text("Shelter Type")) {
+                            
+                            ForEach(shelterTypes, id: \.self) {
+                                Text($0.description)
+                                
+                            }
+                            
+                        }
+                        .frame(height: 90)
+                        .pickerStyle(.inline)
+                        .padding(0)
                     }
-            
+                    
+                    Button {
+                        //TODO: - Guardar cambios
+                    } label: {
+                        Text("Guardar cambios")
+                            .padding()
+                            .foregroundColor(Color.white)
+                            .font(Font.custom("Moderat-Bold", size: 18))
+                            .frame(width: 200, height: 50)
+                            .background(Color("RedKiwoko"))
+                            .cornerRadius(5)
+                    }
+                    .padding(.top, 15)
+                    .shadow(radius: 10.0, x:20, y:10)
                 }
-                .frame(height: 90)
-                .pickerStyle(.inline)
-                .padding(0)
+                if (!addressSelected && !viewModel.searchableAddress.isEmpty) {
+                    List{
+                        ForEach(viewModel.addressResults) {
+                            let text = "\($0.title), \($0.subtitle)"
+                            Text("\($0.title), \($0.subtitle)")
+                                .onTapGesture {
+                                    addressSelected = true
+                                    addressContent = text
+                                    viewModel.searchableAddress = text
+
+                                }
+                        }
+                    }
+                    .listStyle(.plain)
+                    .scrollContentBackground(.hidden)
+                }
+                
             }
-            
-            Button {
-                //TODO: - Guardar cambios
-            } label: {
-                Text("Guardar cambios")
-                    .padding()
-                    .foregroundColor(Color.white)
-                    .font(Font.custom("Moderat-Bold", size: 18))
-                    .frame(width: 200, height: 50)
-                    .background(Color("RedKiwoko"))
-                    .cornerRadius(5)
-            }
-            .padding(.top, 15)
-            .shadow(radius: 10.0, x:20, y:10)
             
             Spacer()
             
@@ -134,3 +167,5 @@ struct DetailView_Previews: PreviewProvider {
         DetailView(userId: "A70C6E16-7B01-4D99-821C-E43E522FFABC")
     }
 }
+
+
