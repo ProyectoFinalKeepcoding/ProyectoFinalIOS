@@ -121,6 +121,8 @@ struct DetailView: View {
                     
                     Button {
                         //TODO: - Guardar cambios
+                        
+                        viewModel.convertAddressToCoordinates(address: viewModel.searchableAddress)
                     } label: {
                         Text("Guardar cambios")
                             .padding()
@@ -133,7 +135,7 @@ struct DetailView: View {
                     .padding(.top, 15)
                     .shadow(radius: 10.0, x:20, y:10)
                 }
-                if (!addressSelected && !viewModel.searchableAddress.isEmpty) {
+                if (!addressSelected && !viewModel.searchableAddress.isEmpty && !viewModel.addressResults.isEmpty) {
                     List{
                         ForEach(viewModel.addressResults) {
                             let text = "\($0.title), \($0.subtitle)"

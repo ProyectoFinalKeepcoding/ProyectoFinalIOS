@@ -44,6 +44,57 @@ final class DetailViewModel: NSObject, ObservableObject  {
         guard searchableText.isEmpty == false else { return}
         localSearchCompleter.queryFragment = searchableText
     }
+    
+    func convertAddressToCoordinates(address: String) {
+        let geoCoder = CLGeocoder()
+        geoCoder.geocodeAddressString(address) { placemarks, error in
+            guard
+                let placemarks = placemarks,
+                let location = placemarks.first?.location else {
+                print("No location found")
+                return
+            }
+            let latitud = location.coordinate.latitude
+            let longitud = location.coordinate.longitude
+            
+            self.shelterDetail.address = Address(latitude: latitud, longitude: longitud)
+            print("Latitud \(location.coordinate.latitude)")
+            print("Longitud \(location.coordinate.longitude) ")
+        }
+    }
+    
+    func convertCoordinatesToAddress(location: CLLocation) {
+        let geoCoder = CLGeocoder()
+        geoCoder.reverseGeocodeLocation(location) { placemarks, error in
+            if error == nil {
+                let pm = placemarks?[0]
+                var addressString : String = ""
+                
+                guard let pm else {
+                    return
+                }
+                if pm.subLocality != nil {
+                    addressString = addressString + pm.subLocality! + ", "
+                }
+                if pm.thoroughfare != nil {
+                    addressString = addressString + pm.thoroughfare! + ", "
+                }
+                if pm.locality != nil {
+                    addressString = addressString + pm.locality! + ", "
+                }
+                if pm.country != nil {
+                    addressString = addressString + pm.country! + ", "
+                }
+                if pm.postalCode != nil {
+                    addressString = addressString + pm.postalCode! + " "
+                }
+                
+                print("Address: \(addressString)")
+            } else {
+                print("Error transforming location")
+            }
+        }
+    }
 }
 
 extension DetailViewModel: MKLocalSearchCompleterDelegate {
