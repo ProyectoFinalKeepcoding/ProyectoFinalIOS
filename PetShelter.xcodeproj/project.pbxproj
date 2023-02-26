@@ -47,6 +47,7 @@
 		D252778329AA93D80028893A /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D252778229AA93D80028893A /* DetailViewModel.swift */; };
 		D263969E29946736009DCB53 /* ShelterDetailModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D263969D29946736009DCB53 /* ShelterDetailModal.swift */; };
 		D29CF94B29ABA65C00A6497D /* AddressResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CF94A29ABA65C00A6497D /* AddressResult.swift */; };
+		D29CF94D29ABBC6400A6497D /* ClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CF94C29ABBC6400A6497D /* ClearButton.swift */; };
 		D2B74898299925BD00D4F07E /* Moderat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D2B74896299925BD00D4F07E /* Moderat-Medium.ttf */; };
 		D2B74899299925BD00D4F07E /* Moderat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D2B74897299925BD00D4F07E /* Moderat-Bold.ttf */; };
 		D2D549CB2997106300FE39B2 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D549CA2997106300FE39B2 /* LocationManager.swift */; };
@@ -120,6 +121,7 @@
 		D252778229AA93D80028893A /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		D263969D29946736009DCB53 /* ShelterDetailModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelterDetailModal.swift; sourceTree = "<group>"; };
 		D29CF94A29ABA65C00A6497D /* AddressResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressResult.swift; sourceTree = "<group>"; };
+		D29CF94C29ABBC6400A6497D /* ClearButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearButton.swift; sourceTree = "<group>"; };
 		D2B74896299925BD00D4F07E /* Moderat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Moderat-Medium.ttf"; sourceTree = "<group>"; };
 		D2B74897299925BD00D4F07E /* Moderat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Moderat-Bold.ttf"; sourceTree = "<group>"; };
 		D2D549CA2997106300FE39B2 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
@@ -355,6 +357,7 @@
 			isa = PBXGroup;
 			children = (
 				9DE8E3992992E60A00FD2DCB /* Image+Extensions.swift */,
+				D29CF94C29ABBC6400A6497D /* ClearButton.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -655,6 +658,7 @@
 				9DE8E39A2992E60A00FD2DCB /* Image+Extensions.swift in Sources */,
 				D252778329AA93D80028893A /* DetailViewModel.swift in Sources */,
 				9D5F0DC9298C503000453576 /* WelcomeView.swift in Sources */,
+				D29CF94D29ABBC6400A6497D /* ClearButton.swift in Sources */,
 				9D65301A2991972D004CF39D /* RegisterView.swift in Sources */,
 				D225FCA72999A06100728AAC /* LoginView.swift in Sources */,
 				9D5F0DFF298C5CEA00453576 /* AidButton.swift in Sources */,

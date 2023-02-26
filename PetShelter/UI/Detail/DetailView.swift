@@ -74,7 +74,6 @@ struct DetailView: View {
                 })
                 .onReceive(viewModel.$searchableAddress.debounce(
                     for: .seconds(1), scheduler: DispatchQueue.main)) { viewModel.searchAddress($0)
-
                     }
                     .onChange(of: viewModel.searchableAddress) { newValue in
                         if (!newValue.isEmpty && newValue != addressContent) {
@@ -82,8 +81,9 @@ struct DetailView: View {
                         }
                         
                     }
-                
-            }.padding(.top,15)
+                    .modifier(ClearButton(text: $viewModel.searchableAddress))
+            }
+            .padding(.top,15)
             
             
             ZStack{
@@ -99,6 +99,7 @@ struct DetailView: View {
                             RoundedRectangle(cornerRadius: 5)
                                 .strokeBorder(Color.gray)
                         })
+                        .modifier(ClearButton(text: $viewModel.shelterDetail.phoneNumber))
                         
                     }.padding(.top,5)
                     
@@ -141,7 +142,7 @@ struct DetailView: View {
                                     addressSelected = true
                                     addressContent = text
                                     viewModel.searchableAddress = text
-
+                                    
                                 }
                         }
                     }
