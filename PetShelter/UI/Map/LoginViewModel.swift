@@ -19,6 +19,8 @@ final class LoginViewModel: ObservableObject {
     
     @Published var navigateToDetail = false
     
+    @Published var userId = ""
+    
     private var repository: Repository
     private var keychain: KeychainSwift
     
@@ -40,10 +42,12 @@ final class LoginViewModel: ObservableObject {
         let result = await repository.login(user: user, password: password)
         
         switch result {
-        case .success(let token):
+        case .success(let loginResponse):
+            print("Login Result \(loginResponse)")
+            self.keychain.set(loginResponse[0], forKey: "AccessToken")
+            self.userId = loginResponse[1]            
             self.status = .loaded
             navigateToDetail = true
-            self.keychain.set(token, forKey: "AccessToken")
         case .failure(let error):
             self.status = Status.error(error: "Usuario y/o Clave incorrectos")
             hasError = true

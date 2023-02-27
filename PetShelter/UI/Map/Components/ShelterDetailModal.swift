@@ -31,7 +31,7 @@ struct ShelterDetailModal: View {
                     .overlay(Color.black)
                 
             }
-            .background(Color("Gray Kiwoko"))
+            .background(Color("GrayKiwoko"))
             .padding(.bottom,20)
             
             HStack(alignment: .center, spacing: 30){

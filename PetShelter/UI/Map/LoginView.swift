@@ -14,12 +14,15 @@ struct LoginView: View {
     @State private var password = ""
     
     var body: some View {
-
+        
         
         NavigationView {
             VStack{
-                Image("Title login")
-                    .padding(.top,100)
+                HStack(alignment: .center){
+                    Image("LogoLogin")
+                        .padding(.bottom,20)
+                    Image("Title login")
+                }.padding(.top,75)
                 
                 Text("Ya tengo cuenta")
                     .font(Font.custom("Moderat-Bold",size: 20))
@@ -55,11 +58,12 @@ struct LoginView: View {
                     Text("Entrar")
                         .padding()
                         .foregroundColor(Color.white)
-                        .font(Font.custom("Moderat-Medium", size: 16))
+                        .font(Font.custom("Moderat-Bold", size: 18))
                         .frame(width: 200, height: 50)
                         .background(Color("RedKiwoko"))
                         .cornerRadius(5)
                 }.padding(.top, 20)
+                    .shadow(radius: 10.0, x:20, y:10)
                 
                 Text("¿Has olvidado tu contraseña?")
                     .font(Font.custom("Moderat-Medium",size: 18))
@@ -104,10 +108,10 @@ struct LoginView: View {
                 
                 return Alert(title: Text(""))
             }
-
+            
         }.navigationDestination(
             isPresented: $viewModel.navigateToDetail) {
-                DetailView()
+                DetailView(userId: viewModel.userId)
             }
     }
     
