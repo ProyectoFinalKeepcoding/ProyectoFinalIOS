@@ -15,14 +15,15 @@ struct ShelterRegisterModel: Decodable {
     
 }
 
-enum ShelterType: String, Decodable {
+enum ShelterType: String, Decodable, Encodable {
     case veterinary
     case particular
     case shelterPoint
     case localGovernment
+    case kiwokoStore
 }
 
-struct Address: Decodable {
+struct Address: Decodable, Encodable {
     let latitude: Double
     let longitude: Double
 }
