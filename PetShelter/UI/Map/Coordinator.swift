@@ -31,6 +31,8 @@ class Coordinator: NSObject, GMSMapViewDelegate {
                 marker.iconView = setMarkerImage(image: UIImage(systemName: "cross.case.circle"), size: 30, color: .blue)
             case .localGovernment:
                 marker.iconView = setMarkerImage(image: UIImage(systemName: "house.lodge.circle"), size: 30, color: .brown)
+            case .kiwokoStore:
+                break
             }
             
             marker.title = place.name

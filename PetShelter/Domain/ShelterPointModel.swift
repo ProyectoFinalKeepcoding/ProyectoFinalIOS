@@ -9,9 +9,9 @@ import Foundation
 
 struct ShelterPointModel: Decodable, Identifiable {
     let id: String
-    let name: String
-    let phoneNumber: String
-    let address: Address
-    let shelterType: ShelterType
+    var name: String
+    var phoneNumber: String
+    var address: Address
+    var shelterType: ShelterType
     var photoURL: String?
 }
