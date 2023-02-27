@@ -46,6 +46,7 @@
 		D230E830299E974900A4E089 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230E82F299E974900A4E089 /* DetailView.swift */; };
 		D252778329AA93D80028893A /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D252778229AA93D80028893A /* DetailViewModel.swift */; };
 		D263969E29946736009DCB53 /* ShelterDetailModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D263969D29946736009DCB53 /* ShelterDetailModal.swift */; };
+		D28FE42629ACEF8A00A1B0A2 /* ShelterUpdateBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28FE42529ACEF8A00A1B0A2 /* ShelterUpdateBody.swift */; };
 		D29CF94B29ABA65C00A6497D /* AddressResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CF94A29ABA65C00A6497D /* AddressResult.swift */; };
 		D29CF94D29ABBC6400A6497D /* ClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CF94C29ABBC6400A6497D /* ClearButton.swift */; };
 		D2B74898299925BD00D4F07E /* Moderat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D2B74896299925BD00D4F07E /* Moderat-Medium.ttf */; };
@@ -120,6 +121,7 @@
 		D230E82F299E974900A4E089 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		D252778229AA93D80028893A /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		D263969D29946736009DCB53 /* ShelterDetailModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelterDetailModal.swift; sourceTree = "<group>"; };
+		D28FE42529ACEF8A00A1B0A2 /* ShelterUpdateBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelterUpdateBody.swift; sourceTree = "<group>"; };
 		D29CF94A29ABA65C00A6497D /* AddressResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressResult.swift; sourceTree = "<group>"; };
 		D29CF94C29ABBC6400A6497D /* ClearButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearButton.swift; sourceTree = "<group>"; };
 		D2B74896299925BD00D4F07E /* Moderat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Moderat-Medium.ttf"; sourceTree = "<group>"; };
@@ -279,6 +281,7 @@
 				9DC7B449298D842600AFC9D2 /* ShelterPointModel.swift */,
 				9D65301729916BC0004CF39D /* NetworkError.swift */,
 				D29CF94A29ABA65C00A6497D /* AddressResult.swift */,
+				D28FE42529ACEF8A00A1B0A2 /* ShelterUpdateBody.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -672,6 +675,7 @@
 				9D65301829916BC0004CF39D /* NetworkError.swift in Sources */,
 				D29CF94B29ABA65C00A6497D /* AddressResult.swift in Sources */,
 				D2D549CB2997106300FE39B2 /* LocationManager.swift in Sources */,
+				D28FE42629ACEF8A00A1B0A2 /* ShelterUpdateBody.swift in Sources */,
 				9D5F0E12298C7B7800453576 /* LottieView.swift in Sources */,
 				9DC7B452298D8B4D00AFC9D2 /* MapViewModel.swift in Sources */,
 				9D6530202991BBB8004CF39D /* Coordinator.swift in Sources */,

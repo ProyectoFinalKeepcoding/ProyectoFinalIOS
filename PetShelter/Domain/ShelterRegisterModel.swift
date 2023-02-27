@@ -15,7 +15,7 @@ struct ShelterRegisterModel: Decodable {
     
 }
 
-enum ShelterType: String, Decodable, CaseIterable {
+enum ShelterType: String, Codable, CaseIterable {
     case particular
     case localGovernment
     case veterinary
@@ -38,7 +38,7 @@ enum ShelterType: String, Decodable, CaseIterable {
     }
 }
 
-struct Address: Decodable {
+struct Address: Codable {
     let latitude: Double
     let longitude: Double
 }

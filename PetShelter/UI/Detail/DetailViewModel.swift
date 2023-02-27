@@ -34,6 +34,9 @@ final class DetailViewModel: NSObject, ObservableObject  {
         switch result {
         case .success(let shelterPoint):
             shelterDetail = shelterPoint
+            
+            let location = CLLocation(latitude: shelterDetail.address.latitude, longitude: shelterDetail.address.longitude)
+            convertCoordinatesToAddress(location: location)
             print(shelterDetail)
         case .failure(let error):
             print(error)
@@ -43,6 +46,20 @@ final class DetailViewModel: NSObject, ObservableObject  {
     func searchAddress(_ searchableText: String) {
         guard searchableText.isEmpty == false else { return}
         localSearchCompleter.queryFragment = searchableText
+    }
+    
+    func updateShelter() async {
+        convertAddressToCoordinates(address: searchableAddress)
+        
+        let result = await repository.updateShelter(userId: shelterDetail.id, shelter: shelterDetail)
+        
+        switch result {
+        case .success(let shelterUpdated):
+            print(shelterUpdated)
+        case .failure(let error):
+            print(error)
+        }
+
     }
     
     func convertAddressToCoordinates(address: String) {
@@ -58,8 +75,7 @@ final class DetailViewModel: NSObject, ObservableObject  {
             let longitud = location.coordinate.longitude
             
             self.shelterDetail.address = Address(latitude: latitud, longitude: longitud)
-            print("Latitud \(location.coordinate.latitude)")
-            print("Longitud \(location.coordinate.longitude) ")
+
         }
     }
     
@@ -88,7 +104,7 @@ final class DetailViewModel: NSObject, ObservableObject  {
                 if pm.postalCode != nil {
                     addressString = addressString + pm.postalCode! + " "
                 }
-                
+                self.searchableAddress = addressString
                 print("Address: \(addressString)")
             } else {
                 print("Error transforming location")

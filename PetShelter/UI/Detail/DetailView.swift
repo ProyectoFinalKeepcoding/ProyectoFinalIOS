@@ -17,6 +17,8 @@ struct DetailView: View {
     @State var addressSelected = true
     @State var addressContent = ""
     
+    @State var isFirstLoaded = true
+    
     @FocusState var isFocusOn: Bool
     
     var shelterTypes = ShelterType.allCases
@@ -46,7 +48,7 @@ struct DetailView: View {
             }
             .padding(.top, 20)
             
-            AsyncImage(url: URL(string: "http://127.0.0.1:8080/\( viewModel.shelterDetail.photoURL ?? "")" )) { photoDownload in
+            AsyncImage(url: URL(string: "http://127.0.0.1:8080/\( viewModel.shelterDetail.photoURL ?? "").jpeg" )) { photoDownload in
                 photoDownload
                     .resizable()
                     .frame(width: 250, height: 250)
@@ -64,8 +66,7 @@ struct DetailView: View {
             VStack (alignment: .leading){
                 Text("Dirección")
                 
-                TextField(text: $viewModel.searchableAddress) {
-                    
+                TextField(text: $viewModel.searchableAddress){
                 }
                 .padding(8)
                 .overlay(content: {
@@ -73,7 +74,11 @@ struct DetailView: View {
                         .strokeBorder(Color.gray)
                 })
                 .onReceive(viewModel.$searchableAddress.debounce(
-                    for: .seconds(1), scheduler: DispatchQueue.main)) { viewModel.searchAddress($0)
+                    for: .seconds(1), scheduler: DispatchQueue.main)) {
+                        if (!isFirstLoaded) {
+                            viewModel.searchAddress($0)
+                        }
+                           isFirstLoaded = false
                     }
                     .onChange(of: viewModel.searchableAddress) { newValue in
                         if (!newValue.isEmpty && newValue != addressContent) {
@@ -121,8 +126,9 @@ struct DetailView: View {
                     
                     Button {
                         //TODO: - Guardar cambios
-                        
-                        viewModel.convertAddressToCoordinates(address: viewModel.searchableAddress)
+                        Task{
+                            await viewModel.updateShelter()
+                        }
                     } label: {
                         Text("Guardar cambios")
                             .padding()
