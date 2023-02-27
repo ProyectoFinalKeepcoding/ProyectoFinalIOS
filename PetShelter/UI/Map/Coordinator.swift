@@ -24,15 +24,15 @@ class Coordinator: NSObject, GMSMapViewDelegate {
             
             switch place.shelterType {
             case .particular:
-                marker.iconView = setMarkerImage(image: UIImage(systemName: "person.crop.circle"), size: 30, color: .red)
+                marker.iconView = setMarkerImage(image: UIImage(named: "particular"), size: 30, color: .red)
             case .shelterPoint:
-                marker.iconView = setMarkerImage(image: UIImage(systemName: "house.and.flag.circle"), size: 30, color: .black)
+                marker.iconView = setMarkerImage(image: UIImage(named: "animal-shelter"), size: 30, color: .black)
             case .veterinary:
-                marker.iconView = setMarkerImage(image: UIImage(systemName: "cross.case.circle"), size: 30, color: .blue)
+                marker.iconView = setMarkerImage(image: UIImage(named: "veterinary"), size: 30, color: .blue)
             case .localGovernment:
-                marker.iconView = setMarkerImage(image: UIImage(systemName: "house.lodge.circle"), size: 30, color: .brown)
+                marker.iconView = setMarkerImage(image: UIImage(named: "town-council"), size: 30, color: .brown)
             case .kiwokoStore:
-                break
+                marker.iconView = setMarkerImage(image: UIImage(named: "kiwoko-shop"), size: 30, color: .brown)
             }
             
             marker.title = place.name

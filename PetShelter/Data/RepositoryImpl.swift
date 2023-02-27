@@ -92,6 +92,18 @@ class RepositoryImpl: Repository {
         
     }
     
+    func register(model: RegisterModel) async {
+        guard let url = URL(string: "\(server)/api/auth/signup") else {
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.httpBody = try? JSONEncoder().encode(model)
+        
+        
+    }
+    
     func getShelterDetail(userId: String) async -> Result<ShelterPointModel, NetworkError> {
         
         guard let url = URL(string: "\(server)\(endpoints.shelters.rawValue)/\(userId)") else {

@@ -24,19 +24,22 @@
 		9D5F0E0F298C7A1900453576 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 9D5F0E0E298C7A1900453576 /* Lottie */; };
 		9D5F0E12298C7B7800453576 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5F0E11298C7B7800453576 /* LottieView.swift */; };
 		9D5F0E14298C7C4400453576 /* DogAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 9D5F0E13298C7C4400453576 /* DogAnimation.json */; };
-		9D65301629916871004CF39D /* Mappers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D65301529916871004CF39D /* Mappers.swift */; };
+		9D60A12929AD1DCB00A277DB /* RegisterStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D60A12829AD1DCB00A277DB /* RegisterStates.swift */; };
 		9D65301829916BC0004CF39D /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D65301729916BC0004CF39D /* NetworkError.swift */; };
 		9D65301A2991972D004CF39D /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6530192991972D004CF39D /* RegisterView.swift */; };
 		9D65301C29919863004CF39D /* ShelterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D65301B29919863004CF39D /* ShelterButton.swift */; };
 		9D65301E299198BC004CF39D /* PhysicPersonButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D65301D299198BC004CF39D /* PhysicPersonButton.swift */; };
 		9D6530202991BBB8004CF39D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D65301F2991BBB8004CF39D /* Coordinator.swift */; };
-		9D9E536B29904785000E3D3F /* RemoteDataSourceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9E536A29904785000E3D3F /* RemoteDataSourceImpl.swift */; };
 		9D9E536D29904859000E3D3F /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9E536C29904859000E3D3F /* Repository.swift */; };
 		9D9E536F29904891000E3D3F /* RepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9E536E29904891000E3D3F /* RepositoryImpl.swift */; };
+		9DA2DF9829A7F6710004CB42 /* TextFieldBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA2DF9729A7F6710004CB42 /* TextFieldBase.swift */; };
+		9DA2DF9A29A7F6AC0004CB42 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA2DF9929A7F6AC0004CB42 /* RegisterViewModel.swift */; };
+		9DA2DF9C29A7F6F50004CB42 /* UserTypePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA2DF9B29A7F6F50004CB42 /* UserTypePicker.swift */; };
+		9DA2DF9E29A803C60004CB42 /* TextFieldType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA2DF9D29A803C60004CB42 /* TextFieldType.swift */; };
+		9DA2DFA029A821CD0004CB42 /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA2DF9F29A821CD0004CB42 /* RegisterModel.swift */; };
 		9DC7B446298D802600AFC9D2 /* ShelterRegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC7B445298D802600AFC9D2 /* ShelterRegisterModel.swift */; };
 		9DC7B448298D816900AFC9D2 /* SignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC7B447298D816900AFC9D2 /* SignInModel.swift */; };
 		9DC7B44A298D842600AFC9D2 /* ShelterPointModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC7B449298D842600AFC9D2 /* ShelterPointModel.swift */; };
-		9DC7B44D298D84A600AFC9D2 /* RemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC7B44C298D84A600AFC9D2 /* RemoteDataSource.swift */; };
 		9DC7B44F298D880700AFC9D2 /* locations.json in Resources */ = {isa = PBXBuildFile; fileRef = 9DC7B44E298D880700AFC9D2 /* locations.json */; };
 		9DC7B452298D8B4D00AFC9D2 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC7B451298D8B4D00AFC9D2 /* MapViewModel.swift */; };
 		9DE8E39A2992E60A00FD2DCB /* Image+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE8E3992992E60A00FD2DCB /* Image+Extensions.swift */; };
@@ -97,20 +100,23 @@
 		9D5F0DFE298C5CEA00453576 /* AidButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AidButton.swift; sourceTree = "<group>"; };
 		9D5F0E11298C7B7800453576 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		9D5F0E13298C7C4400453576 /* DogAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DogAnimation.json; sourceTree = "<group>"; };
-		9D65301529916871004CF39D /* Mappers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mappers.swift; sourceTree = "<group>"; };
+		9D60A12829AD1DCB00A277DB /* RegisterStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterStates.swift; sourceTree = "<group>"; };
 		9D65301729916BC0004CF39D /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		9D6530192991972D004CF39D /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		9D65301B29919863004CF39D /* ShelterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelterButton.swift; sourceTree = "<group>"; };
 		9D65301D299198BC004CF39D /* PhysicPersonButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicPersonButton.swift; sourceTree = "<group>"; };
 		9D65301F2991BBB8004CF39D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		9D9E536A29904785000E3D3F /* RemoteDataSourceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataSourceImpl.swift; sourceTree = "<group>"; };
 		9D9E536C29904859000E3D3F /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		9D9E536E29904891000E3D3F /* RepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryImpl.swift; sourceTree = "<group>"; };
 		9D9E53702990589F000E3D3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		9DA2DF9729A7F6710004CB42 /* TextFieldBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldBase.swift; sourceTree = "<group>"; };
+		9DA2DF9929A7F6AC0004CB42 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		9DA2DF9B29A7F6F50004CB42 /* UserTypePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypePicker.swift; sourceTree = "<group>"; };
+		9DA2DF9D29A803C60004CB42 /* TextFieldType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldType.swift; sourceTree = "<group>"; };
+		9DA2DF9F29A821CD0004CB42 /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
 		9DC7B445298D802600AFC9D2 /* ShelterRegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelterRegisterModel.swift; sourceTree = "<group>"; };
 		9DC7B447298D816900AFC9D2 /* SignInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInModel.swift; sourceTree = "<group>"; };
 		9DC7B449298D842600AFC9D2 /* ShelterPointModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelterPointModel.swift; sourceTree = "<group>"; };
-		9DC7B44C298D84A600AFC9D2 /* RemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataSource.swift; sourceTree = "<group>"; };
 		9DC7B44E298D880700AFC9D2 /* locations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = locations.json; sourceTree = "<group>"; };
 		9DC7B451298D8B4D00AFC9D2 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		9DE8E3992992E60A00FD2DCB /* Image+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Extensions.swift"; sourceTree = "<group>"; };
@@ -266,7 +272,6 @@
 		9D5F0DF1298C519A00453576 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				9DC7B44B298D849000AFC9D2 /* Remote */,
 				9D9E536C29904859000E3D3F /* Repository.swift */,
 				9D9E536E29904891000E3D3F /* RepositoryImpl.swift */,
 			);
@@ -280,8 +285,10 @@
 				9DC7B447298D816900AFC9D2 /* SignInModel.swift */,
 				9DC7B449298D842600AFC9D2 /* ShelterPointModel.swift */,
 				9D65301729916BC0004CF39D /* NetworkError.swift */,
+				9DA2DF9F29A821CD0004CB42 /* RegisterModel.swift */,
 				D29CF94A29ABA65C00A6497D /* AddressResult.swift */,
 				D28FE42529ACEF8A00A1B0A2 /* ShelterUpdateBody.swift */,
+
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -307,7 +314,10 @@
 		9D5F0DF5298C51E300453576 /* Register */ = {
 			isa = PBXGroup;
 			children = (
+				9DA2DF9629A7F6370004CB42 /* Component */,
 				9D6530192991972D004CF39D /* RegisterView.swift */,
+				9DA2DF9929A7F6AC0004CB42 /* RegisterViewModel.swift */,
+				9D60A12829AD1DCB00A277DB /* RegisterStates.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -335,14 +345,14 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		9DC7B44B298D849000AFC9D2 /* Remote */ = {
+		9DA2DF9629A7F6370004CB42 /* Component */ = {
 			isa = PBXGroup;
 			children = (
-				9DC7B44C298D84A600AFC9D2 /* RemoteDataSource.swift */,
-				9D9E536A29904785000E3D3F /* RemoteDataSourceImpl.swift */,
-				9D65301529916871004CF39D /* Mappers.swift */,
+				9DA2DF9729A7F6710004CB42 /* TextFieldBase.swift */,
+				9DA2DF9B29A7F6F50004CB42 /* UserTypePicker.swift */,
+				9DA2DF9D29A803C60004CB42 /* TextFieldType.swift */,
 			);
-			path = Remote;
+			path = Component;
 			sourceTree = "<group>";
 		};
 		9DC7B450298D8B1700AFC9D2 /* Component */ = {
@@ -646,25 +656,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D65301629916871004CF39D /* Mappers.swift in Sources */,
-				9D9E536B29904785000E3D3F /* RemoteDataSourceImpl.swift in Sources */,
 				238180DB299EB356004446F3 /* SplashView.swift in Sources */,
 				9D9E536F29904891000E3D3F /* RepositoryImpl.swift in Sources */,
-				9DC7B44D298D84A600AFC9D2 /* RemoteDataSource.swift in Sources */,
 				9D9E536D29904859000E3D3F /* Repository.swift in Sources */,
 				9DC7B44A298D842600AFC9D2 /* ShelterPointModel.swift in Sources */,
 				D263969E29946736009DCB53 /* ShelterDetailModal.swift in Sources */,
 				9D5F0DFD298C5C8700453576 /* Header.swift in Sources */,
 				D210F440299A9019007D8ED1 /* LoginViewModel.swift in Sources */,
+				9DA2DF9829A7F6710004CB42 /* TextFieldBase.swift in Sources */,
+				9D60A12929AD1DCB00A277DB /* RegisterStates.swift in Sources */,
 				9D65301C29919863004CF39D /* ShelterButton.swift in Sources */,
 				9DC7B446298D802600AFC9D2 /* ShelterRegisterModel.swift in Sources */,
 				9DE8E39A2992E60A00FD2DCB /* Image+Extensions.swift in Sources */,
+				9DA2DF9C29A7F6F50004CB42 /* UserTypePicker.swift in Sources */,
 				D252778329AA93D80028893A /* DetailViewModel.swift in Sources */,
 				9D5F0DC9298C503000453576 /* WelcomeView.swift in Sources */,
 				D29CF94D29ABBC6400A6497D /* ClearButton.swift in Sources */,
 				9D65301A2991972D004CF39D /* RegisterView.swift in Sources */,
 				D225FCA72999A06100728AAC /* LoginView.swift in Sources */,
 				9D5F0DFF298C5CEA00453576 /* AidButton.swift in Sources */,
+				9DA2DF9A29A7F6AC0004CB42 /* RegisterViewModel.swift in Sources */,
 				9D5F0DF8298C527C00453576 /* MapView.swift in Sources */,
 				238180DE299EBDCF004446F3 /* CustomColor.swift in Sources */,
 				9DC7B448298D816900AFC9D2 /* SignInModel.swift in Sources */,
@@ -678,7 +689,9 @@
 				D28FE42629ACEF8A00A1B0A2 /* ShelterUpdateBody.swift in Sources */,
 				9D5F0E12298C7B7800453576 /* LottieView.swift in Sources */,
 				9DC7B452298D8B4D00AFC9D2 /* MapViewModel.swift in Sources */,
+				9DA2DF9E29A803C60004CB42 /* TextFieldType.swift in Sources */,
 				9D6530202991BBB8004CF39D /* Coordinator.swift in Sources */,
+				9DA2DFA029A821CD0004CB42 /* RegisterModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
