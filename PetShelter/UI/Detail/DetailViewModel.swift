@@ -9,6 +9,8 @@ import Foundation
 import MapKit
 
 final class DetailViewModel: NSObject, ObservableObject  {
+    @Published var status = Status.none
+    @Published var displayAlert = false
     
     @Published var shelterDetail: ShelterPointModel = ShelterPointModel(id: "", name: "", phoneNumber: "", address: Address(latitude: 0.0, longitude: 0.0), shelterType: .shelterPoint)
     
@@ -49,17 +51,25 @@ final class DetailViewModel: NSObject, ObservableObject  {
     }
     
     func updateShelter() async {
+        self.status = .loading
         convertAddressToCoordinates(address: searchableAddress)
+
+    }
+    
+    func updateData() async {
         
         let result = await repository.updateShelter(userId: shelterDetail.id, shelter: shelterDetail)
         
         switch result {
         case .success(let shelterUpdated):
+            self.status = .loaded
+            displayAlert = true
             print(shelterUpdated)
         case .failure(let error):
+            self.status = Status.error(error: "Error al actualizar datos")
+            displayAlert = true
             print(error)
         }
-
     }
     
     func convertAddressToCoordinates(address: String) {
@@ -76,6 +86,9 @@ final class DetailViewModel: NSObject, ObservableObject  {
             
             self.shelterDetail.address = Address(latitude: latitud, longitude: longitud)
 
+            Task{
+                await self.updateData()
+            }
         }
     }
     

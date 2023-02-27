@@ -48,7 +48,7 @@ struct DetailView: View {
             }
             .padding(.top, 20)
             
-            AsyncImage(url: URL(string: "http://127.0.0.1:8080/\( viewModel.shelterDetail.photoURL ?? "").jpeg" )) { photoDownload in
+            AsyncImage(url: URL(string: "http://127.0.0.1:8080/\( viewModel.shelterDetail.photoURL ?? "")" )) { photoDownload in
                 photoDownload
                     .resizable()
                     .frame(width: 250, height: 250)
@@ -78,7 +78,7 @@ struct DetailView: View {
                         if (!isFirstLoaded) {
                             viewModel.searchAddress($0)
                         }
-                           isFirstLoaded = false
+                        isFirstLoaded = false
                     }
                     .onChange(of: viewModel.searchableAddress) { newValue in
                         if (!newValue.isEmpty && newValue != addressContent) {
@@ -160,6 +160,18 @@ struct DetailView: View {
                 
             }
             
+            switch viewModel.status {
+                
+            case .loading:
+                ProgressView()
+                    .scaleEffect(2)
+                    .padding(.top,10)
+                
+            default:
+                Spacer()
+                
+            }
+            
             Spacer()
             
         }.padding([.leading, .trailing], 20)
@@ -167,6 +179,19 @@ struct DetailView: View {
                 Task{
                     await viewModel.getShelterDetail(userId:userId)
                 }
+            }
+            .alert(isPresented: $viewModel.displayAlert) {
+                if case let .error(message) = viewModel.status {
+                    return Alert(title: Text("Error"),
+                                 message: Text(message))
+                }
+                
+                if case .loaded = viewModel.status {
+                    return Alert(title: Text("Registro completado"),
+                                 message: Text("Datos guardados con éxito"))
+                }
+                
+                return Alert(title: Text(""))
             }
     }
 }
