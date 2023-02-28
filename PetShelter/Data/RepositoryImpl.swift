@@ -51,6 +51,7 @@ class RepositoryImpl: Repository {
             return .success(shelterPointModel)
             
         } catch {
+            print(error.localizedDescription)
             return .failure(.responseError)
         }
     }

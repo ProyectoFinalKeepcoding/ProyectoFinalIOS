@@ -15,7 +15,7 @@ struct ShelterRegisterModel: Decodable {
     
 }
 
-enum ShelterType: Decodable, Encodable, CaseIterable {
+enum ShelterType: String, Codable, CaseIterable {
 
     case particular
     case localGovernment
