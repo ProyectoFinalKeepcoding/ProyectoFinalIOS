@@ -12,4 +12,5 @@ protocol Repository {
     func login(user: String, password: String) async -> Result<[String], NetworkError>
     func getShelterDetail(userId: String) async -> Result<ShelterPointModel, NetworkError>
     func updateShelter(userId: String, shelter: ShelterPointModel) async -> Result<ShelterPointModel, NetworkError>
+    func uploadPhoto(userId: String, imageData: Data, completion: @escaping (Result<[String: Any], NetworkError>) -> Void)
 }

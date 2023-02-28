@@ -148,7 +148,8 @@ struct DetailView: View {
                     Button {
                         //TODO: - Guardar cambios
                         Task{
-                            await viewModel.updateShelter()
+                            await viewModel.uploadImage(image:image)
+//                            await viewModel.updateShelter()
                         }
                     } label: {
                         Text("Guardar cambios")

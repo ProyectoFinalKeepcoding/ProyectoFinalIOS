@@ -72,6 +72,22 @@ final class DetailViewModel: NSObject, ObservableObject  {
         }
     }
     
+    func uploadImage(image: UIImage) async {
+        guard let imageData = image.jpegData(compressionQuality: 0.7) else {
+            return
+        }
+        
+        repository.uploadPhoto(userId: shelterDetail.id, imageData: imageData, completion: { result in
+            switch result {
+            case .success(let response):
+                print(response)
+            case .failure(let error):
+                print(error)
+            }
+        })        
+        
+    }
+    
     func convertAddressToCoordinates(address: String) {
         let geoCoder = CLGeocoder()
         geoCoder.geocodeAddressString(address) { placemarks, error in
