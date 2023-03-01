@@ -188,7 +188,6 @@ class RepositoryImpl: Repository {
             if error == nil {
                 let jsonData = try? JSONSerialization.jsonObject(with: responseData!, options: .allowFragments)
                 if let json = jsonData as? [String: Any] {
-                    print(json)
                     completion(.success(json))
                 } else {
                     completion(.failure(.responseError))

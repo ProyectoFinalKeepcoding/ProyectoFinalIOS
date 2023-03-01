@@ -210,6 +210,7 @@
 		9D5F0DC5298C503000453576 /* PetShelter */ = {
 			isa = PBXGroup;
 			children = (
+				9D5F0DC6298C503000453576 /* PetShelterApp.swift */,
 				238180DC299EBDBA004446F3 /* Colors */,
 				D2B74895299924C500D4F07E /* Fonts */,
 				9DE8E3982992E5F300FD2DCB /* Utils */,
@@ -255,13 +256,12 @@
 			isa = PBXGroup;
 			children = (
 				D21C145529AE1BF7003CF0F0 /* Components */,
-				D230E82E299E971600A4E089 /* Detail */,
-				9D5F0DC6298C503000453576 /* PetShelterApp.swift */,
-				238180DA299EB356004446F3 /* SplashView.swift */,
-				9D5F0DF5298C51E300453576 /* Register */,
-				9D5F0DF4298C51DB00453576 /* Login */,
+				D27839C329AFCA830051D85B /* Splash */,
 				9D5F0DF3298C51B800453576 /* Welcome */,
 				9D5F0DF6298C51ED00453576 /* Map */,
+				9D5F0DF4298C51DB00453576 /* Login */,
+				9D5F0DF5298C51E300453576 /* Register */,
+				D230E82E299E971600A4E089 /* Detail */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -396,6 +396,14 @@
 				D252778229AA93D80028893A /* DetailViewModel.swift */,
 			);
 			path = Detail;
+			sourceTree = "<group>";
+		};
+		D27839C329AFCA830051D85B /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				238180DA299EB356004446F3 /* SplashView.swift */,
+			);
+			path = Splash;
 			sourceTree = "<group>";
 		};
 		D2B74895299924C500D4F07E /* Fonts */ = {

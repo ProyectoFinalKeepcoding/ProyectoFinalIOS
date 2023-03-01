@@ -78,6 +78,7 @@ struct DetailView: View {
             }
             .padding(.top,5)
             .onTapGesture {
+                viewModel.displayAlert = false
                 showSheet = true
             }
             .sheet(isPresented: $showSheet) {
@@ -146,10 +147,8 @@ struct DetailView: View {
                     }
                     
                     Button {
-                        //TODO: - Guardar cambios
                         Task{
-                            await viewModel.uploadImage(image:image)
-//                            await viewModel.updateShelter()
+                            await viewModel.updateShelter(image: image)
                         }
                     } label: {
                         Text("Guardar cambios")
