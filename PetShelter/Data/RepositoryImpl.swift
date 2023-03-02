@@ -69,9 +69,7 @@ class RepositoryImpl: Repository {
         }
         
         let base64LoginString = loginData.base64EncodedString()
-        
-        print("Base64 \(base64LoginString)")
-        
+                
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = HTTPMethods.get
         urlRequest.setValue(ApiKey, forHTTPHeaderField: "ApiKey")

@@ -142,7 +142,6 @@ final class DetailViewModel: NSObject, ObservableObject  {
                     addressString = addressString + pm.postalCode! + " "
                 }
                 self.searchableAddress = addressString
-                print("Address: \(addressString)")
             } else {
                 print("Error transforming location")
             }
