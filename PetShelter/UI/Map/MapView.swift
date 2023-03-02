@@ -22,7 +22,7 @@ struct MapView: View {
                     self.selectedShelter = selectedShelter
                 }
                 .ignoresSafeArea()
-                AidButton()
+                AidButton(viewModel: viewModel)
             }
         }.sheet(item: $selectedShelter, content: { option in
             ShelterDetailModal(shelter: option)

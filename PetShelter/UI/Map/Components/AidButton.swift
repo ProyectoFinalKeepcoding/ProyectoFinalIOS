@@ -7,12 +7,17 @@
 
 import SwiftUI
 
+
 struct AidButton: View {
+    @ObservedObject var viewModel: MapViewModel
+    
+    
     var body: some View {
         VStack {
             Spacer()
             Button {
-                //
+                //TODO: Search closest location & show its modal
+                viewModel.onClickClosestShelter()
             } label: {
                 Image(systemName: "cross.circle.fill")
                     .font(.system(size: 40))
@@ -26,8 +31,8 @@ struct AidButton: View {
     }
 }
 
-struct AidButton_Previews: PreviewProvider {
-    static var previews: some View {
-        AidButton()
-    }
-}
+//struct AidButton_Previews: PreviewProvider {
+//    static var previews: some View {
+//        AidButton()
+//    }
+//}
