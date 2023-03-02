@@ -9,10 +9,12 @@ import SwiftUI
 import GoogleMaps
 
 struct Map: UIViewRepresentable {
+    
+    @ObservedObject var locationManager: LocationManager
     @Binding var coordinates: [ShelterPointModel]
     var onMarkerClick: (ShelterPointModel) -> ()
     
-    @StateObject var locationManager = LocationManager()
+   
     private let zoom: Float = 5.0
     
     typealias UIViewType = GMSMapView
