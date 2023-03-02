@@ -50,9 +50,10 @@ final class DetailViewModel: NSObject, ObservableObject  {
         localSearchCompleter.queryFragment = searchableText
     }
     
-    func updateShelter() async {
+    func updateShelter(image: UIImage) async {
         self.status = .loading
         convertAddressToCoordinates(address: searchableAddress)
+        await uploadImage(image: image)
 
     }
     
@@ -70,6 +71,29 @@ final class DetailViewModel: NSObject, ObservableObject  {
             displayAlert = true
             print(error)
         }
+    }
+    
+    func uploadImage(image: UIImage) async {
+        guard let imageData = image.jpegData(compressionQuality: 0.7) else {
+            await updateData()
+            return
+        }
+        
+        repository.uploadPhoto(userId: shelterDetail.id, imageData: imageData, completion: { result in
+            switch result {
+            case .success(let response):
+                self.displayAlert = false
+                Task{
+                    await self.updateData()
+                }
+                print(response)
+            case .failure(let error):
+                self.status = Status.error(error: "Error al subir imagen")
+                self.displayAlert = true
+                print(error)
+            }
+        })        
+        
     }
     
     func convertAddressToCoordinates(address: String) {
@@ -118,7 +142,6 @@ final class DetailViewModel: NSObject, ObservableObject  {
                     addressString = addressString + pm.postalCode! + " "
                 }
                 self.searchableAddress = addressString
-                print("Address: \(addressString)")
             } else {
                 print("Error transforming location")
             }

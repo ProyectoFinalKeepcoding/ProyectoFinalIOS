@@ -22,10 +22,11 @@ enum endpoints: String {
     case shelters = "/shelters"
     case login = "/auth/signin"
     case update = "/update"
+    case upload = "/upload"
 }
 
 class RepositoryImpl: Repository {
-    
+
     private var urlSession = URLSession.shared
     
     private let keychain = KeychainSwift()
@@ -69,9 +70,7 @@ class RepositoryImpl: Repository {
         }
         
         let base64LoginString = loginData.base64EncodedString()
-        
-        print("Base64 \(base64LoginString)")
-        
+                
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = HTTPMethods.get
         urlRequest.setValue(ApiKey, forHTTPHeaderField: "ApiKey")
@@ -153,7 +152,7 @@ class RepositoryImpl: Repository {
             let (data, response) = try await urlSession.data(for: request)
             guard (response as? HTTPURLResponse)?.statusCode == 200 else {
                 let json = String(data: data, encoding: .utf8)
-                print("Fallo \(json)")
+                print("Fallo \(json ?? "Error invalid code")")
                 return .failure(.invalidCode)
             }
             
@@ -163,6 +162,51 @@ class RepositoryImpl: Repository {
         } catch {
             return .failure(.responseError)
         }
+    }
+    
+    func uploadPhoto(userId: String, imageData: Data, completion: @escaping (Result<[String: Any], NetworkError>) -> Void){
+        let fileName = userId
+    
+        guard let url = URL(string: "\(server)\(endpoints.upload.rawValue)/\(userId)") else {
+            completion(.failure(.invalidURL))
+            return
+        }
+        
+        // generate boundary
+        let boundary = UUID().uuidString
+
+        // Set the URLRequest to POST and add the url
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
+        urlRequest.setValue(ApiKey, forHTTPHeaderField: "ApiKey")
+        urlRequest.setValue("Bearer \(keychain.get("AccessToken") ?? "")", forHTTPHeaderField: "Authorization")
+        
+        // Set Content-Type Header to multipart/form-data, this is equivalent to submitting form data with file upload in a web browser
+        // And the boundary is also set here
+        urlRequest.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+        
+        var data = Data()
+        
+        // Add the image data to the raw http request data
+        data.append("\r\n--\(boundary)\r\n".data(using: .utf8)!)
+        data.append("Content-Disposition: form-data; name=\"picture\"; filename=\"\(fileName)\"\r\n".data(using: .utf8)!)
+        data.append("Content-Type: image/png\r\n\r\n".data(using: .utf8)!)
+        data.append(imageData)
+        
+        data.append("\r\n--\(boundary)--\r\n".data(using: .utf8)!)
+        
+        urlSession.uploadTask(with: urlRequest, from: data) { responseData, response, error in
+            if error == nil {
+                let jsonData = try? JSONSerialization.jsonObject(with: responseData!, options: .allowFragments)
+                if let json = jsonData as? [String: Any] {
+                    completion(.success(json))
+                } else {
+                    completion(.failure(.responseError))
+                }
+            }
+        }
+        .resume()
+        
     }
     
 }

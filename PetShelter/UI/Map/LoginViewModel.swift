@@ -43,7 +43,6 @@ final class LoginViewModel: ObservableObject {
         
         switch result {
         case .success(let loginResponse):
-            print("Login Result \(loginResponse)")
             self.keychain.set(loginResponse[0], forKey: "AccessToken")
             self.userId = loginResponse[1]            
             self.status = .loaded

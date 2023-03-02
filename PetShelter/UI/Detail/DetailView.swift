@@ -23,6 +23,10 @@ struct DetailView: View {
     
     var shelterTypes = ShelterType.allCases
     
+    @State private var image = UIImage()
+    @State private var showSheet = false
+    @State private var isImageSelected = false
+    
     var body: some View {
         VStack(alignment: .center) {
             
@@ -48,20 +52,38 @@ struct DetailView: View {
             }
             .padding(.top, 20)
             
-            AsyncImage(url: URL(string: "http://127.0.0.1:8080/\( viewModel.shelterDetail.photoURL ?? "")" )) { photoDownload in
-                photoDownload
-                    .resizable()
-                    .frame(width: 250, height: 250)
-                    .aspectRatio(contentMode:.fit)
-                    .cornerRadius(10)
-            } placeholder: {
-                Image(systemName: "photo")
-                    .resizable()
-                    .frame(width: 250, height: 250)
-                    .aspectRatio(contentMode:.fit)
-                    .cornerRadius(10)
+            ZStack{
+                if (isImageSelected) {
+                    Image(uiImage: self.image)
+                        .resizable()
+                        .frame(width: 250, height: 250)
+                        .aspectRatio(contentMode:.fit)
+                        .cornerRadius(10)
+                    
+                } else {
+                    AsyncImage(url: URL(string: "http://127.0.0.1:8080/\( viewModel.shelterDetail.photoURL ?? "")" )) { photoDownload in
+                        photoDownload
+                            .resizable()
+                            .frame(width: 250, height: 250)
+                            .aspectRatio(contentMode:.fit)
+                            .cornerRadius(10)
+                    } placeholder: {
+                        Image(systemName: "photo")
+                            .resizable()
+                            .frame(width: 250, height: 250)
+                            .aspectRatio(contentMode:.fit)
+                            .cornerRadius(10)
+                    }
+                }
             }
             .padding(.top,5)
+            .onTapGesture {
+                viewModel.displayAlert = false
+                showSheet = true
+            }
+            .sheet(isPresented: $showSheet) {
+                ImagePicker(sourceType: .photoLibrary, selectedImage: self.$image, isImageSelected: self.$isImageSelected)
+            }
             
             VStack (alignment: .leading){
                 Text("Dirección")
@@ -125,9 +147,8 @@ struct DetailView: View {
                     }
                     
                     Button {
-                        //TODO: - Guardar cambios
                         Task{
-                            await viewModel.updateShelter()
+                            await viewModel.updateShelter(image: image)
                         }
                     } label: {
                         Text("Guardar cambios")
@@ -198,7 +219,7 @@ struct DetailView: View {
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(userId: "A70C6E16-7B01-4D99-821C-E43E522FFABC")
+        DetailView(userId: "ac7128c3-3be9-436f-b545-319e0b5d77fa")
     }
 }
 
