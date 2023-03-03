@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct PhysicPersonButton: View {
+    
     var body: some View {
         NavigationLink(destination: {
-            MapView()
+            MapView().environmentObject(LocationManager())
         }, label: {
             Text("He encontrado una mascota")
                 .font(Font.custom("Moderat-Medium", size: 25))

@@ -10,7 +10,8 @@ import GoogleMaps
 
 struct Map: UIViewRepresentable {
     
-    @ObservedObject var locationManager: LocationManager
+    @EnvironmentObject var locationManager: LocationManager
+    
     @Binding var coordinates: [ShelterPointModel]
     var onMarkerClick: (ShelterPointModel) -> ()
     

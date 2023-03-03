@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct MapView: View {
+    
+    @EnvironmentObject var locationManager : LocationManager
+    
     @ObservedObject var viewModel = MapViewModel()
-    @ObservedObject var locationManager = LocationManager()
     
     @State var selectedShelter: ShelterPointModel?
     
@@ -19,7 +21,7 @@ struct MapView: View {
                 .frame(height: 36)
                 .padding()
             ZStack {
-                Map(locationManager: locationManager, coordinates: $viewModel.locations){ selectedShelter in
+                Map(coordinates: $viewModel.locations){ selectedShelter in
                     self.selectedShelter = selectedShelter
                 }
                 .ignoresSafeArea()
