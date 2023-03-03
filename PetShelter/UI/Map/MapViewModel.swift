@@ -8,15 +8,12 @@
 import Foundation
 import GoogleMaps
 import SwiftUI
-//import CoreLocation
 
 
 final class MapViewModel: ObservableObject {
     private var repository: Repository
     @Published var locations = [ShelterPointModel]()
-    
-//    @ObservedObject var locationManager:  LocationManager
-    
+
     init(repository: Repository = RepositoryImpl()) {
         self.repository = repository
     }
@@ -32,8 +29,7 @@ final class MapViewModel: ObservableObject {
             print(error)
         }
     }
-    
-    
+        
     // MARK: onClickButton
     func onClickClosestShelter() {
         //TODO: #1 Get Closest Shelter
@@ -48,12 +44,8 @@ final class MapViewModel: ObservableObject {
     func getClosestShelter() -> ShelterPointModel? {
         
         //TODO: #1 Get origin coordiantes
-//        let origin = CLLocationCoordinate2D(latitude: locationManager.latitude, longitude: locationManager.longitude )
-        
-        
-        let origin = CLLocationCoordinate2D(latitude: 40.4165, longitude: -3.70256)
-        
-        
+        let origin = CLLocationCoordinate2D(latitude: Map.locationManager.latitude, longitude: Map.locationManager.longitude )
+                
         //TODO: #2 init closestShelter
 
         var closestShelter: ShelterPointModel?
@@ -78,16 +70,6 @@ final class MapViewModel: ObservableObject {
         
         print(closestShelter!)
                 
-        
-        
-//            .sorted(by: { shelter1, shelter2 in
-//
-//                let coordinatesShelter1 = CLLocationCoordinate2D(shelter1.address.latitude, shelter1.address.longitude)
-//
-//                let coordinatesShelter2 = CLLocationCoordinate2D(shelter2.address.latitude, shelter2.address.longitude)
-//
-//
-//            })
         return closestShelter
     }
     
