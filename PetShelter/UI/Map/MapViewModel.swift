@@ -13,6 +13,11 @@ import SwiftUI
 final class MapViewModel: ObservableObject {
     private var repository: Repository
     @Published var locations = [ShelterPointModel]()
+    
+    
+    @Published var modalPresented: Bool = false
+    @Published var selectedShelter: ShelterPointModel?
+    
 
     init(repository: Repository = RepositoryImpl()) {
         self.repository = repository
@@ -34,8 +39,11 @@ final class MapViewModel: ObservableObject {
     func onClickClosestShelter() {
         //TODO: #1 Get Closest Shelter
         let closestShelter = getClosestShelter()
-        
+
         // TODO: #2 Activate Modal Shelter
+        modalPresented = true
+        selectedShelter = closestShelter
+        
         
         // TODO: #3 Zoom camera to this Shelter
     }
@@ -66,9 +74,7 @@ final class MapViewModel: ObservableObject {
                 return distance1 < distance2
             }
             .first
-        
-        
-        print(closestShelter!)
+    
                 
         return closestShelter
     }

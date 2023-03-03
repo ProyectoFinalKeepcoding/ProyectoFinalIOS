@@ -6,11 +6,17 @@
 //
 
 import SwiftUI
+import Combine
 
 struct MapView: View {
     @ObservedObject var viewModel = MapViewModel()
     
+    /// Variable para asignar shelter al que se hace click
     @State var selectedShelter: ShelterPointModel?
+    /// Variable que determina si se debe mostrar el más cercano
+    @State var isClosestPresented: Bool = false
+    
+    @State var cancellables = Set<AnyCancellable>()
     
     var body: some View {
         VStack {
@@ -24,15 +30,28 @@ struct MapView: View {
                 .ignoresSafeArea()
                 AidButton(viewModel: viewModel)
             }
-        }.sheet(item: $selectedShelter, content: { option in
+        }
+        /// Modal que se presenta al seleccionar un shelter
+        .sheet(item: $selectedShelter, content: { option in
             ShelterDetailModal(shelter: option)
                 .presentationDetents([.fraction(0.40), .large])
                 .padding(.top, 20)
         })
+        /// Modal que se presenta al intentar buscar el shelter más cercano
+        .sheet(isPresented: $isClosestPresented, content: {
+            ShelterDetailModal(shelter: viewModel.selectedShelter!)
+                .presentationDetents([.fraction(0.40), .large])
+                .padding(.top, 20)
+        })
+        
         .onAppear {
             Task {
                 await viewModel.getShelterPoints()
             }
+            
+            viewModel.$modalPresented.sink { value in
+                isClosestPresented = value
+            }.store(in: &cancellables)
             
         }
         .navigationBarBackButtonHidden(true)
