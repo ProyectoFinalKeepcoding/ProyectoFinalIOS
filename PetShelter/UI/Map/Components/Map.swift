@@ -10,6 +10,7 @@ import GoogleMaps
 
 struct Map: UIViewRepresentable {
 
+    var viewModel: MapViewModel
     @Binding var coordinates: [ShelterPointModel]
     var onMarkerClick: (ShelterPointModel) -> ()
     
@@ -26,13 +27,12 @@ struct Map: UIViewRepresentable {
         mapView.isMyLocationEnabled = true
         mapView.padding = UIEdgeInsets(top: 0, left: 100, bottom: 100, right: 0)
         mapView.delegate = context.coordinator
+        setSubscriber(mapView)
         return mapView
     }
     
     func updateUIView(_ mapView: GMSMapView, context: Context) {
-        let camera = GMSCameraPosition.camera(withLatitude: Map.locationManager.latitude, longitude: Map.locationManager.longitude, zoom: zoom)
-        mapView.camera = camera
-        mapView.animate(toLocation: CLLocationCoordinate2D(latitude: Map.locationManager.latitude, longitude: Map.locationManager.longitude))
+        moveToUserLocation(mapView)
         context.coordinator.places = coordinates
         context.coordinator.addMarkers(mapView: mapView)
     }
@@ -40,6 +40,28 @@ struct Map: UIViewRepresentable {
     func makeCoordinator() -> Coordinator {
         return Coordinator(onMarkerClick)
     }
+    
+    func setSubscriber(_ mapView: GMSMapView){
+        
+        viewModel.cancellable = viewModel.$closestShelter.sink(receiveValue: { shelterPoint in
+            
+            guard let latitude = shelterPoint?.address.latitude, let longitud = shelterPoint?.address.longitude else {
+                
+                return
+            }
+            let camera = GMSCameraPosition.camera(withLatitude: latitude, longitude: longitud, zoom: 9)
+            
+            mapView.camera = camera
+            mapView.animate(toLocation: CLLocationCoordinate2D(latitude: latitude, longitude: longitud ))
+        })
+   }
+    
+    func moveToUserLocation(_ mapView: GMSMapView) {
+        let camera = GMSCameraPosition.camera(withLatitude: Map.locationManager.latitude, longitude: Map.locationManager.longitude, zoom: 9)
+        mapView.camera = camera
+        mapView.animate(toLocation: CLLocationCoordinate2D(latitude: Map.locationManager.latitude, longitude: Map.locationManager.longitude))
+    }
+ 
     
 }
 

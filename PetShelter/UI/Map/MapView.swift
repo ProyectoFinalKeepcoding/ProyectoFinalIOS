@@ -24,7 +24,7 @@ struct MapView: View {
                 .frame(height: 36)
                 .padding()
             ZStack {
-                Map(coordinates: $viewModel.locations){ selectedShelter in
+                Map(viewModel: viewModel,coordinates: $viewModel.locations){ selectedShelter in
                     self.selectedShelter = selectedShelter
                 }
                 .ignoresSafeArea()
@@ -39,7 +39,7 @@ struct MapView: View {
         })
         /// Modal que se presenta al intentar buscar el shelter más cercano
         .sheet(isPresented: $isClosestPresented, content: {
-            ShelterDetailModal(shelter: viewModel.selectedShelter!)
+            ShelterDetailModal(shelter: viewModel.closestShelter!)
                 .presentationDetents([.fraction(0.40), .large])
                 .padding(.top, 20)
         })

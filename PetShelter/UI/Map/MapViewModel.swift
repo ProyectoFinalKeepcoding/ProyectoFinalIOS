@@ -8,7 +8,7 @@
 import Foundation
 import GoogleMaps
 import SwiftUI
-
+import Combine
 
 final class MapViewModel: ObservableObject {
     private var repository: Repository
@@ -16,8 +16,9 @@ final class MapViewModel: ObservableObject {
     
     
     @Published var modalPresented: Bool = false
-    @Published var selectedShelter: ShelterPointModel?
+    @Published var closestShelter: ShelterPointModel?
     
+    var cancellable: AnyCancellable?
 
     init(repository: Repository = RepositoryImpl()) {
         self.repository = repository
@@ -42,10 +43,8 @@ final class MapViewModel: ObservableObject {
 
         // TODO: #2 Activate Modal Shelter
         modalPresented = true
-        selectedShelter = closestShelter
-        
-        
         // TODO: #3 Zoom camera to this Shelter
+        self.closestShelter = closestShelter
     }
     
     // MARK: Get closest Shelter from current location
@@ -87,32 +86,5 @@ final class MapViewModel: ObservableObject {
         
         return origin.distance(from: destination)
     }
-    
-    //    // MARK: Calculate distance between Shelter points & current location
-    //
-    //    func degreesToRadians(degrees: Double) -> Double {
-    //        return degrees * Double.pi / 180
-    //    }
-    //
-    //    func distanceInKmBetweenEarthCoordinates(lat1: Double, lon1: Double, lat2: Double, lon2: Double) -> Double {
-    //
-    //        let earthRadiusKm: Double = 6371
-    //
-    //        let dLat = degreesToRadians(degrees: lat2 - lat1)
-    //        let dLon = degreesToRadians(degrees: lon2 - lon1)
-    //
-    //        let lat1 = degreesToRadians(degrees: lat1)
-    //        let lat2 = degreesToRadians(degrees: lat2)
-    //
-    //        // MARK: Harvesine Formula
-    //        // Square of half the chord length between the points
-    //        let a = sin(dLat/2) * sin(dLat/2) +
-    //        sin(dLon/2) * sin(dLon/2) * cos(lat1) * cos(lat2)
-    //
-    //        // Angular distance in radians
-    //        let c = 2 * atan2(sqrt(a), sqrt(1 - a))
-    //
-    //        return earthRadiusKm * c
-    //    }
     
 }
