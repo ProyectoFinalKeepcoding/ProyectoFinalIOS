@@ -9,7 +9,7 @@ import Foundation
 import KeychainSwift
 
 
-class MockKeychain: KeychainSwift {
+class KeychainFake: KeychainSwift {
     
     var savedToken: String?
     

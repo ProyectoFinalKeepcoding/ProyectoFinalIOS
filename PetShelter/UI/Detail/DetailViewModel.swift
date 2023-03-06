@@ -12,12 +12,12 @@ final class DetailViewModel: NSObject, ObservableObject  {
     @Published var status = Status.none
     @Published var displayAlert = false
     
-    @Published var shelterDetail: ShelterPointModel = ShelterPointModel(id: "", name: "", phoneNumber: "", address: Address(latitude: 0.0, longitude: 0.0), shelterType: .shelterPoint)
+    @Published var shelterDetail: ShelterPointModel = ShelterPointModel(id: "", name: "", phoneNumber: "", address: Address(latitude: 40.416906, longitude: -3.7056774), shelterType: .shelterPoint)
     
     @Published var addressResults: [AddressResult] = []
     @Published var searchableAddress = ""
     
-    private lazy var localSearchCompleter: MKLocalSearchCompleter = {
+    lazy var localSearchCompleter: MKLocalSearchCompleter = {
         let completer = MKLocalSearchCompleter()
         completer.delegate = self
         return completer
@@ -42,6 +42,7 @@ final class DetailViewModel: NSObject, ObservableObject  {
             print(shelterDetail)
         case .failure(let error):
             print(error)
+            status = .error(error: error.localizedDescription)
         }
     }
     
