@@ -57,9 +57,10 @@
 		D2B74899299925BD00D4F07E /* Moderat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D2B74897299925BD00D4F07E /* Moderat-Bold.ttf */; };
 		D2D549CB2997106300FE39B2 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D549CA2997106300FE39B2 /* LocationManager.swift */; };
 		D2ED0A7F29A55FEF00AF4FB1 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D2ED0A7E29A55FEF00AF4FB1 /* KeychainSwift */; };
-		D2F6FCA329A18C7200675257 /* MockRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F6FCA229A18C7200675257 /* MockRepository.swift */; };
-		D2F6FCA529A18DA000675257 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F6FCA429A18DA000675257 /* LoginViewModelTests.swift */; };
-		D2F6FCA729A190A200675257 /* MockKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F6FCA629A190A200675257 /* MockKeychain.swift */; };
+		D2F6FCA329A18C7200675257 /* RepositoryFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F6FCA229A18C7200675257 /* RepositoryFake.swift */; };
+		D2F6FCA529A18DA000675257 /* LoginVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F6FCA429A18DA000675257 /* LoginVMTests.swift */; };
+		D2F6FCA729A190A200675257 /* KeychainFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F6FCA629A190A200675257 /* KeychainFake.swift */; };
+		D2FBC6FD29B3A7F900E6BD41 /* DetailVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FBC6FC29B3A7F900E6BD41 /* DetailVMTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,9 +136,10 @@
 		D2B74896299925BD00D4F07E /* Moderat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Moderat-Medium.ttf"; sourceTree = "<group>"; };
 		D2B74897299925BD00D4F07E /* Moderat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Moderat-Bold.ttf"; sourceTree = "<group>"; };
 		D2D549CA2997106300FE39B2 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
-		D2F6FCA229A18C7200675257 /* MockRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRepository.swift; sourceTree = "<group>"; };
-		D2F6FCA429A18DA000675257 /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
-		D2F6FCA629A190A200675257 /* MockKeychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockKeychain.swift; sourceTree = "<group>"; };
+		D2F6FCA229A18C7200675257 /* RepositoryFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryFake.swift; sourceTree = "<group>"; };
+		D2F6FCA429A18DA000675257 /* LoginVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVMTests.swift; sourceTree = "<group>"; };
+		D2F6FCA629A190A200675257 /* KeychainFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainFake.swift; sourceTree = "<group>"; };
+		D2FBC6FC29B3A7F900E6BD41 /* DetailVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVMTests.swift; sourceTree = "<group>"; };
 		E6082ED6772146F7B121A2DD /* Pods-PetShelter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetShelter.debug.xcconfig"; path = "Target Support Files/Pods-PetShelter/Pods-PetShelter.debug.xcconfig"; sourceTree = "<group>"; };
 		E99CEB1CE344709175E3888D /* Pods_PetShelter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetShelter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB6D51982ED40A172652196B /* Pods-PetShelter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetShelter.release.xcconfig"; path = "Target Support Files/Pods-PetShelter/Pods-PetShelter.release.xcconfig"; sourceTree = "<group>"; };
@@ -242,9 +244,8 @@
 		9D5F0DD6298C503200453576 /* PetShelterTests */ = {
 			isa = PBXGroup;
 			children = (
-				D2F6FCA229A18C7200675257 /* MockRepository.swift */,
-				D2F6FCA429A18DA000675257 /* LoginViewModelTests.swift */,
-				D2F6FCA629A190A200675257 /* MockKeychain.swift */,
+				D2FBC6F929B3A6AE00E6BD41 /* Fakes */,
+				D2FBC6F829B3A6A400E6BD41 /* ViewModels */,
 			);
 			path = PetShelterTests;
 			sourceTree = "<group>";
@@ -291,7 +292,6 @@
 				9DA2DF9F29A821CD0004CB42 /* RegisterModel.swift */,
 				D29CF94A29ABA65C00A6497D /* AddressResult.swift */,
 				D28FE42529ACEF8A00A1B0A2 /* ShelterUpdateBody.swift */,
-
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -423,6 +423,24 @@
 				D2B74896299925BD00D4F07E /* Moderat-Medium.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		D2FBC6F829B3A6A400E6BD41 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				D2F6FCA429A18DA000675257 /* LoginVMTests.swift */,
+				D2FBC6FC29B3A7F900E6BD41 /* DetailVMTests.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		D2FBC6F929B3A6AE00E6BD41 /* Fakes */ = {
+			isa = PBXGroup;
+			children = (
+				D2F6FCA629A190A200675257 /* KeychainFake.swift */,
+				D2F6FCA229A18C7200675257 /* RepositoryFake.swift */,
+			);
+			path = Fakes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -719,9 +737,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2F6FCA529A18DA000675257 /* LoginViewModelTests.swift in Sources */,
-				D2F6FCA329A18C7200675257 /* MockRepository.swift in Sources */,
-				D2F6FCA729A190A200675257 /* MockKeychain.swift in Sources */,
+				D2F6FCA529A18DA000675257 /* LoginVMTests.swift in Sources */,
+				D2F6FCA329A18C7200675257 /* RepositoryFake.swift in Sources */,
+				D2F6FCA729A190A200675257 /* KeychainFake.swift in Sources */,
+				D2FBC6FD29B3A7F900E6BD41 /* DetailVMTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

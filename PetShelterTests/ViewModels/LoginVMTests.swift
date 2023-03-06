@@ -8,15 +8,15 @@
 import XCTest
 @testable import PetShelter
 
-final class LoginViewModelTests: XCTestCase {
+final class LoginVMTests: XCTestCase {
     
-    private var mockRepository: MockRepository!
-    private var mockKeyChain: MockKeychain!
+    private var mockRepository: RepositoryFake!
+    private var mockKeyChain: KeychainFake!
     private var sut: LoginViewModel!
 
     override func setUpWithError() throws {
-        mockRepository = MockRepository()
-        mockKeyChain = MockKeychain()
+        mockRepository = RepositoryFake()
+        mockKeyChain = KeychainFake()
         sut = LoginViewModel(repository: mockRepository, keychain: mockKeyChain)
     }
 
