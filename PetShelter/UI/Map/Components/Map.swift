@@ -25,7 +25,7 @@ struct Map: UIViewRepresentable {
         let mapView = GMSMapView.map(withFrame: .zero, camera: camera)
         mapView.settings.myLocationButton = true
         mapView.isMyLocationEnabled = true
-        mapView.padding = UIEdgeInsets(top: 0, left: 100, bottom: 100, right: 0)
+        mapView.padding = UIEdgeInsets(top: 0, left: 100, bottom: 120, right: 0)
         mapView.delegate = context.coordinator
         setSubscriber(mapView)
         return mapView
