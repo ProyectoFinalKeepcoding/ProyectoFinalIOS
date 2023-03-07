@@ -12,12 +12,12 @@ final class DetailViewModel: NSObject, ObservableObject  {
     @Published var status = Status.none
     @Published var displayAlert = false
     
-    @Published var shelterDetail: ShelterPointModel = ShelterPointModel(id: "", name: "", phoneNumber: "", address: Address(latitude: 0.0, longitude: 0.0), shelterType: .shelterPoint)
+    @Published var shelterDetail: ShelterPointModel = ShelterPointModel(id: "", name: "", phoneNumber: "", address: Address(latitude: 40.416906, longitude: -3.7056774), shelterType: .shelterPoint)
     
     @Published var addressResults: [AddressResult] = []
     @Published var searchableAddress = ""
     
-    private lazy var localSearchCompleter: MKLocalSearchCompleter = {
+    lazy var localSearchCompleter: MKLocalSearchCompleter = {
         let completer = MKLocalSearchCompleter()
         completer.delegate = self
         return completer
@@ -42,6 +42,7 @@ final class DetailViewModel: NSObject, ObservableObject  {
             print(shelterDetail)
         case .failure(let error):
             print(error)
+            status = .error(error: error.localizedDescription)
         }
     }
     
@@ -50,9 +51,10 @@ final class DetailViewModel: NSObject, ObservableObject  {
         localSearchCompleter.queryFragment = searchableText
     }
     
-    func updateShelter() async {
+    func updateShelter(image: UIImage) async {
         self.status = .loading
         convertAddressToCoordinates(address: searchableAddress)
+        await uploadImage(image: image)
 
     }
     
@@ -70,6 +72,29 @@ final class DetailViewModel: NSObject, ObservableObject  {
             displayAlert = true
             print(error)
         }
+    }
+    
+    func uploadImage(image: UIImage) async {
+        guard let imageData = image.jpegData(compressionQuality: 0.7) else {
+            await updateData()
+            return
+        }
+        
+        repository.uploadPhoto(userId: shelterDetail.id, imageData: imageData, completion: { result in
+            switch result {
+            case .success(let response):
+                self.displayAlert = false
+                Task{
+                    await self.updateData()
+                }
+                print(response)
+            case .failure(let error):
+                self.status = Status.error(error: "Error al subir imagen")
+                self.displayAlert = true
+                print(error)
+            }
+        })        
+        
     }
     
     func convertAddressToCoordinates(address: String) {
@@ -118,7 +143,6 @@ final class DetailViewModel: NSObject, ObservableObject  {
                     addressString = addressString + pm.postalCode! + " "
                 }
                 self.searchableAddress = addressString
-                print("Address: \(addressString)")
             } else {
                 print("Error transforming location")
             }
