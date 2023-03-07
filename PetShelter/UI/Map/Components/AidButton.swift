@@ -7,20 +7,28 @@
 
 import SwiftUI
 
+
 struct AidButton: View {
+    @ObservedObject var viewModel: MapViewModel
+    
+    
     var body: some View {
         VStack {
             Spacer()
             Button {
-                //
+                //TODO: Search closest location & show its modal
+                viewModel.onClickClosestShelter()
             } label: {
-                Image(systemName: "cross.circle.fill")
-                    .font(.system(size: 40))
-                    .foregroundColor(.white)
+                Text("Refugio más cercano")
             }
             .padding()
-            .background(Color.red)
-            .cornerRadius(30)
+            .scaledToFit()
+            .frame(height: 120)
+            .foregroundColor(Color.white)
+            .font(Font.custom("Moderat-Medium", size: 22))
+            .fontWeight(.bold)
+            .background(Color("RedKiwoko"))
+            .cornerRadius(5)
             
         }
     }
@@ -28,6 +36,6 @@ struct AidButton: View {
 
 struct AidButton_Previews: PreviewProvider {
     static var previews: some View {
-        AidButton()
+        AidButton(viewModel: MapViewModel())
     }
 }
