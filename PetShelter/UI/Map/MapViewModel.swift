@@ -22,7 +22,6 @@ final class MapViewModel: ObservableObject {
         switch result {
         case .success(let points):
             locations = points
-            print(locations)
         case .failure(let error):
             print(error)
         }

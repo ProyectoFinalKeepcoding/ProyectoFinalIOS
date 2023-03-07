@@ -92,16 +92,27 @@ class RepositoryImpl: Repository {
         
     }
     
-    func register(model: RegisterModel) async {
-        guard let url = URL(string: "\(server)/api/auth/signup") else {
-            return
+    func register(model: ShelterRegisterModel) async -> Result<RegisterState, NetworkError>{
+        guard let url = URL(string: "\(server)/auth/signup") else {
+            return .failure(.invalidURL)
         }
         
         var request = URLRequest(url: url)
-        request.httpMethod = "POST"
+        request.httpMethod = HTTPMethods.post
+        request.setValue(ApiKey, forHTTPHeaderField: "ApiKey")
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpBody = try? JSONEncoder().encode(model)
         
-        
+        do {
+            let (_, response) = try await urlSession.data(for: request)
+            guard (response as? HTTPURLResponse)?.statusCode == 200 else {
+                return .failure(.invalidCode)
+            }
+            print(response)
+            return .success(.success)
+        } catch {
+            return .failure(.responseError)
+        }
     }
     
     func getShelterDetail(userId: String) async -> Result<ShelterPointModel, NetworkError> {
@@ -134,8 +145,6 @@ class RepositoryImpl: Repository {
         guard let url = URL(string: "\(server)\(endpoints.update.rawValue)/\(userId)") else {
             return .failure(.invalidURL)
         }
-        
-        
         
         var request = URLRequest(url: url)
         request.httpMethod = HTTPMethods.post

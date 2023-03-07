@@ -6,7 +6,7 @@
 //
 
 import Foundation
-struct ShelterRegisterModel: Decodable {
+struct ShelterRegisterModel: Decodable, Encodable {
     let name: String
     let password: String
     let phoneNumber: String
@@ -15,7 +15,7 @@ struct ShelterRegisterModel: Decodable {
     
 }
 
-enum ShelterType: Decodable, Encodable, CaseIterable {
+enum ShelterType: String, Codable, CaseIterable {
 
     case particular
     case localGovernment
@@ -40,6 +40,6 @@ enum ShelterType: Decodable, Encodable, CaseIterable {
 }
 
 struct Address: Codable {
-    let latitude: Double
-    let longitude: Double
+    var latitude: Double
+    var longitude: Double
 }
