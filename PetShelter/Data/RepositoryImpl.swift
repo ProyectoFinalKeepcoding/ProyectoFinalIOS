@@ -27,11 +27,11 @@ enum endpoints: String {
 
 class RepositoryImpl: Repository {
 
-    private var urlSession = URLSession.shared
+    private var urlSession: Networking
     
     private let keychain = KeychainSwift()
     
-    init(urlSession: URLSession = URLSession.shared) {
+    init(urlSession: Networking = URLSession.shared) {
         self.urlSession = urlSession
     }
     

@@ -45,10 +45,12 @@ class RepositoryFake: Repository {
         return .failure(.responseError)
     }
     
-    func register(model: PetShelter.RegisterModel) async {
-        
+    func register(model: ShelterRegisterModel) async -> Result<RegisterState, NetworkError> {
+        //TODO: - Hacer fake de registro
+        return .success(.success)
     }
     
+  
     func getShelterDetail(userId: String) async -> Result<PetShelter.ShelterPointModel, PetShelter.NetworkError> {
         
         if (userId == "CorrectID") {
