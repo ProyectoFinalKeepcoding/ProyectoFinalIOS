@@ -27,11 +27,11 @@ enum endpoints: String {
 
 class RepositoryImpl: Repository {
 
-    private var urlSession = URLSession.shared
+    private var urlSession: Networking
     
     private let keychain = KeychainSwift()
     
-    init(urlSession: URLSession = URLSession.shared) {
+    init(urlSession: Networking = URLSession.shared) {
         self.urlSession = urlSession
     }
     
@@ -206,7 +206,7 @@ class RepositoryImpl: Repository {
         
         urlSession.uploadTask(with: urlRequest, from: data) { responseData, response, error in
             if error == nil {
-                let jsonData = try? JSONSerialization.jsonObject(with: responseData!, options: .allowFragments)
+                let jsonData = try? JSONSerialization.jsonObject(with: responseData ?? Data(), options: .allowFragments)
                 if let json = jsonData as? [String: Any] {
                     completion(.success(json))
                 } else {

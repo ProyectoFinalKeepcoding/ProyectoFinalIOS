@@ -37,11 +37,7 @@
 		9DA2DF9C29A7F6F50004CB42 /* UserTypePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA2DF9B29A7F6F50004CB42 /* UserTypePicker.swift */; };
 		9DA2DF9E29A803C60004CB42 /* TextFieldType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA2DF9D29A803C60004CB42 /* TextFieldType.swift */; };
 		9DAB7DCA29B40FA1008EE816 /* PopUpRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAB7DC929B40FA1008EE816 /* PopUpRegister.swift */; };
-		9DAB7DCB29B40FA1008EE816 /* PopUpRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAB7DC929B40FA1008EE816 /* PopUpRegister.swift */; };
-		9DAB7DCC29B40FA1008EE816 /* PopUpRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAB7DC929B40FA1008EE816 /* PopUpRegister.swift */; };
 		9DAB7DCE29B41596008EE816 /* PopUpType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAB7DCD29B41596008EE816 /* PopUpType.swift */; };
-		9DAB7DCF29B41596008EE816 /* PopUpType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAB7DCD29B41596008EE816 /* PopUpType.swift */; };
-		9DAB7DD029B41596008EE816 /* PopUpType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAB7DCD29B41596008EE816 /* PopUpType.swift */; };
 		9DC7B446298D802600AFC9D2 /* ShelterRegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC7B445298D802600AFC9D2 /* ShelterRegisterModel.swift */; };
 		9DC7B448298D816900AFC9D2 /* SignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC7B447298D816900AFC9D2 /* SignInModel.swift */; };
 		9DC7B44A298D842600AFC9D2 /* ShelterPointModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC7B449298D842600AFC9D2 /* ShelterPointModel.swift */; };
@@ -51,12 +47,16 @@
 		9DFE513229B55DA700D086F6 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFE513129B55DA700D086F6 /* EmptyView.swift */; };
 		9DFE513429B55E5500D086F6 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFE513329B55E5500D086F6 /* LoadingView.swift */; };
 		BE7157DA1E3658BDDD766EC4 /* Pods_PetShelterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812CA2925F0CE2122970AC02 /* Pods_PetShelterTests.framework */; };
+		D2030C5B29B7F8F700336D49 /* RepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2030C5A29B7F8F700336D49 /* RepositoryTests.swift */; };
 		D210F440299A9019007D8ED1 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D210F43F299A9019007D8ED1 /* LoginViewModel.swift */; };
 		D21C145729AE1C09003CF0F0 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21C145629AE1C09003CF0F0 /* ImagePicker.swift */; };
 		D225FCA72999A06100728AAC /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D225FCA62999A06100728AAC /* LoginView.swift */; };
 		D230E830299E974900A4E089 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230E82F299E974900A4E089 /* DetailView.swift */; };
 		D252778329AA93D80028893A /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D252778229AA93D80028893A /* DetailViewModel.swift */; };
 		D263969E29946736009DCB53 /* ShelterDetailModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D263969D29946736009DCB53 /* ShelterDetailModal.swift */; };
+		D264EA9029B914FE00C0D7DC /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = D264EA8F29B914FE00C0D7DC /* Networking.swift */; };
+		D264EA9229B91AF500C0D7DC /* NetworkingFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = D264EA9129B91AF500C0D7DC /* NetworkingFake.swift */; };
+		D264EA9429B91F1600C0D7DC /* FakeDataVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = D264EA9329B91F1600C0D7DC /* FakeDataVariables.swift */; };
 		D28FE42629ACEF8A00A1B0A2 /* ShelterUpdateBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28FE42529ACEF8A00A1B0A2 /* ShelterUpdateBody.swift */; };
 		D29CF94B29ABA65C00A6497D /* AddressResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CF94A29ABA65C00A6497D /* AddressResult.swift */; };
 		D29CF94D29ABBC6400A6497D /* ClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CF94C29ABBC6400A6497D /* ClearButton.swift */; };
@@ -134,12 +134,16 @@
 		9DFE513329B55E5500D086F6 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		AC15991C6AB3AD7BEC7D9CC7 /* Pods-PetShelterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetShelterTests.release.xcconfig"; path = "Target Support Files/Pods-PetShelterTests/Pods-PetShelterTests.release.xcconfig"; sourceTree = "<group>"; };
 		B975DCA9E7535542CBCB0B0B /* Pods_PetShelter_PetShelterUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetShelter_PetShelterUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2030C5A29B7F8F700336D49 /* RepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTests.swift; sourceTree = "<group>"; };
 		D210F43F299A9019007D8ED1 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewModel.swift; path = PetShelter/UI/Map/LoginViewModel.swift; sourceTree = SOURCE_ROOT; };
 		D21C145629AE1C09003CF0F0 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		D225FCA62999A06100728AAC /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginView.swift; path = PetShelter/UI/Map/LoginView.swift; sourceTree = SOURCE_ROOT; };
 		D230E82F299E974900A4E089 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		D252778229AA93D80028893A /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		D263969D29946736009DCB53 /* ShelterDetailModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelterDetailModal.swift; sourceTree = "<group>"; };
+		D264EA8F29B914FE00C0D7DC /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		D264EA9129B91AF500C0D7DC /* NetworkingFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingFake.swift; sourceTree = "<group>"; };
+		D264EA9329B91F1600C0D7DC /* FakeDataVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeDataVariables.swift; sourceTree = "<group>"; };
 		D28FE42529ACEF8A00A1B0A2 /* ShelterUpdateBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelterUpdateBody.swift; sourceTree = "<group>"; };
 		D29CF94A29ABA65C00A6497D /* AddressResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressResult.swift; sourceTree = "<group>"; };
 		D29CF94C29ABBC6400A6497D /* ClearButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearButton.swift; sourceTree = "<group>"; };
@@ -256,6 +260,7 @@
 			children = (
 				D2FBC6F929B3A6AE00E6BD41 /* Fakes */,
 				D2FBC6F829B3A6A400E6BD41 /* ViewModels */,
+				D2030C5A29B7F8F700336D49 /* RepositoryTests.swift */,
 			);
 			path = PetShelterTests;
 			sourceTree = "<group>";
@@ -288,6 +293,7 @@
 			children = (
 				9D9E536C29904859000E3D3F /* Repository.swift */,
 				9D9E536E29904891000E3D3F /* RepositoryImpl.swift */,
+				D264EA8F29B914FE00C0D7DC /* Networking.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -452,6 +458,8 @@
 			children = (
 				D2F6FCA629A190A200675257 /* KeychainFake.swift */,
 				D2F6FCA229A18C7200675257 /* RepositoryFake.swift */,
+				D264EA9129B91AF500C0D7DC /* NetworkingFake.swift */,
+				D264EA9329B91F1600C0D7DC /* FakeDataVariables.swift */,
 			);
 			path = Fakes;
 			sourceTree = "<group>";
@@ -740,6 +748,7 @@
 				9D65301829916BC0004CF39D /* NetworkError.swift in Sources */,
 				D29CF94B29ABA65C00A6497D /* AddressResult.swift in Sources */,
 				D2D549CB2997106300FE39B2 /* LocationManager.swift in Sources */,
+				D264EA9029B914FE00C0D7DC /* Networking.swift in Sources */,
 				D28FE42629ACEF8A00A1B0A2 /* ShelterUpdateBody.swift in Sources */,
 				9D5F0E12298C7B7800453576 /* LottieView.swift in Sources */,
 				9DC7B452298D8B4D00AFC9D2 /* MapViewModel.swift in Sources */,
@@ -753,14 +762,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2F6FCA529A18DA000675257 /* LoginViewModelTests.swift in Sources */,
-				D2F6FCA329A18C7200675257 /* MockRepository.swift in Sources */,
-				9DAB7DCF29B41596008EE816 /* PopUpType.swift in Sources */,
-				9DAB7DCB29B40FA1008EE816 /* PopUpRegister.swift in Sources */,
-				D2F6FCA729A190A200675257 /* MockKeychain.swift in Sources */,
+				D2F6FCA529A18DA000675257 /* LoginVMTests.swift in Sources */,
+				D2F6FCA329A18C7200675257 /* RepositoryFake.swift in Sources */,
+				D2030C5B29B7F8F700336D49 /* RepositoryTests.swift in Sources */,
+				D2F6FCA729A190A200675257 /* KeychainFake.swift in Sources */,
 				D2F6FCA529A18DA000675257 /* LoginVMTests.swift in Sources */,
 				D2F6FCA329A18C7200675257 /* RepositoryFake.swift in Sources */,
 				D2F6FCA729A190A200675257 /* KeychainFake.swift in Sources */,
+				D264EA9229B91AF500C0D7DC /* NetworkingFake.swift in Sources */,
+				D264EA9429B91F1600C0D7DC /* FakeDataVariables.swift in Sources */,
 				D2FBC6FD29B3A7F900E6BD41 /* DetailVMTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -769,10 +779,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DAB7DD029B41596008EE816 /* PopUpType.swift in Sources */,
 				9D5F0DE4298C503200453576 /* PetShelterUITestsLaunchTests.swift in Sources */,
 				9D5F0DE2298C503200453576 /* PetShelterUITests.swift in Sources */,
-				9DAB7DCC29B40FA1008EE816 /* PopUpRegister.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

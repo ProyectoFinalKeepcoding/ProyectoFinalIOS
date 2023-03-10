@@ -7,7 +7,12 @@
 
 import Foundation
 
-struct ShelterPointModel: Decodable, Identifiable {
+struct ShelterPointModel: Codable, Identifiable , Equatable {
+    static func == (lhs: ShelterPointModel, rhs: ShelterPointModel) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
+
     let id: String
     var name: String
     var phoneNumber: String
