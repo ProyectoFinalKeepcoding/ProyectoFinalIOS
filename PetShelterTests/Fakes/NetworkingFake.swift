@@ -10,7 +10,7 @@ import Foundation
 
 class NetworkingFake: Networking {
     
-    var result = Result<Data, Error>.success(Data())
+    var result = Result<Data, NetworkError>.success(Data())
     
     var data: Data?
     var response: URLResponse?
