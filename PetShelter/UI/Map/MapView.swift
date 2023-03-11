@@ -67,7 +67,7 @@ struct MapView: View {
             }.store(in: &cancellables)
             
         }
-        .navigationBarBackButtonHidden(true)
+//        .navigationBarBackButtonHidden(true)
     }
 }
 
@@ -77,3 +77,7 @@ struct MapView_Previews: PreviewProvider {
         MapView()
     }
 }
+
+
+//Image("LogoLogin")
+//    .padding(.bottom,20)

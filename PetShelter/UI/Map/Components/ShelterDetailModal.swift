@@ -62,7 +62,7 @@ struct ShelterDetailModal: View {
                         HStack{
                             Spacer()
                             Text(shelter.phoneNumber)
-                                .fontWeight(.bold)
+                                .font(Font.custom("Moderat-Bold", size: 20))
                             Spacer()
                             
                             Image(uiImage: UIImage(named: "Phone")!)
@@ -85,7 +85,7 @@ struct ShelterDetailModal: View {
                         HStack{
                             Spacer()
                             Text("Ir")
-                                .fontWeight(.bold)
+                                .font(Font.custom("Moderat-Bold", size: 20))
                             Spacer()
                             
                             Image(uiImage: UIImage(named: "Directions")!)

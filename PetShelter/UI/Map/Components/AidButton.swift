@@ -21,9 +21,8 @@ struct AidButton: View {
             } label: {
                 Text("Refugio más cercano")
             }
-            .padding()
-            .scaledToFit()
-            .frame(height: 120)
+            .padding(.horizontal,60)
+            .frame(height: 110)
             .foregroundColor(Color.white)
             .font(Font.custom("Moderat-Medium", size: 22))
             .fontWeight(.bold)
