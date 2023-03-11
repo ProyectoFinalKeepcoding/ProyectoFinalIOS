@@ -9,6 +9,7 @@ import Foundation
 import KeychainSwift
 
 let server = "http://127.0.0.1:8080/api"
+let imageBaseURL = "http://127.0.0.1:8080/"
 
 let ApiKey = "mWIwALVZo3a0evMfbUgkl/gLvRis1/w99To0AamBN+0="
 

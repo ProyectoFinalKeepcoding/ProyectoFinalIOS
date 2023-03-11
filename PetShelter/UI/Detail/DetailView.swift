@@ -61,7 +61,7 @@ struct DetailView: View {
                         .cornerRadius(10)
                     
                 } else {
-                    AsyncImage(url: URL(string: "http://127.0.0.1:8080/\( viewModel.shelterDetail.photoURL ?? "")" )) { photoDownload in
+                    AsyncImage(url: URL(string: "\(imageBaseURL)\( viewModel.shelterDetail.photoURL ?? "")" )) { photoDownload in
                         photoDownload
                             .resizable()
                             .frame(width: 250, height: 250)

@@ -9,6 +9,8 @@ import Foundation
 import GoogleMaps
 import SwiftUI
 
+/// Coordinator que funciona como delegado del mapa que presenta los métodos para añadir marcadores y
+/// click en el mismo para mostrar el detalle
 class Coordinator: NSObject, GMSMapViewDelegate {
     var places: [ShelterPointModel] = []
     
