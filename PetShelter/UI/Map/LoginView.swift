@@ -5,6 +5,12 @@
 //  Created by Joaquín Corugedo Rodríguez on 12/2/23.
 //
 
+/*
+ Esta vista representa la pantalla de login
+ - Parameters:
+    - user, password: campos para completar
+ */
+
 import SwiftUI
 
 struct LoginView: View {
@@ -14,8 +20,7 @@ struct LoginView: View {
     @State private var password = ""
     
     var body: some View {
-        
-        
+                
         NavigationView {
             VStack{
                 HStack(alignment: .center){
@@ -45,7 +50,7 @@ struct LoginView: View {
                     .padding(.top,20)
                 
                 Button {
-                    //TODO: - Función login
+                    //MARK: - Función Login
                     Task{
                         await viewModel.login(user: user, password: password)
                         
