@@ -32,7 +32,10 @@ struct Map: UIViewRepresentable {
     }
     
     func updateUIView(_ mapView: GMSMapView, context: Context) {
-        moveToUserLocation(mapView)
+        if Map.locationManager.lastFocusedLocation == nil {
+            moveToUserLocation(mapView)
+        }
+        
         context.coordinator.places = coordinates
         context.coordinator.addMarkers(mapView: mapView)
     }

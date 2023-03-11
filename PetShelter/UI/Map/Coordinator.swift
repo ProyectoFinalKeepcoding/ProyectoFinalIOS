@@ -49,11 +49,18 @@ class Coordinator: NSObject, GMSMapViewDelegate {
         return UIImageView(image: scaledImage)
     }
     
+    /// Función que gestiona el evento de hacer clice en un marcador para mostrar detalle
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         let place = places.filter {
             $0.name == marker.title
         }.first!
+
         onMarkerClick(place)
+        Map.locationManager.lastFocusedLocation = CLLocation(latitude: place.address.latitude, longitude: place.address.longitude)
+        let camera = GMSCameraPosition.camera(withLatitude: place.address.latitude, longitude: place.address.longitude, zoom: 9)
+        mapView.camera = camera
+        mapView.animate(toLocation: CLLocationCoordinate2D(latitude: place.address.latitude, longitude: place.address.longitude))
+        
         return true
     }
     

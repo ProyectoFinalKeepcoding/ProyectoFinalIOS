@@ -17,6 +17,8 @@ class LocationManager: NSObject, ObservableObject {
         willSet { objectWillChange.send()}
     }
     
+    var lastFocusedLocation: CLLocation?
+    
     var latitude: CLLocationDegrees {
         return location?.coordinate.latitude ?? 0
     }
