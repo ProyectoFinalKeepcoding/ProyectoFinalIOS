@@ -60,8 +60,8 @@ class Coordinator: NSObject, GMSMapViewDelegate {
         onMarkerClick(place)
         Map.locationManager.lastFocusedLocation = CLLocation(latitude: place.address.latitude, longitude: place.address.longitude)
         let camera = GMSCameraPosition.camera(withLatitude: place.address.latitude, longitude: place.address.longitude, zoom: 9)
-        mapView.camera = camera
-        mapView.animate(toLocation: CLLocationCoordinate2D(latitude: place.address.latitude, longitude: place.address.longitude))
+
+        mapView.animate(to: camera)
         
         return true
     }
