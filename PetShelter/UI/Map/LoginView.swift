@@ -113,11 +113,14 @@ struct LoginView: View {
                 
                 return Alert(title: Text(""))
             }
-            
+
         }.navigationDestination(
             isPresented: $viewModel.navigateToDetail) {
-                DetailView(userId: viewModel.userId)
+                if (viewModel.status == .loaded) {
+                    DetailView(userId: viewModel.userId)
+                }
             }
+   
     }
     
 }
