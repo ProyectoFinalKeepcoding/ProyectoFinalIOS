@@ -25,11 +25,7 @@ struct PopUpRegister: View {
                         .font(.system(size: 80))
                     Text(type == .success ? "El registro se completó con exito." : "Lo sentimos, ha ocurrido un error.")
                     NavigationLink(destination: {
-                        if type == .success {
-                            MapView()
-                        } else {
-                            LoginView()
-                        }
+                        LoginView()
                     }, label: {
                         Text("Aceptar")
                             .foregroundColor(.white)
