@@ -9,8 +9,8 @@ import Foundation
 import GoogleMaps
 import SwiftUI
 
-/// Coordinator que funciona como delegado del mapa que presenta los métodos para añadir marcadores y
-/// click en el mismo para mostrar el detalle
+/// Coordinator that functions as a map delegate that presents the methods for adding markers and
+/// click on it to show the detail
 class Coordinator: NSObject, GMSMapViewDelegate {
     var places: [ShelterPointModel] = []
     
@@ -20,6 +20,8 @@ class Coordinator: NSObject, GMSMapViewDelegate {
         self.onMarkerClick = onMarkerClick
     }
     
+    /// Function to add markers to map
+    /// - Parameter mapView: mapView associated
     func addMarkers(mapView: GMSMapView) {
         places.forEach { place in
             let marker = GMSMarker(position: CLLocationCoordinate2D(latitude: place.address.latitude, longitude: place.address.longitude))
@@ -28,13 +30,13 @@ class Coordinator: NSObject, GMSMapViewDelegate {
             case .particular:
                 marker.iconView = setMarkerImage(image: UIImage(named: "particular"), size: 30, color: .red)
             case .shelterPoint:
-                marker.iconView = setMarkerImage(image: UIImage(named: "animal-shelter"), size: 30, color: .black)
+                marker.iconView = setMarkerImage(image: UIImage(named: "animal-shelter"), size: 30, color: .red)
             case .veterinary:
-                marker.iconView = setMarkerImage(image: UIImage(named: "veterinary"), size: 30, color: .blue)
+                marker.iconView = setMarkerImage(image: UIImage(named: "veterinary"), size: 30, color: .red)
             case .localGovernment:
-                marker.iconView = setMarkerImage(image: UIImage(named: "town-council"), size: 30, color: .brown)
+                marker.iconView = setMarkerImage(image: UIImage(named: "town-council"), size: 30, color: .red)
             case .kiwokoStore:
-                marker.iconView = setMarkerImage(image: UIImage(named: "kiwoko-shop"), size: 30, color: .brown)
+                marker.iconView = setMarkerImage(image: UIImage(named: "kiwoko-shop"), size: 30, color: .red)
             }
             
             marker.title = place.name
@@ -42,6 +44,12 @@ class Coordinator: NSObject, GMSMapViewDelegate {
         }
     }
     
+    /// Function to set marker image
+    /// - Parameters:
+    ///   - image: image content
+    ///   - size: image size
+    ///   - color: image color
+    /// - Returns: UIIMageView with selected components
     func setMarkerImage(image: UIImage?, size: Int, color: UIColor) -> UIImageView{
         guard let image else {
             return UIImageView(image: UIImage(systemName: "house.lodge"))
@@ -51,7 +59,11 @@ class Coordinator: NSObject, GMSMapViewDelegate {
         return UIImageView(image: scaledImage)
     }
     
-    /// Función que gestiona el evento de hacer clice en un marcador para mostrar detalle
+    /// Function that handles the event of clicking on a marker to show detail and animate to position
+    /// - Parameters:
+    ///   - mapView: View representing the map
+    ///   - marker: marker in which user has tapped
+    /// - Returns: Bool by default inherited from GMSMapViewDelegate
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         let place = places.filter {
             $0.name == marker.title
