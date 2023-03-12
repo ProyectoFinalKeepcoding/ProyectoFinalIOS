@@ -13,14 +13,15 @@ struct PhysicPersonButton: View {
             MapView()
         }, label: {
             Text("He encontrado una mascota")
-                .font(Font.custom("Moderat-Medium", size: 25))
-                .bold()
+                .font(Font.custom("Moderat-Medium", size: 24))
+                .padding(.vertical, 10)
+                .lineSpacing(10)
                 .foregroundColor(.white)
         })
-        .frame(width: 300)
+        .frame(width: 310)
         .padding()
         .background(Color("RedKiwoko"))
-        .cornerRadius(16)
+        .cornerRadius(5)
     }
 }
 
