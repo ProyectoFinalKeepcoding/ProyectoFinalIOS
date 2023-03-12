@@ -37,7 +37,7 @@ struct ShelterDetailModal: View {
             
             HStack(alignment: .center, spacing: 30){
                 
-                AsyncImage(url: URL(string: "\(imageBaseURL)\( shelter.photoURL ?? "")")) { photoDownload in
+                AsyncImage(url: URL(string: "\(imageBaseURL)\( shelter.photoURL ?? "").png")) { photoDownload in
                     
                     photoDownload
                         .resizable()

@@ -71,7 +71,7 @@ struct DetailView: View {
                         .cornerRadius(10)
                     
                 } else {
-                    AsyncImage(url: URL(string: "\(imageBaseURL)\( viewModel.shelterDetail.photoURL ?? "")" )) { photoDownload in
+                    AsyncImage(url: URL(string: "\(imageBaseURL)\( viewModel.shelterDetail.photoURL ?? "").png" )) { photoDownload in
                         photoDownload
                             .resizable()
                             .frame(width: 250, height: 250)

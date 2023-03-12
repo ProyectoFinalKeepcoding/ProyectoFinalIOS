@@ -68,6 +68,8 @@ final class DetailViewModel: NSObject, ObservableObject  {
     
     func updateData() async {
         
+        shelterDetail.photoURL = shelterDetail.id
+        
         let result = await repository.updateShelter(userId: shelterDetail.id, shelter: shelterDetail)
         
         switch result {
