@@ -5,14 +5,18 @@
 //  Created by Joaquín Corugedo Rodríguez on 12/2/23.
 //
 
-/*
- Esta vista representa la pantalla de login
+/**
+ This view represents the login screen
  - Parameters:
-    - user, password: campos para completar
- */
+    - user, password: fields to complete with user data
+ **/
 
 import SwiftUI
 
+///  This view represents the login screen
+/// - Parameters:
+///    - user: name of user
+///    - password: password of user
 struct LoginView: View {
     @StateObject var viewModel = LoginViewModel()
     

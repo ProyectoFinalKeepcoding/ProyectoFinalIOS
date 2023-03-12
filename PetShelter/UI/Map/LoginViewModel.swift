@@ -12,12 +12,12 @@ enum Status: Equatable {
     case none, loading, loaded, error(error: String)
 }
 
-/// Clase del viewModel para el Login
+/// ViewModel class for Login
 /// - Parameters:
-///     - status: Variantes del estado desde que se inicia hasta que se completa el proceso de login con éxito o fracaso
-///     - hasError: Indica si hay un error en el login para mostrar mensaje de alerta
-///     - navigateToDetail: Realiza la navegación cuando se pone a true
-///     - userId: Id del usuario obtenido al realizar login para pasar a la vista de detalle
+///    - status: Variants of the status from the start to the completion of the login process with success or failure
+///    - hasError: Indicates if there is an error in the login to show an alert message
+///    - navigateToDetail: Perform navigation when set to true
+///    - userId: Id of the user obtained when logging in to go to the detail view
 final class LoginViewModel: ObservableObject {
     @Published var status = Status.none
     

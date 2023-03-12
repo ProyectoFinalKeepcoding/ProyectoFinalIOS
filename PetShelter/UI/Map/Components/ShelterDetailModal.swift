@@ -9,7 +9,7 @@ import SwiftUI
 import CoreLocation
 import MapKit
 
-/// Vista que representa el modal con el detalle del punto del mapa
+/// View that renders the modal with the detail of the map point
 struct ShelterDetailModal: View {
     
     @State var shelter: ShelterPointModel

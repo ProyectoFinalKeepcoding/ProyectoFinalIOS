@@ -7,8 +7,8 @@
 
 import SwiftUI
 import GoogleMaps
-/// Struct para representar un mapa en SwiftUI con métodos para actualizar la vista
-/// y vinculado al viewModel , coordinator y locationManager
+/// Struct to render a map in SwiftUI with methods to update the view
+/// and bound to the viewModel , coordinator and locationManager
 struct Map: UIViewRepresentable {
 
     var viewModel: MapViewModel

@@ -8,16 +8,16 @@
 import SwiftUI
 import KeychainSwift
 
-/// Vista que representa la pantalla de detalle
+/// View representing the detail screen
 /// - Parameters:
-///     - userId: Identificador usuario pasado desde el login
-///     - addressSelected: Booleano para indicar que se ha seleccionado una dirección
-///     - addressContent: Variable que representa el contenido de la dirección
-///     - isFocusOn: Booleano que indica si el textField del nombre está activo cuando se hace click en el botón para editar
-///     - shelterTypes: Contiene todos los tipos de shelter del enum
-///     - image: Imagen de perfil para subir a server
-///     - showSheet: Booleano para indicar si se muestra el ImagePicker
-///     - isImageSelected: Indica si se ha seleccionado una imagen de la galería
+///    - userId: User identifier passed from the login
+///    - addressSelected: Boolean to indicate that an address has been     selected
+///    - addressContent: Variable that represents the content of the   address
+///    - isFocusOn: Boolean that indicates if the textField of the name is     active when the edit button is clicked
+///    - shelterTypes: Contains all shelter types in the enum
+///    - image: Profile image to upload to server
+///    - showSheet: Boolean to indicate if the ImagePicker is shown
+///    - isImageSelected: Indicates if an image has been selected from the gallery
 struct DetailView: View {
     
     @StateObject var viewModel = DetailViewModel()

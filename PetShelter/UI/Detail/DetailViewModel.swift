@@ -8,14 +8,14 @@
 import Foundation
 import MapKit
 
-/// Clase que representa el viewModel del detalle
+/// Class that represents the viewModel of the detail
 /// - Parameters:
-///     - status: Estados por los que pasa al llamar a la actualización del detalle
-///     - displayAlert: Indica si se debe mostrar una alerta
-///     - shelterDetail: Modelo que contiene los datos a mostrar del refugio
-///     - addressResults: Lista de direcciones cargadas con la búsqueda con autocompletado
-///     - searchableAddress: Indica el texto escrito en el campo de dirección para la búsqueda
-///     - repository: Capa de repositorio inyectada que hace las llamadas a a los correspondientes endpoints
+///    - status: States through which it passes when calling the update of the detail
+///    - displayAlert: Indicates whether to display an alert
+///    - shelterDetail: Model that contains the data to display the shelter
+///    - addressResults: List of addresses loaded with autocomplete search
+///    - searchableAddress: Indicates the text written in the address field for the search
+///    - repository: Injected repository layer that makes calls to the corresponding endpoints
 final class DetailViewModel: NSObject, ObservableObject  {
     @Published var status = Status.none
     @Published var displayAlert = false
