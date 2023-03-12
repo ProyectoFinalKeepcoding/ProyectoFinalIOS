@@ -7,7 +7,8 @@
 
 import SwiftUI
 import GoogleMaps
-
+/// Struct to render a map in SwiftUI with methods to update the view
+/// and bound to the viewModel , coordinator and locationManager
 struct Map: UIViewRepresentable {
 
     var viewModel: MapViewModel
@@ -32,7 +33,10 @@ struct Map: UIViewRepresentable {
     }
     
     func updateUIView(_ mapView: GMSMapView, context: Context) {
-        moveToUserLocation(mapView)
+        if Map.locationManager.lastFocusedLocation == nil {
+            moveToUserLocation(mapView)
+        }
+        
         context.coordinator.places = coordinates
         context.coordinator.addMarkers(mapView: mapView)
     }
@@ -51,15 +55,14 @@ struct Map: UIViewRepresentable {
             }
             let camera = GMSCameraPosition.camera(withLatitude: latitude, longitude: longitud, zoom: 9)
             
-            mapView.camera = camera
-            mapView.animate(toLocation: CLLocationCoordinate2D(latitude: latitude, longitude: longitud ))
+            mapView.animate(to: camera)
         })
    }
     
     func moveToUserLocation(_ mapView: GMSMapView) {
         let camera = GMSCameraPosition.camera(withLatitude: Map.locationManager.latitude, longitude: Map.locationManager.longitude, zoom: 9)
-        mapView.camera = camera
-        mapView.animate(toLocation: CLLocationCoordinate2D(latitude: Map.locationManager.latitude, longitude: Map.locationManager.longitude))
+
+        mapView.animate(to: camera)
     }
  
     

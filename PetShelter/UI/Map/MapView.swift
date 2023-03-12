@@ -8,12 +8,16 @@
 import SwiftUI
 import Combine
 
+/// View that shows a map with the user's location and a list of available Shelters around
+/// - Parameters:
+///    - selectedShelter: Variable to assign shelter to which is clicked
+///    - isClosestPresented: Variable that determines if the nearest should be displayed
 struct MapView: View {
+
     @ObservedObject var viewModel = MapViewModel()
     
-    /// Variable para asignar shelter al que se hace click
     @State var selectedShelter: ShelterPointModel?
-    /// Variable que determina si se debe mostrar el más cercano
+
     @State var isClosestPresented: Bool = false
     
     @State var cancellables = Set<AnyCancellable>()
@@ -31,17 +35,28 @@ struct MapView: View {
                 AidButton(viewModel: viewModel)
             }
         }
-        /// Modal que se presenta al seleccionar un shelter
+        /// Modal that is presented when selecting a shelter
         .sheet(item: $selectedShelter, content: { option in
             ShelterDetailModal(shelter: option)
                 .presentationDetents([.fraction(0.40), .large])
                 .padding(.top, 20)
         })
-        /// Modal que se presenta al intentar buscar el shelter más cercano
+        /// Modal that is presented when trying to search for the nearest shelter
         .sheet(isPresented: $isClosestPresented, content: {
-            ShelterDetailModal(shelter: viewModel.closestShelter!)
-                .presentationDetents([.fraction(0.40), .large])
-                .padding(.top, 20)
+            
+            ///Condition to display shelter if the default value or error text is not null
+            if let closestShelter = viewModel.closestShelter {
+                ShelterDetailModal(shelter: closestShelter)
+                    .presentationDetents([.fraction(0.40), .large])
+                    .padding(.top, 20)
+            } else {
+                Text("Error al cargar refugio")
+                    .presentationDetents([.fraction(0.40)])
+                    .font(Font.custom("Moderat-Medium",size: 18))
+                    .foregroundColor(Color("RedKiwoko"))
+                    .padding(.top, 20)
+            }
+
         })
         
         .onAppear {
@@ -54,7 +69,6 @@ struct MapView: View {
             }.store(in: &cancellables)
             
         }
-        .navigationBarBackButtonHidden(true)
     }
 }
 
@@ -64,3 +78,7 @@ struct MapView_Previews: PreviewProvider {
         MapView()
     }
 }
+
+
+//Image("LogoLogin")
+//    .padding(.bottom,20)

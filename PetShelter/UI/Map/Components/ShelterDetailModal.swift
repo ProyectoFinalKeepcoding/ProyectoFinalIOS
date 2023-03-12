@@ -9,6 +9,7 @@ import SwiftUI
 import CoreLocation
 import MapKit
 
+/// View that renders the modal with the detail of the map point
 struct ShelterDetailModal: View {
     
     @State var shelter: ShelterPointModel
@@ -36,7 +37,7 @@ struct ShelterDetailModal: View {
             
             HStack(alignment: .center, spacing: 30){
                 
-                AsyncImage(url: URL(string: "\(server)/\( shelter.photoURL ?? "").png")) { photoDownload in
+                AsyncImage(url: URL(string: "\(imageBaseURL)\( shelter.photoURL ?? "").png")) { photoDownload in
                     
                     photoDownload
                         .resizable()
@@ -62,7 +63,7 @@ struct ShelterDetailModal: View {
                         HStack{
                             Spacer()
                             Text(shelter.phoneNumber)
-                                .fontWeight(.bold)
+                                .font(Font.custom("Moderat-Bold", size: 20))
                             Spacer()
                             
                             Image(uiImage: UIImage(named: "Phone")!)
@@ -85,7 +86,7 @@ struct ShelterDetailModal: View {
                         HStack{
                             Spacer()
                             Text("Ir")
-                                .fontWeight(.bold)
+                                .font(Font.custom("Moderat-Bold", size: 20))
                             Spacer()
                             
                             Image(uiImage: UIImage(named: "Directions")!)

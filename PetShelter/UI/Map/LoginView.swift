@@ -5,8 +5,18 @@
 //  Created by Joaquín Corugedo Rodríguez on 12/2/23.
 //
 
+/**
+ This view represents the login screen
+ - Parameters:
+    - user, password: fields to complete with user data
+ **/
+
 import SwiftUI
 
+///  This view represents the login screen
+/// - Parameters:
+///    - user: name of user
+///    - password: password of user
 struct LoginView: View {
     @StateObject var viewModel = LoginViewModel()
     
@@ -14,8 +24,7 @@ struct LoginView: View {
     @State private var password = ""
     
     var body: some View {
-        
-        
+                
         NavigationView {
             VStack{
                 HStack(alignment: .center){
@@ -45,7 +54,7 @@ struct LoginView: View {
                     .padding(.top,20)
                 
                 Button {
-                    //TODO: - Función login
+                    //MARK: - Función Login
                     Task{
                         await viewModel.login(user: user, password: password)
                         
@@ -108,11 +117,14 @@ struct LoginView: View {
                 
                 return Alert(title: Text(""))
             }
-            
+
         }.navigationDestination(
             isPresented: $viewModel.navigateToDetail) {
-                DetailView(userId: viewModel.userId)
+                if (viewModel.status == .loaded) {
+                    DetailView(userId: viewModel.userId)
+                }
             }
+   
     }
     
 }

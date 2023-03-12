@@ -8,6 +8,16 @@
 import SwiftUI
 import KeychainSwift
 
+/// View representing the detail screen
+/// - Parameters:
+///    - userId: User identifier passed from the login
+///    - addressSelected: Boolean to indicate that an address has been     selected
+///    - addressContent: Variable that represents the content of the   address
+///    - isFocusOn: Boolean that indicates if the textField of the name is     active when the edit button is clicked
+///    - shelterTypes: Contains all shelter types in the enum
+///    - image: Profile image to upload to server
+///    - showSheet: Boolean to indicate if the ImagePicker is shown
+///    - isImageSelected: Indicates if an image has been selected from the gallery
 struct DetailView: View {
     
     @StateObject var viewModel = DetailViewModel()
@@ -21,7 +31,7 @@ struct DetailView: View {
     
     @FocusState var isFocusOn: Bool
     
-    var shelterTypes = ShelterType.allCases
+    let shelterTypes = ShelterType.allCases
     
     @State private var image = UIImage()
     @State private var showSheet = false
@@ -61,7 +71,7 @@ struct DetailView: View {
                         .cornerRadius(10)
                     
                 } else {
-                    AsyncImage(url: URL(string: "http://127.0.0.1:8080/\( viewModel.shelterDetail.photoURL ?? "")" )) { photoDownload in
+                    AsyncImage(url: URL(string: "\(imageBaseURL)\( viewModel.shelterDetail.photoURL ?? "").png" )) { photoDownload in
                         photoDownload
                             .resizable()
                             .frame(width: 250, height: 250)
