@@ -14,16 +14,18 @@ struct WelcomeView: View {
                 Spacer()
 
                 ShelterButton()
+                    .padding(.top,40)
                 Spacer()
-                    .frame(height: 200)
+                    .frame(height: 190)
                 
                 HStack{
                     LottieView(lottieFile: "DogAnimation")
-                         .frame(width: 160, height: 180)
+                         .frame(width: 160, height: 140)
                     Spacer()
                 }
   
                 PhysicPersonButton()
+
                 Spacer()
             }
 

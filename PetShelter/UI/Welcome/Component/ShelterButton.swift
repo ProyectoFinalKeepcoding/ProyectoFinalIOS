@@ -12,7 +12,7 @@ struct ShelterButton: View {
         NavigationLink(destination: {
             LoginView()
         }, label: {
-            Text("Puedo acoger a una mascota")
+            Text("Puedo acoger a una \nmascota")
                 .font(Font.custom("Moderat-Medium", size: 24))
                 .padding(.vertical, 10)
                 .lineSpacing(10)
@@ -22,6 +22,7 @@ struct ShelterButton: View {
         .padding()
         .background(Color.white)
         .cornerRadius(5)
+
     }
 }
 

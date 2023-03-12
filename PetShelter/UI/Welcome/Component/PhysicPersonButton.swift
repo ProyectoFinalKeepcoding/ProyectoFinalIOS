@@ -12,7 +12,7 @@ struct PhysicPersonButton: View {
         NavigationLink(destination: {
             MapView()
         }, label: {
-            Text("He encontrado una mascota")
+            Text("He encontrado una \nmascota")
                 .font(Font.custom("Moderat-Medium", size: 24))
                 .padding(.vertical, 10)
                 .lineSpacing(10)
@@ -22,6 +22,8 @@ struct PhysicPersonButton: View {
         .padding()
         .background(Color("RedKiwoko"))
         .cornerRadius(5)
+        
+        Spacer()
     }
 }
 
