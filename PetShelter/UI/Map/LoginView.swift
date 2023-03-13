@@ -5,11 +5,6 @@
 //  Created by Joaquín Corugedo Rodríguez on 12/2/23.
 //
 
-/**
- This view represents the login screen
- - Parameters:
-    - user, password: fields to complete with user data
- **/
 
 import SwiftUI
 

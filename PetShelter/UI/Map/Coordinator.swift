@@ -9,7 +9,7 @@ import Foundation
 import GoogleMaps
 import SwiftUI
 
-/// Coordinator that functions as a map delegate that presents the methods for adding markers and
+/// Coordinator that functions as a map delegate which presents the methods for adding markers and
 /// click on it to show the detail
 class Coordinator: NSObject, GMSMapViewDelegate {
     var places: [ShelterPointModel] = []
@@ -28,15 +28,15 @@ class Coordinator: NSObject, GMSMapViewDelegate {
             
             switch place.shelterType {
             case .particular:
-                marker.iconView = setMarkerImage(image: UIImage(named: "particular"), size: 30, color: .red)
+                marker.iconView = setMarkerImage(image: UIImage(named: "particular"), size: 30)
             case .shelterPoint:
-                marker.iconView = setMarkerImage(image: UIImage(named: "animal-shelter"), size: 30, color: .red)
+                marker.iconView = setMarkerImage(image: UIImage(named: "animal-shelter"), size: 30)
             case .veterinary:
-                marker.iconView = setMarkerImage(image: UIImage(named: "veterinary"), size: 30, color: .red)
+                marker.iconView = setMarkerImage(image: UIImage(named: "veterinary"), size: 30)
             case .localGovernment:
-                marker.iconView = setMarkerImage(image: UIImage(named: "town-council"), size: 30, color: .red)
+                marker.iconView = setMarkerImage(image: UIImage(named: "town-council"), size: 30)
             case .kiwokoStore:
-                marker.iconView = setMarkerImage(image: UIImage(named: "kiwoko-shop"), size: 30, color: .red)
+                marker.iconView = setMarkerImage(image: UIImage(named: "kiwoko-shop"), size: 30)
             }
             
             marker.title = place.name
@@ -48,14 +48,13 @@ class Coordinator: NSObject, GMSMapViewDelegate {
     /// - Parameters:
     ///   - image: image content
     ///   - size: image size
-    ///   - color: image color
     /// - Returns: UIIMageView with selected components
-    func setMarkerImage(image: UIImage?, size: Int, color: UIColor) -> UIImageView{
+    func setMarkerImage(image: UIImage?, size: Int) -> UIImageView{
         guard let image else {
             return UIImageView(image: UIImage(systemName: "house.lodge"))
         }
-        let tintedImage = image.withTintColor(color, renderingMode: .alwaysOriginal)
-        let scaledImage = tintedImage.resizeImageTo(size: CGSize(width: size, height: size))
+//        let tintedImage = image.withTintColor(color, renderingMode: .alwaysOriginal)
+        let scaledImage = image.resizeImageTo(size: CGSize(width: size, height: size))
         return UIImageView(image: scaledImage)
     }
     
