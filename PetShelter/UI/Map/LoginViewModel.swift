@@ -36,6 +36,10 @@ final class LoginViewModel: ObservableObject {
         self.keychain = keychain
     }    
     
+    /// Makes call to login method in repository and updates variables with result
+    /// - Parameters:
+    ///   - user: User´s name
+    ///   - password: User´s password
     func login(user: String, password: String) async {
         
         guard !user.isEmpty, !password.isEmpty else {
