@@ -10,6 +10,11 @@ import GoogleMaps
 import SwiftUI
 import Combine
 
+/// ViewModel associated to MapView
+/// - Parameters:
+///    - locations: list of shelter points downloaded from API Service
+///    - modalPresented: Variable which determines if modal of closest shelter should be presented
+///    - closestShelter: Model thant contains data of closest Shelter from user´s location
 final class MapViewModel: ObservableObject {
     private var repository: Repository
     @Published var locations = [ShelterPointModel]()
@@ -24,6 +29,7 @@ final class MapViewModel: ObservableObject {
         self.repository = repository
     }
     
+    /// Gets list of shelters downloaded from server
     func getShelterPoints() async {
         let result = await repository.fetchShelterPoints()
         
@@ -35,7 +41,8 @@ final class MapViewModel: ObservableObject {
         }
     }
         
-    // MARK: onClickButton
+
+    /// Gets the closest shelter based on user´s location , shows a modal with the detail and animates the camera to its position
     func onClickClosestShelter() {
         //TODO: #1 Get Closest Shelter
         let closestShelter = getClosestShelter()
@@ -46,13 +53,13 @@ final class MapViewModel: ObservableObject {
         self.closestShelter = closestShelter
     }
     
-    // MARK: Get closest Shelter from current location
+    /// Gets closest Shelter from current location
     func getClosestShelter() -> ShelterPointModel? {
         
-        //TODO: #1 Get origin coordiantes
+        //MARK: #1 Get origin coordiantes
         let origin = CLLocationCoordinate2D(latitude: Map.locationManager.latitude, longitude: Map.locationManager.longitude )
                 
-        //TODO: #2 init closestShelter
+        //MARK: #2 init closestShelter
 
         var closestShelter: ShelterPointModel?
         
@@ -77,7 +84,12 @@ final class MapViewModel: ObservableObject {
         return closestShelter
     }
     
-    // MARK: Distance in meters with CoreLocation Shelter points & current location
+    
+    /// Calculates distance in meters with CoreLocation Shelter points & current location
+    /// - Parameters:
+    ///   - origin: origin point
+    ///   - destination: destination point
+    /// - Returns: Double with the distance value
     func distanceBetweenWithCoreLocation(origin: CLLocationCoordinate2D, destination: CLLocationCoordinate2D) -> Double {
         
         let origin = CLLocation(latitude: origin.latitude, longitude: origin.longitude)
