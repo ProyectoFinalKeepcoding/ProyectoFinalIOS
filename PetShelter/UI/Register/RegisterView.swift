@@ -14,10 +14,11 @@ struct RegisterView: View {
     @State var direction = ""
     @State var phone = ""
     @State var type: ShelterType = .veterinary
-    @State var popUpIsHidden = true
     @State var address: Address = Address(latitude: 0, longitude: 0)
-    @State var addressSelected = false
     @State var addressContent = ""
+    @State var addressSelected = false
+    @State var isDisabled = false
+    @State var popUpIsHidden = true
     
     var body: some View {
         
@@ -38,6 +39,7 @@ struct RegisterView: View {
                                 viewModel.searchAddress(query)
                             }
                             .environmentObject(viewModel)
+                            .disabled(isDisabled)
                     }
                     TextFieldBase(text: $phone, nameField: "Teléfono", type: .onlyNumbersField)
                         .environmentObject(viewModel)
@@ -55,6 +57,7 @@ struct RegisterView: View {
                                 addressSelected = true
                                 viewModel.convertAddressToCoordinates(address: direction) { address in
                                     self.address = address ?? Address(latitude: 0, longitude: 0)
+                                    isDisabled = true
                                 }
                             }
                     }
@@ -75,8 +78,14 @@ struct RegisterView: View {
                     
                     let model = ShelterRegisterModel(name: userName, password: password, phoneNumber: phone, address: address, shelterType: type)
                     Task {
-                        await viewModel.registerUser(userData: model)
-                        popUpIsHidden = false
+                        if viewModel.isAvailableToSubmit(username: userName, password: password, phoneNumber: phone) {
+                            await viewModel.registerUser(userData: model)
+                            popUpIsHidden = false
+                        } else {
+                            viewModel.state = .error
+                            popUpIsHidden = false
+                        }
+                        
                     }
                 }, label: {
                     Text("Crear Cuenta")
