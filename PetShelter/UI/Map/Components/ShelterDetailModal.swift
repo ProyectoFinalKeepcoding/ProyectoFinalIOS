@@ -109,6 +109,8 @@ struct ShelterDetailModal: View {
     }
 }
 
+/// Calls the phone number indicates in detail
+/// - Parameter phoneNumber: Selected phone Number
 private func callNumber(phoneNumber: String) {
     if let phoneCallURL = URL(string: "tel://\(phoneNumber)") {
         let application: UIApplication = UIApplication.shared
@@ -118,6 +120,8 @@ private func callNumber(phoneNumber: String) {
     }
 }
 
+/// Open Maps App and show route to selected point
+/// - Parameter address: Address with coordinates of selected point
 private func showRoute(address: Address) {
     let coordinate = CLLocationCoordinate2DMake(address.latitude,address.longitude)
     let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary: nil))
