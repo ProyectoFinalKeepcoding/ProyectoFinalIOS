@@ -17,7 +17,7 @@ class RegisterViewModel: NSObject, ObservableObject {
         self.repository = repository
     }
     
-    private lazy var localSearchCompleter: MKLocalSearchCompleter = {
+    lazy var localSearchCompleter: MKLocalSearchCompleter = {
         let completer = MKLocalSearchCompleter()
         completer.delegate = self
         return completer
@@ -54,7 +54,7 @@ class RegisterViewModel: NSObject, ObservableObject {
     }
     
     func searchAddress(_ searchableText: String) {
-        guard searchableText.isEmpty == false else { return}
+        guard searchableText.isEmpty == false else { return }
         localSearchCompleter.queryFragment = searchableText
     }
     
@@ -78,13 +78,16 @@ class RegisterViewModel: NSObject, ObservableObject {
             completionHandler(coordinates)
         }
     }
+    
+    func isAvailableToSubmit(username: String, password: String, phoneNumber: String) -> Bool {
+        return validateUserName(userName: username) && validatePassword(password: password) && validatePhoneNumber(phoneNumber: phoneNumber) ? true : false
+    }
 }
 
 extension RegisterViewModel: MKLocalSearchCompleterDelegate {
     
     func completerDidUpdateResults(_ completer: MKLocalSearchCompleter) {
         searchResults = completer.results
-        print("\(searchResults)")
     }
     
     func completer(_ completer: MKLocalSearchCompleter, didFailWithError error: Error) {

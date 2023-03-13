@@ -46,8 +46,7 @@ class RepositoryFake: Repository {
     }
     
     func register(model: ShelterRegisterModel) async -> Result<RegisterState, NetworkError> {
-        //TODO: - Hacer fake de registro
-        return .success(.success)
+        return model.name == "success" ? .success(.success) : .failure(.dataFormatting)
     }
     
   
