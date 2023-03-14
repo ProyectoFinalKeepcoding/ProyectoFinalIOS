@@ -16,7 +16,7 @@ struct SplashView: View {
     var body: some View {
         ZStack {
             //Mandatory to fill the entire view
-            Color.black
+            Color.white
                 .opacity(0.8)
                 .ignoresSafeArea()
             
