@@ -37,6 +37,8 @@ final class DetailViewModel: NSObject, ObservableObject  {
         self.repository = repository
     }
     
+    /// Gets the shelter Detail when calling to corresponding method in repository
+    /// - Parameter userId: User´s id passed from viewModel
     func getShelterDetail(userId: String) async {
         
         let result = await repository.getShelterDetail(userId: userId)
@@ -54,11 +56,15 @@ final class DetailViewModel: NSObject, ObservableObject  {
         }
     }
     
+    /// Passed an address from to get a list of possible options
+    /// - Parameter searchableText: Address passed in string format
     func searchAddress(_ searchableText: String) {
         guard searchableText.isEmpty == false else { return}
         localSearchCompleter.queryFragment = searchableText
     }
     
+    /// Initiates correspondeing calls to update Shelter Detail
+    /// - Parameter image: image selected with imagePicker
     func updateShelter(image: UIImage) async {
         self.status = .loading
         convertAddressToCoordinates(address: searchableAddress)
@@ -66,6 +72,7 @@ final class DetailViewModel: NSObject, ObservableObject  {
 
     }
     
+    /// Updates data of the shelter calling to corresponding method in repository
     func updateData() async {
         
         shelterDetail.photoURL = shelterDetail.id
@@ -84,6 +91,8 @@ final class DetailViewModel: NSObject, ObservableObject  {
         }
     }
     
+    /// Calls to the corresponding repository method to upload image to server
+    /// - Parameter image: image selected in UIImage format
     func uploadImage(image: UIImage) async {
         guard let imageData = image.jpegData(compressionQuality: 0.7) else {
             await updateData()
@@ -107,6 +116,8 @@ final class DetailViewModel: NSObject, ObservableObject  {
         
     }
     
+    /// Converts Address in String format to coordenates an updates corresponding property in shelter
+    /// - Parameter address: Address in string format
     func convertAddressToCoordinates(address: String) {
         let geoCoder = CLGeocoder()
         geoCoder.geocodeAddressString(address) { placemarks, error in
@@ -127,6 +138,8 @@ final class DetailViewModel: NSObject, ObservableObject  {
         }
     }
     
+    /// Converts  coordinates to obtain an String formatted address
+    /// - Parameter location: Instance of a CLLocation object with coordinates
     func convertCoordinatesToAddress(location: CLLocation) {
         let geoCoder = CLGeocoder()
         geoCoder.reverseGeocodeLocation(location) { placemarks, error in
@@ -162,6 +175,8 @@ final class DetailViewModel: NSObject, ObservableObject  {
 
 extension DetailViewModel: MKLocalSearchCompleterDelegate {
     
+    /// Updates results  od address list with autocomplete results from  Maps API
+    /// - Parameter completer: Completer of class MKLocalSearchCompleter
     func completerDidUpdateResults(_ completer: MKLocalSearchCompleter) {
         Task { @MainActor in
             addressResults = completer.results.map {

@@ -11,7 +11,7 @@ import KeychainSwift
 /// View representing the detail screen
 /// - Parameters:
 ///    - userId: User identifier passed from the login
-///    - addressSelected: Boolean to indicate that an address has been     selected
+///    - addressSelected: Boolean to indicate that an address from autocompletion has been selected
 ///    - addressContent: Variable that represents the content of the   address
 ///    - isFocusOn: Boolean that indicates if the textField of the name is     active when the edit button is clicked
 ///    - shelterTypes: Contains all shelter types in the enum

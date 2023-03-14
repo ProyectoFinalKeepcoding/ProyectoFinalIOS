@@ -9,6 +9,12 @@ import SwiftUI
 import GoogleMaps
 /// Struct to render a map in SwiftUI with methods to update the view
 /// and bound to the viewModel , coordinator and locationManager
+/// - Parameters:
+///    - viewModel: viewModel associated with the MapView
+///    - coordinates: list of shelter points passed from MapView
+///    - onMarkerClick: Closure passed from MapView to catch event of clicking on a marker
+///    - locationManager: instance of LocationManeger class that handles to get user´s location
+///    - zoom: zoom of Camer in GoogleMaps view
 struct Map: UIViewRepresentable {
 
     var viewModel: MapViewModel
@@ -41,10 +47,14 @@ struct Map: UIViewRepresentable {
         context.coordinator.addMarkers(mapView: mapView)
     }
     
+    /// Sets coordinator to handles events inherited from GMSMapViewDelegate
+    /// - Returns: Instance of Coordinator
     func makeCoordinator() -> Coordinator {
         return Coordinator(onMarkerClick)
     }
     
+    /// Sets the subscriber to mapView to observe properties from MapViewModel and handle actions
+    /// - Parameter mapView: Instance of MapView
     func setSubscriber(_ mapView: GMSMapView){
         
         viewModel.cancellable = viewModel.$closestShelter.sink(receiveValue: { shelterPoint in
@@ -59,6 +69,8 @@ struct Map: UIViewRepresentable {
         })
    }
     
+    /// Animates mapView to the user´s location
+    /// - Parameter mapView: Instance of MapView
     func moveToUserLocation(_ mapView: GMSMapView) {
         let camera = GMSCameraPosition.camera(withLatitude: Map.locationManager.latitude, longitude: Map.locationManager.longitude, zoom: 9)
 

@@ -33,7 +33,7 @@ class RegisterViewModel: NSObject, ObservableObject {
         
         switch result {
         case .success(let success):
-            state = success
+            state = .success
             print("succes")
         case .failure(let error):
             state = .error
