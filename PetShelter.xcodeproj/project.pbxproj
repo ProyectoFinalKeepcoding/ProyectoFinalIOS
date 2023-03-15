@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23373A1129C1F484005FCBFB /* MapVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23373A1029C1F484005FCBFB /* MapVMTests.swift */; };
+		238180DB299EB356004446F3 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238180DA299EB356004446F3 /* SplashView.swift */; };
+		238180DE299EBDCF004446F3 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238180DD299EBDCF004446F3 /* CustomColor.swift */; };
 		6C0CB3120A6A66C8DE605820 /* Pods_PetShelter_PetShelterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B975DCA9E7535542CBCB0B0B /* Pods_PetShelter_PetShelterUITests.framework */; };
 		7EA5F1D799C11AEC6B6C4B4B /* Pods_PetShelter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E99CEB1CE344709175E3888D /* Pods_PetShelter.framework */; };
+		9D403B1129BBEEFD007F929C /* RegisterVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D403B1029BBEEFD007F929C /* RegisterVMTests.swift */; };
 		9D5F0DC7298C503000453576 /* PetShelterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5F0DC6298C503000453576 /* PetShelterApp.swift */; };
 		9D5F0DC9298C503000453576 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5F0DC8298C503000453576 /* WelcomeView.swift */; };
 		9D5F0DCB298C503200453576 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D5F0DCA298C503200453576 /* Assets.xcassets */; };
 		9D5F0DCE298C503200453576 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D5F0DCD298C503200453576 /* Preview Assets.xcassets */; };
-		9D5F0DD8298C503200453576 /* PetShelterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5F0DD7298C503200453576 /* PetShelterTests.swift */; };
 		9D5F0DE2298C503200453576 /* PetShelterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5F0DE1298C503200453576 /* PetShelterUITests.swift */; };
 		9D5F0DE4298C503200453576 /* PetShelterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5F0DE3298C503200453576 /* PetShelterUITestsLaunchTests.swift */; };
 		9D5F0DF8298C527C00453576 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5F0DF7298C527C00453576 /* MapView.swift */; };
@@ -23,7 +26,50 @@
 		9D5F0E0F298C7A1900453576 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 9D5F0E0E298C7A1900453576 /* Lottie */; };
 		9D5F0E12298C7B7800453576 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5F0E11298C7B7800453576 /* LottieView.swift */; };
 		9D5F0E14298C7C4400453576 /* DogAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 9D5F0E13298C7C4400453576 /* DogAnimation.json */; };
+		9D60A12929AD1DCB00A277DB /* RegisterState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D60A12829AD1DCB00A277DB /* RegisterState.swift */; };
+		9D65301829916BC0004CF39D /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D65301729916BC0004CF39D /* NetworkError.swift */; };
+		9D65301A2991972D004CF39D /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6530192991972D004CF39D /* RegisterView.swift */; };
+		9D65301C29919863004CF39D /* ShelterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D65301B29919863004CF39D /* ShelterButton.swift */; };
+		9D65301E299198BC004CF39D /* PhysicPersonButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D65301D299198BC004CF39D /* PhysicPersonButton.swift */; };
+		9D6530202991BBB8004CF39D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D65301F2991BBB8004CF39D /* Coordinator.swift */; };
+		9D9E536D29904859000E3D3F /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9E536C29904859000E3D3F /* Repository.swift */; };
+		9D9E536F29904891000E3D3F /* RepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9E536E29904891000E3D3F /* RepositoryImpl.swift */; };
+		9DA2DF9829A7F6710004CB42 /* TextFieldBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA2DF9729A7F6710004CB42 /* TextFieldBase.swift */; };
+		9DA2DF9A29A7F6AC0004CB42 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA2DF9929A7F6AC0004CB42 /* RegisterViewModel.swift */; };
+		9DA2DF9C29A7F6F50004CB42 /* UserTypePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA2DF9B29A7F6F50004CB42 /* UserTypePicker.swift */; };
+		9DA2DF9E29A803C60004CB42 /* TextFieldType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA2DF9D29A803C60004CB42 /* TextFieldType.swift */; };
+		9DAB7DCA29B40FA1008EE816 /* PopUpRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAB7DC929B40FA1008EE816 /* PopUpRegister.swift */; };
+		9DAB7DCE29B41596008EE816 /* PopUpType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAB7DCD29B41596008EE816 /* PopUpType.swift */; };
+		9DC7B446298D802600AFC9D2 /* ShelterRegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC7B445298D802600AFC9D2 /* ShelterRegisterModel.swift */; };
+		9DC7B448298D816900AFC9D2 /* SignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC7B447298D816900AFC9D2 /* SignInModel.swift */; };
+		9DC7B44A298D842600AFC9D2 /* ShelterPointModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC7B449298D842600AFC9D2 /* ShelterPointModel.swift */; };
+		9DC7B44F298D880700AFC9D2 /* locations.json in Resources */ = {isa = PBXBuildFile; fileRef = 9DC7B44E298D880700AFC9D2 /* locations.json */; };
+		9DC7B452298D8B4D00AFC9D2 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC7B451298D8B4D00AFC9D2 /* MapViewModel.swift */; };
+		9DE8E39A2992E60A00FD2DCB /* Image+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE8E3992992E60A00FD2DCB /* Image+Extensions.swift */; };
+		9DFE513229B55DA700D086F6 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFE513129B55DA700D086F6 /* EmptyView.swift */; };
+		9DFE513429B55E5500D086F6 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFE513329B55E5500D086F6 /* LoadingView.swift */; };
 		BE7157DA1E3658BDDD766EC4 /* Pods_PetShelterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812CA2925F0CE2122970AC02 /* Pods_PetShelterTests.framework */; };
+		D2030C5B29B7F8F700336D49 /* RepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2030C5A29B7F8F700336D49 /* RepositoryTests.swift */; };
+		D210F440299A9019007D8ED1 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D210F43F299A9019007D8ED1 /* LoginViewModel.swift */; };
+		D21C145729AE1C09003CF0F0 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21C145629AE1C09003CF0F0 /* ImagePicker.swift */; };
+		D225FCA72999A06100728AAC /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D225FCA62999A06100728AAC /* LoginView.swift */; };
+		D230E830299E974900A4E089 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230E82F299E974900A4E089 /* DetailView.swift */; };
+		D252778329AA93D80028893A /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D252778229AA93D80028893A /* DetailViewModel.swift */; };
+		D263969E29946736009DCB53 /* ShelterDetailModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D263969D29946736009DCB53 /* ShelterDetailModal.swift */; };
+		D264EA9029B914FE00C0D7DC /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = D264EA8F29B914FE00C0D7DC /* Networking.swift */; };
+		D264EA9229B91AF500C0D7DC /* NetworkingFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = D264EA9129B91AF500C0D7DC /* NetworkingFake.swift */; };
+		D264EA9429B91F1600C0D7DC /* FakeDataVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = D264EA9329B91F1600C0D7DC /* FakeDataVariables.swift */; };
+		D28FE42629ACEF8A00A1B0A2 /* ShelterUpdateBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28FE42529ACEF8A00A1B0A2 /* ShelterUpdateBody.swift */; };
+		D29CF94B29ABA65C00A6497D /* AddressResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CF94A29ABA65C00A6497D /* AddressResult.swift */; };
+		D29CF94D29ABBC6400A6497D /* ClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CF94C29ABBC6400A6497D /* ClearButton.swift */; };
+		D2B74898299925BD00D4F07E /* Moderat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D2B74896299925BD00D4F07E /* Moderat-Medium.ttf */; };
+		D2B74899299925BD00D4F07E /* Moderat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D2B74897299925BD00D4F07E /* Moderat-Bold.ttf */; };
+		D2D549CB2997106300FE39B2 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D549CA2997106300FE39B2 /* LocationManager.swift */; };
+		D2ED0A7F29A55FEF00AF4FB1 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D2ED0A7E29A55FEF00AF4FB1 /* KeychainSwift */; };
+		D2F6FCA329A18C7200675257 /* RepositoryFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F6FCA229A18C7200675257 /* RepositoryFake.swift */; };
+		D2F6FCA529A18DA000675257 /* LoginVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F6FCA429A18DA000675257 /* LoginVMTests.swift */; };
+		D2F6FCA729A190A200675257 /* KeychainFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F6FCA629A190A200675257 /* KeychainFake.swift */; };
+		D2FBC6FD29B3A7F900E6BD41 /* DetailVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FBC6FC29B3A7F900E6BD41 /* DetailVMTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,16 +91,19 @@
 
 /* Begin PBXFileReference section */
 		061601341A03BB051BF1EE3B /* Pods-PetShelter-PetShelterUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetShelter-PetShelterUITests.debug.xcconfig"; path = "Target Support Files/Pods-PetShelter-PetShelterUITests/Pods-PetShelter-PetShelterUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		23373A1029C1F484005FCBFB /* MapVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVMTests.swift; sourceTree = "<group>"; };
+		238180DA299EB356004446F3 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		238180DD299EBDCF004446F3 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 		3A3A95B8FAFBF58848646572 /* Pods-PetShelter-PetShelterUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetShelter-PetShelterUITests.release.xcconfig"; path = "Target Support Files/Pods-PetShelter-PetShelterUITests/Pods-PetShelter-PetShelterUITests.release.xcconfig"; sourceTree = "<group>"; };
 		68ACFA3C2AFE9BC4D6AB13B3 /* Pods-PetShelterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetShelterTests.debug.xcconfig"; path = "Target Support Files/Pods-PetShelterTests/Pods-PetShelterTests.debug.xcconfig"; sourceTree = "<group>"; };
 		812CA2925F0CE2122970AC02 /* Pods_PetShelterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetShelterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D403B1029BBEEFD007F929C /* RegisterVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVMTests.swift; sourceTree = "<group>"; };
 		9D5F0DC3298C503000453576 /* PetShelter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetShelter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D5F0DC6298C503000453576 /* PetShelterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetShelterApp.swift; sourceTree = "<group>"; };
 		9D5F0DC8298C503000453576 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		9D5F0DCA298C503200453576 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D5F0DCD298C503200453576 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9D5F0DD3298C503200453576 /* PetShelterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PetShelterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9D5F0DD7298C503200453576 /* PetShelterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetShelterTests.swift; sourceTree = "<group>"; };
 		9D5F0DDD298C503200453576 /* PetShelterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PetShelterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D5F0DE1298C503200453576 /* PetShelterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetShelterUITests.swift; sourceTree = "<group>"; };
 		9D5F0DE3298C503200453576 /* PetShelterUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetShelterUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -64,8 +113,51 @@
 		9D5F0DFE298C5CEA00453576 /* AidButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AidButton.swift; sourceTree = "<group>"; };
 		9D5F0E11298C7B7800453576 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		9D5F0E13298C7C4400453576 /* DogAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DogAnimation.json; sourceTree = "<group>"; };
+		9D60A12829AD1DCB00A277DB /* RegisterState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterState.swift; sourceTree = "<group>"; };
+		9D65301729916BC0004CF39D /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		9D6530192991972D004CF39D /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		9D65301B29919863004CF39D /* ShelterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelterButton.swift; sourceTree = "<group>"; };
+		9D65301D299198BC004CF39D /* PhysicPersonButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicPersonButton.swift; sourceTree = "<group>"; };
+		9D65301F2991BBB8004CF39D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		9D9E536C29904859000E3D3F /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		9D9E536E29904891000E3D3F /* RepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryImpl.swift; sourceTree = "<group>"; };
+		9D9E53702990589F000E3D3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		9DA2DF9729A7F6710004CB42 /* TextFieldBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldBase.swift; sourceTree = "<group>"; };
+		9DA2DF9929A7F6AC0004CB42 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		9DA2DF9B29A7F6F50004CB42 /* UserTypePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypePicker.swift; sourceTree = "<group>"; };
+		9DA2DF9D29A803C60004CB42 /* TextFieldType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldType.swift; sourceTree = "<group>"; };
+		9DAB7DC929B40FA1008EE816 /* PopUpRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpRegister.swift; sourceTree = "<group>"; };
+		9DAB7DCD29B41596008EE816 /* PopUpType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpType.swift; sourceTree = "<group>"; };
+		9DC7B445298D802600AFC9D2 /* ShelterRegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelterRegisterModel.swift; sourceTree = "<group>"; };
+		9DC7B447298D816900AFC9D2 /* SignInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInModel.swift; sourceTree = "<group>"; };
+		9DC7B449298D842600AFC9D2 /* ShelterPointModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelterPointModel.swift; sourceTree = "<group>"; };
+		9DC7B44E298D880700AFC9D2 /* locations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = locations.json; sourceTree = "<group>"; };
+		9DC7B451298D8B4D00AFC9D2 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		9DE8E3992992E60A00FD2DCB /* Image+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Extensions.swift"; sourceTree = "<group>"; };
+		9DFE513129B55DA700D086F6 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		9DFE513329B55E5500D086F6 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		AC15991C6AB3AD7BEC7D9CC7 /* Pods-PetShelterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetShelterTests.release.xcconfig"; path = "Target Support Files/Pods-PetShelterTests/Pods-PetShelterTests.release.xcconfig"; sourceTree = "<group>"; };
 		B975DCA9E7535542CBCB0B0B /* Pods_PetShelter_PetShelterUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetShelter_PetShelterUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2030C5A29B7F8F700336D49 /* RepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTests.swift; sourceTree = "<group>"; };
+		D210F43F299A9019007D8ED1 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewModel.swift; path = PetShelter/UI/Map/LoginViewModel.swift; sourceTree = SOURCE_ROOT; };
+		D21C145629AE1C09003CF0F0 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		D225FCA62999A06100728AAC /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginView.swift; path = PetShelter/UI/Map/LoginView.swift; sourceTree = SOURCE_ROOT; };
+		D230E82F299E974900A4E089 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		D252778229AA93D80028893A /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		D263969D29946736009DCB53 /* ShelterDetailModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelterDetailModal.swift; sourceTree = "<group>"; };
+		D264EA8F29B914FE00C0D7DC /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		D264EA9129B91AF500C0D7DC /* NetworkingFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingFake.swift; sourceTree = "<group>"; };
+		D264EA9329B91F1600C0D7DC /* FakeDataVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeDataVariables.swift; sourceTree = "<group>"; };
+		D28FE42529ACEF8A00A1B0A2 /* ShelterUpdateBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelterUpdateBody.swift; sourceTree = "<group>"; };
+		D29CF94A29ABA65C00A6497D /* AddressResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressResult.swift; sourceTree = "<group>"; };
+		D29CF94C29ABBC6400A6497D /* ClearButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearButton.swift; sourceTree = "<group>"; };
+		D2B74896299925BD00D4F07E /* Moderat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Moderat-Medium.ttf"; sourceTree = "<group>"; };
+		D2B74897299925BD00D4F07E /* Moderat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Moderat-Bold.ttf"; sourceTree = "<group>"; };
+		D2D549CA2997106300FE39B2 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		D2F6FCA229A18C7200675257 /* RepositoryFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryFake.swift; sourceTree = "<group>"; };
+		D2F6FCA429A18DA000675257 /* LoginVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVMTests.swift; sourceTree = "<group>"; };
+		D2F6FCA629A190A200675257 /* KeychainFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainFake.swift; sourceTree = "<group>"; };
+		D2FBC6FC29B3A7F900E6BD41 /* DetailVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVMTests.swift; sourceTree = "<group>"; };
 		E6082ED6772146F7B121A2DD /* Pods-PetShelter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetShelter.debug.xcconfig"; path = "Target Support Files/Pods-PetShelter/Pods-PetShelter.debug.xcconfig"; sourceTree = "<group>"; };
 		E99CEB1CE344709175E3888D /* Pods_PetShelter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetShelter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB6D51982ED40A172652196B /* Pods-PetShelter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetShelter.release.xcconfig"; path = "Target Support Files/Pods-PetShelter/Pods-PetShelter.release.xcconfig"; sourceTree = "<group>"; };
@@ -76,6 +168,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2ED0A7F29A55FEF00AF4FB1 /* KeychainSwift in Frameworks */,
 				7EA5F1D799C11AEC6B6C4B4B /* Pods_PetShelter.framework in Frameworks */,
 				9D5F0E0F298C7A1900453576 /* Lottie in Frameworks */,
 			);
@@ -100,6 +193,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		238180DC299EBDBA004446F3 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				238180DD299EBDCF004446F3 /* CustomColor.swift */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
 		28046F3931BB7346B319318E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +236,12 @@
 		9D5F0DC5298C503000453576 /* PetShelter */ = {
 			isa = PBXGroup;
 			children = (
+				9D5F0DC6298C503000453576 /* PetShelterApp.swift */,
+				238180DC299EBDBA004446F3 /* Colors */,
+				D2B74895299924C500D4F07E /* Fonts */,
+				9DE8E3982992E5F300FD2DCB /* Utils */,
+				9D9E53702990589F000E3D3F /* Info.plist */,
+				9DC7B44E298D880700AFC9D2 /* locations.json */,
 				9D5F0DF2298C51A600453576 /* Domain */,
 				9D5F0DF1298C519A00453576 /* Data */,
 				9D5F0DF0298C519300453576 /* UI */,
@@ -155,7 +262,9 @@
 		9D5F0DD6298C503200453576 /* PetShelterTests */ = {
 			isa = PBXGroup;
 			children = (
-				9D5F0DD7298C503200453576 /* PetShelterTests.swift */,
+				D2FBC6F929B3A6AE00E6BD41 /* Fakes */,
+				D2FBC6F829B3A6A400E6BD41 /* ViewModels */,
+				D2030C5A29B7F8F700336D49 /* RepositoryTests.swift */,
 			);
 			path = PetShelterTests;
 			sourceTree = "<group>";
@@ -172,11 +281,13 @@
 		9D5F0DF0298C519300453576 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				9D5F0DC6298C503000453576 /* PetShelterApp.swift */,
-				9D5F0DF5298C51E300453576 /* Register */,
-				9D5F0DF4298C51DB00453576 /* Login */,
+				D21C145529AE1BF7003CF0F0 /* Components */,
+				D27839C329AFCA830051D85B /* Splash */,
 				9D5F0DF3298C51B800453576 /* Welcome */,
 				9D5F0DF6298C51ED00453576 /* Map */,
+				9D5F0DF4298C51DB00453576 /* Login */,
+				9D5F0DF5298C51E300453576 /* Register */,
+				D230E82E299E971600A4E089 /* Detail */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -184,6 +295,9 @@
 		9D5F0DF1298C519A00453576 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				9D9E536C29904859000E3D3F /* Repository.swift */,
+				9D9E536E29904891000E3D3F /* RepositoryImpl.swift */,
+				D264EA8F29B914FE00C0D7DC /* Networking.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -191,6 +305,12 @@
 		9D5F0DF2298C51A600453576 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				9DC7B445298D802600AFC9D2 /* ShelterRegisterModel.swift */,
+				9DC7B447298D816900AFC9D2 /* SignInModel.swift */,
+				9DC7B449298D842600AFC9D2 /* ShelterPointModel.swift */,
+				9D65301729916BC0004CF39D /* NetworkError.swift */,
+				D29CF94A29ABA65C00A6497D /* AddressResult.swift */,
+				D28FE42529ACEF8A00A1B0A2 /* ShelterUpdateBody.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -198,9 +318,8 @@
 		9D5F0DF3298C51B800453576 /* Welcome */ = {
 			isa = PBXGroup;
 			children = (
+				9DC7B450298D8B1700AFC9D2 /* Component */,
 				9D5F0DC8298C503000453576 /* WelcomeView.swift */,
-				9D5F0E11298C7B7800453576 /* LottieView.swift */,
-				9D5F0E13298C7C4400453576 /* DogAnimation.json */,
 			);
 			path = Welcome;
 			sourceTree = "<group>";
@@ -208,6 +327,8 @@
 		9D5F0DF4298C51DB00453576 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				D225FCA62999A06100728AAC /* LoginView.swift */,
+				D210F43F299A9019007D8ED1 /* LoginViewModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -215,6 +336,12 @@
 		9D5F0DF5298C51E300453576 /* Register */ = {
 			isa = PBXGroup;
 			children = (
+				9DA2DF9629A7F6370004CB42 /* Component */,
+				9D6530192991972D004CF39D /* RegisterView.swift */,
+				9DA2DF9929A7F6AC0004CB42 /* RegisterViewModel.swift */,
+				9D60A12829AD1DCB00A277DB /* RegisterState.swift */,
+				9DAB7DC929B40FA1008EE816 /* PopUpRegister.swift */,
+				9DAB7DCD29B41596008EE816 /* PopUpType.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -224,6 +351,9 @@
 			children = (
 				9D5F0DF9298C52A000453576 /* Components */,
 				9D5F0DF7298C527C00453576 /* MapView.swift */,
+				9DC7B451298D8B4D00AFC9D2 /* MapViewModel.swift */,
+				9D65301F2991BBB8004CF39D /* Coordinator.swift */,
+				D2D549CA2997106300FE39B2 /* LocationManager.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -234,8 +364,41 @@
 				9D5F0DFA298C52BE00453576 /* Map.swift */,
 				9D5F0DFC298C5C8700453576 /* Header.swift */,
 				9D5F0DFE298C5CEA00453576 /* AidButton.swift */,
+				D263969D29946736009DCB53 /* ShelterDetailModal.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		9DA2DF9629A7F6370004CB42 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				9DA2DF9729A7F6710004CB42 /* TextFieldBase.swift */,
+				9DA2DF9B29A7F6F50004CB42 /* UserTypePicker.swift */,
+				9DA2DF9D29A803C60004CB42 /* TextFieldType.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		9DC7B450298D8B1700AFC9D2 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				9D5F0E11298C7B7800453576 /* LottieView.swift */,
+				9D5F0E13298C7C4400453576 /* DogAnimation.json */,
+				9D65301B29919863004CF39D /* ShelterButton.swift */,
+				9D65301D299198BC004CF39D /* PhysicPersonButton.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		9DE8E3982992E5F300FD2DCB /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				9DE8E3992992E60A00FD2DCB /* Image+Extensions.swift */,
+				D29CF94C29ABBC6400A6497D /* ClearButton.swift */,
+				9DFE513129B55DA700D086F6 /* EmptyView.swift */,
+				9DFE513329B55E5500D086F6 /* LoadingView.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		C272302C08C099AC3508E9C9 /* Pods */ = {
@@ -249,6 +412,62 @@
 				AC15991C6AB3AD7BEC7D9CC7 /* Pods-PetShelterTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		D21C145529AE1BF7003CF0F0 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				D21C145629AE1C09003CF0F0 /* ImagePicker.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		D230E82E299E971600A4E089 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				D230E82F299E974900A4E089 /* DetailView.swift */,
+				D252778229AA93D80028893A /* DetailViewModel.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		D27839C329AFCA830051D85B /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				238180DA299EB356004446F3 /* SplashView.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		D2B74895299924C500D4F07E /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				D2B74897299925BD00D4F07E /* Moderat-Bold.ttf */,
+				D2B74896299925BD00D4F07E /* Moderat-Medium.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		D2FBC6F829B3A6A400E6BD41 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				D2F6FCA429A18DA000675257 /* LoginVMTests.swift */,
+				D2FBC6FC29B3A7F900E6BD41 /* DetailVMTests.swift */,
+				9D403B1029BBEEFD007F929C /* RegisterVMTests.swift */,
+				23373A1029C1F484005FCBFB /* MapVMTests.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		D2FBC6F929B3A6AE00E6BD41 /* Fakes */ = {
+			isa = PBXGroup;
+			children = (
+				D2F6FCA629A190A200675257 /* KeychainFake.swift */,
+				D2F6FCA229A18C7200675257 /* RepositoryFake.swift */,
+				D264EA9129B91AF500C0D7DC /* NetworkingFake.swift */,
+				D264EA9329B91F1600C0D7DC /* FakeDataVariables.swift */,
+			);
+			path = Fakes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,6 +490,7 @@
 			name = PetShelter;
 			packageProductDependencies = (
 				9D5F0E0E298C7A1900453576 /* Lottie */,
+				D2ED0A7E29A55FEF00AF4FB1 /* KeychainSwift */,
 			);
 			productName = PetShelter;
 			productReference = 9D5F0DC3298C503000453576 /* PetShelter.app */;
@@ -349,6 +569,7 @@
 			mainGroup = 9D5F0DBA298C503000453576;
 			packageReferences = (
 				9D5F0E0D298C7A1900453576 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				D2ED0A7D29A55FEF00AF4FB1 /* XCRemoteSwiftPackageReference "keychain-swift" */,
 			);
 			productRefGroup = 9D5F0DC4298C503000453576 /* Products */;
 			projectDirPath = "";
@@ -366,9 +587,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2B74899299925BD00D4F07E /* Moderat-Bold.ttf in Resources */,
 				9D5F0DCE298C503200453576 /* Preview Assets.xcassets in Resources */,
 				9D5F0E14298C7C4400453576 /* DogAnimation.json in Resources */,
+				9DC7B44F298D880700AFC9D2 /* locations.json in Resources */,
 				9D5F0DCB298C503200453576 /* Assets.xcassets in Resources */,
+				D2B74898299925BD00D4F07E /* Moderat-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,13 +720,47 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				238180DB299EB356004446F3 /* SplashView.swift in Sources */,
+				D21C145729AE1C09003CF0F0 /* ImagePicker.swift in Sources */,
+				9D9E536F29904891000E3D3F /* RepositoryImpl.swift in Sources */,
+				9D9E536D29904859000E3D3F /* Repository.swift in Sources */,
+				9DC7B44A298D842600AFC9D2 /* ShelterPointModel.swift in Sources */,
+				D263969E29946736009DCB53 /* ShelterDetailModal.swift in Sources */,
 				9D5F0DFD298C5C8700453576 /* Header.swift in Sources */,
+				D210F440299A9019007D8ED1 /* LoginViewModel.swift in Sources */,
+				9DA2DF9829A7F6710004CB42 /* TextFieldBase.swift in Sources */,
+				9D60A12929AD1DCB00A277DB /* RegisterState.swift in Sources */,
+				9D65301C29919863004CF39D /* ShelterButton.swift in Sources */,
+				9DC7B446298D802600AFC9D2 /* ShelterRegisterModel.swift in Sources */,
+				9DFE513429B55E5500D086F6 /* LoadingView.swift in Sources */,
+				9DE8E39A2992E60A00FD2DCB /* Image+Extensions.swift in Sources */,
+				9DA2DF9C29A7F6F50004CB42 /* UserTypePicker.swift in Sources */,
+				D252778329AA93D80028893A /* DetailViewModel.swift in Sources */,
 				9D5F0DC9298C503000453576 /* WelcomeView.swift in Sources */,
+				D29CF94D29ABBC6400A6497D /* ClearButton.swift in Sources */,
+				9D65301A2991972D004CF39D /* RegisterView.swift in Sources */,
+				D225FCA72999A06100728AAC /* LoginView.swift in Sources */,
 				9D5F0DFF298C5CEA00453576 /* AidButton.swift in Sources */,
+				9DA2DF9A29A7F6AC0004CB42 /* RegisterViewModel.swift in Sources */,
 				9D5F0DF8298C527C00453576 /* MapView.swift in Sources */,
+				238180DE299EBDCF004446F3 /* CustomColor.swift in Sources */,
+				9DC7B448298D816900AFC9D2 /* SignInModel.swift in Sources */,
+				9D65301E299198BC004CF39D /* PhysicPersonButton.swift in Sources */,
+				9DFE513229B55DA700D086F6 /* EmptyView.swift in Sources */,
+				9DAB7DCE29B41596008EE816 /* PopUpType.swift in Sources */,
+				D230E830299E974900A4E089 /* DetailView.swift in Sources */,
 				9D5F0DFB298C52BE00453576 /* Map.swift in Sources */,
 				9D5F0DC7298C503000453576 /* PetShelterApp.swift in Sources */,
+				9D65301829916BC0004CF39D /* NetworkError.swift in Sources */,
+				D29CF94B29ABA65C00A6497D /* AddressResult.swift in Sources */,
+				D2D549CB2997106300FE39B2 /* LocationManager.swift in Sources */,
+				D264EA9029B914FE00C0D7DC /* Networking.swift in Sources */,
+				D28FE42629ACEF8A00A1B0A2 /* ShelterUpdateBody.swift in Sources */,
 				9D5F0E12298C7B7800453576 /* LottieView.swift in Sources */,
+				9DC7B452298D8B4D00AFC9D2 /* MapViewModel.swift in Sources */,
+				9DA2DF9E29A803C60004CB42 /* TextFieldType.swift in Sources */,
+				9DAB7DCA29B40FA1008EE816 /* PopUpRegister.swift in Sources */,
+				9D6530202991BBB8004CF39D /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -510,7 +768,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D5F0DD8298C503200453576 /* PetShelterTests.swift in Sources */,
+				D2F6FCA529A18DA000675257 /* LoginVMTests.swift in Sources */,
+				D2F6FCA329A18C7200675257 /* RepositoryFake.swift in Sources */,
+				D2030C5B29B7F8F700336D49 /* RepositoryTests.swift in Sources */,
+				23373A1129C1F484005FCBFB /* MapVMTests.swift in Sources */,
+				D2F6FCA729A190A200675257 /* KeychainFake.swift in Sources */,
+				D2F6FCA529A18DA000675257 /* LoginVMTests.swift in Sources */,
+				D2F6FCA329A18C7200675257 /* RepositoryFake.swift in Sources */,
+				D2F6FCA729A190A200675257 /* KeychainFake.swift in Sources */,
+				D264EA9229B91AF500C0D7DC /* NetworkingFake.swift in Sources */,
+				D264EA9429B91F1600C0D7DC /* FakeDataVariables.swift in Sources */,
+				9D403B1129BBEEFD007F929C /* RegisterVMTests.swift in Sources */,
+				D2FBC6FD29B3A7F900E6BD41 /* DetailVMTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -589,7 +858,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -643,7 +912,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -662,13 +931,16 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PetShelter/Preview Content\"";
+				DEVELOPMENT_TEAM = 8DA4M3747L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PetShelter/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -691,13 +963,16 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PetShelter/Preview Content\"";
+				DEVELOPMENT_TEAM = 8DA4M3747L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PetShelter/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -837,6 +1112,14 @@
 				minimumVersion = 4.0.0;
 			};
 		};
+		D2ED0A7D29A55FEF00AF4FB1 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -844,6 +1127,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9D5F0E0D298C7A1900453576 /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
+		};
+		D2ED0A7E29A55FEF00AF4FB1 /* KeychainSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D2ED0A7D29A55FEF00AF4FB1 /* XCRemoteSwiftPackageReference "keychain-swift" */;
+			productName = KeychainSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

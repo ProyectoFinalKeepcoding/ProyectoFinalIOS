@@ -15,7 +15,7 @@ struct PetShelterApp: App {
     }
     var body: some Scene {
         WindowGroup {
-            WelcomeView()
+            SplashView()
         }
     }
 }
