@@ -17,6 +17,8 @@ import Combine
 ///    - closestShelter: Model thant contains data of closest Shelter from user´s location
 final class MapViewModel: ObservableObject {
     private var repository: Repository
+    
+    @Published var status = Status.none
     @Published var locations = [ShelterPointModel]()
     
     
@@ -36,8 +38,10 @@ final class MapViewModel: ObservableObject {
         switch result {
         case .success(let points):
             locations = points
+            
         case .failure(let error):
             print(error)
+            status = .error(error: error.localizedDescription)
         }
     }
         

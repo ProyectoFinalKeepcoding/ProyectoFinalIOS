@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23373A1129C1F484005FCBFB /* MapVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23373A1029C1F484005FCBFB /* MapVMTests.swift */; };
 		238180DB299EB356004446F3 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238180DA299EB356004446F3 /* SplashView.swift */; };
 		238180DE299EBDCF004446F3 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238180DD299EBDCF004446F3 /* CustomColor.swift */; };
 		6C0CB3120A6A66C8DE605820 /* Pods_PetShelter_PetShelterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B975DCA9E7535542CBCB0B0B /* Pods_PetShelter_PetShelterUITests.framework */; };
@@ -90,6 +91,7 @@
 
 /* Begin PBXFileReference section */
 		061601341A03BB051BF1EE3B /* Pods-PetShelter-PetShelterUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetShelter-PetShelterUITests.debug.xcconfig"; path = "Target Support Files/Pods-PetShelter-PetShelterUITests/Pods-PetShelter-PetShelterUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		23373A1029C1F484005FCBFB /* MapVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVMTests.swift; sourceTree = "<group>"; };
 		238180DA299EB356004446F3 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		238180DD299EBDCF004446F3 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 		3A3A95B8FAFBF58848646572 /* Pods-PetShelter-PetShelterUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetShelter-PetShelterUITests.release.xcconfig"; path = "Target Support Files/Pods-PetShelter-PetShelterUITests/Pods-PetShelter-PetShelterUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -452,6 +454,7 @@
 				D2F6FCA429A18DA000675257 /* LoginVMTests.swift */,
 				D2FBC6FC29B3A7F900E6BD41 /* DetailVMTests.swift */,
 				9D403B1029BBEEFD007F929C /* RegisterVMTests.swift */,
+				23373A1029C1F484005FCBFB /* MapVMTests.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -768,6 +771,7 @@
 				D2F6FCA529A18DA000675257 /* LoginVMTests.swift in Sources */,
 				D2F6FCA329A18C7200675257 /* RepositoryFake.swift in Sources */,
 				D2030C5B29B7F8F700336D49 /* RepositoryTests.swift in Sources */,
+				23373A1129C1F484005FCBFB /* MapVMTests.swift in Sources */,
 				D2F6FCA729A190A200675257 /* KeychainFake.swift in Sources */,
 				D2F6FCA529A18DA000675257 /* LoginVMTests.swift in Sources */,
 				D2F6FCA329A18C7200675257 /* RepositoryFake.swift in Sources */,

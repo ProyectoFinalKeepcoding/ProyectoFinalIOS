@@ -10,6 +10,8 @@ import Foundation
 
 class RepositoryFake: Repository {
     
+    
+    
     let shelterCorrectIDFake = ShelterPointModel(
         id: "CorrectID",
         name: "Shelter Point 1",
@@ -30,10 +32,23 @@ class RepositoryFake: Repository {
         shelterType: .shelterPoint)
 
     
+    var result: Result<[ShelterPointModel], NetworkError>
+    
+    
+    init (result: Result<[ShelterPointModel], NetworkError> = .success([ShelterPointModel(
+        id: "CorrectID",
+        name: "Shelter Point 1",
+        phoneNumber: "555-555-0001",
+        address: Address(
+            latitude: 40.4168,
+            longitude: -3.7038),
+        shelterType: .shelterPoint)])) {
+        self.result = result
+    }
     
     func fetchShelterPoints() async -> Result<[PetShelter.ShelterPointModel], PetShelter.NetworkError> {
         
-        return .success([shelterCorrectIDFake])
+        return result
     }
     
     func login(user: String, password: String) async -> Result<[String], PetShelter.NetworkError> {
